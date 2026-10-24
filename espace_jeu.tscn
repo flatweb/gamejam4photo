@@ -59,6 +59,8 @@ shape = SubResource("BoxShape3D_vpl4w")
 
 [node name="Joueur" parent="." unique_id=887026073 instance=ExtResource("1_r28ko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+camera_FOV = null
+interaction_ray_length = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=301571981]
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 10, 0)

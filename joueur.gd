@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 
 const SPEED = 5.0
+const SPEED_LATERAL = 3.0
 const JUMP_VELOCITY = 4.5
 const ROT_SPEED = 2
 const BEND_SPEED = 1
@@ -11,6 +12,9 @@ var freezed : bool = false
 var albumopened : bool = false
 var albumopening : bool = false
 var mouse_captured : bool = false
+var look_dir : Vector2
+var camera_sens : float = 1.0
+
 
 func capture_mouse() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -23,7 +27,7 @@ func release_mouse() -> void:
 
 
 @onready var fps_camera: Camera3D = %Camera3D
-@onready var interaction_ray: RayCast3D = %InteractionRay
+#@onready var interaction_ray: RayCast3D = %InteractionRay
 
 @export var camera_FOV = 55
 @export var interaction_ray_length = 3.0
@@ -43,7 +47,7 @@ func _input(event: InputEvent) -> void:
 			toggle_cursor_mode()
 		elif mouseevent.pressed == false and cursor_locked :
 			$Tete.rotation_degrees.x = 0.0
-			$Tete.rotation_degrees.y = 0.0
+			$Tete.rotation_degrees.y	 = 0.0
 			toggle_cursor_mode()
 			
 	if cursor_locked and event is InputEventMouseMotion:
@@ -69,6 +73,23 @@ func toggle_cursor_mode():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cursor_locked = !cursor_locked
 
+func _handle_joypad_camera_rotation(delta: float, sens_mod: float = 1.0) -> void:
+	var joypad_dir: Vector2 = Input.get_vector(&"look_left", &"look_right", &"look_up", &"look_down")
+	if joypad_dir.length() > 0:
+		look_dir += joypad_dir * delta
+		rotation.y -= look_dir.x * camera_sens * sens_mod
+		$Tete.rotation.x = clamp($Tete.rotation.x - look_dir.y * camera_sens * sens_mod, -1.5, 1.5)
+		$Tete.rotation_degrees.x = clamp($Tete.rotation_degrees.x, -70, 70)
+		$Tete.rotation_degrees.y = clamp($Tete.rotation_degrees.y, -70, 70)
+		look_dir = Vector2.ZERO
+	else:
+		look_dir = Vector2(sign($Tete.rotation_degrees.y),sign($Tete.rotation_degrees.x))*delta
+		if sign($Tete.rotation.x - look_dir.y * camera_sens * sens_mod) != sign($Tete.rotation.x):
+			$Tete.rotation.x = 0.0
+		else:
+			$Tete.rotation.x = clamp($Tete.rotation.x - look_dir.y * camera_sens * sens_mod, -1.5, 1.5)
+		look_dir = Vector2.ZERO
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -83,32 +104,24 @@ func _physics_process(delta: float) -> void:
 		## do nothing
 		#pass
 	#else :
+	
+	_handle_joypad_camera_rotation(delta)
+	
 	if true:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		#var bend = Input.get_action_strength("back")
 		var front = -Input.get_action_strength("front") + Input.get_action_strength("back")
-		var turn = Input.get_action_strength("left") - Input.get_action_strength("right")
-		if turn != 0 :
-			rotate_y(delta*turn*ROT_SPEED)
-			
+		var lateral = Input.get_action_strength("left") - Input.get_action_strength("right")
+		
 		var direction : Vector3
 		direction = Vector3(sin(rotation.y),0,cos(rotation.y))
 		velocity = direction.normalized()*front*SPEED
-
-		#if bend > 0:
-			#var bendangle = min(delta*BEND_SPEED,MAX_BEND_ANGLE)
-			## on se benche en arrière, donc on va vers le négatif
-			#rotation.x = max(rotation.x-bendangle,-MAX_BEND_ANGLE)
-		#elif rotation.x < 0 :
-			#var bendangle = min(delta*BEND_SPEED,MAX_BEND_ANGLE)
-			## on revient droit, donc on va vers zéro
-			#rotation.x = min(rotation.x+bendangle,0)
-			
+		velocity +=  Vector3(-cos(rotation.y),0,sin(rotation.y)).normalized()*lateral*SPEED_LATERAL
+		
 		# Handle jump.
-		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
-
 	move_and_slide()
 
 func _process(delta : float):
