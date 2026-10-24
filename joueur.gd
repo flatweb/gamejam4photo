@@ -68,13 +68,13 @@ func _handle_joypad_camera_rotation(delta: float, sens_mod: float = 1.0) -> void
 		$Tete.rotation_degrees.x = clamp($Tete.rotation_degrees.x, -70, 70)
 		$Tete.rotation_degrees.y = clamp($Tete.rotation_degrees.y, -70, 70)
 		look_dir = Vector2.ZERO
-	else:
-		look_dir = Vector2(sign($Tete.rotation_degrees.y),sign($Tete.rotation_degrees.x))*delta
-		if sign($Tete.rotation.x - look_dir.y * camera_sens * sens_mod) != sign($Tete.rotation.x):
-			$Tete.rotation.x = 0.0
-		else:
-			$Tete.rotation.x = clamp($Tete.rotation.x - look_dir.y * camera_sens * sens_mod, -1.5, 1.5)
-		look_dir = Vector2.ZERO
+	#else:
+		#look_dir = Vector2(sign($Tete.rotation_degrees.y),sign($Tete.rotation_degrees.x))*delta
+		#if sign($Tete.rotation.x - look_dir.y * camera_sens * sens_mod) != sign($Tete.rotation.x):
+			#$Tete.rotation.x = 0.0
+		#else:
+			#$Tete.rotation.x = clamp($Tete.rotation.x - look_dir.y * camera_sens * sens_mod, -1.5, 1.5)
+		#look_dir = Vector2.ZERO
 
 
 func _physics_process(delta: float) -> void:
