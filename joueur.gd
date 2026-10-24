@@ -55,12 +55,21 @@ func _physics_process(delta: float) -> void:
 func _process(delta : float):
 	# Pas d'action autorisée sur l'album est en train de bouger
 	if albumopening : return
+	
 	if Input.is_action_just_pressed("album") and not albumopened :
 		albumopening = true
 		$AnimationPlayer.play("open")
 	elif Input.is_action_just_pressed("album") and albumopened :
 		albumopening = true
 		$AnimationPlayer.play("close")
+		
+	if albumopened:
+		if Input.is_action_just_pressed("right"):
+			$Album.pagenext()
+			pass
+		elif Input.is_action_just_pressed("left"):
+			$Album.pageprev()
+			pass
 
 
 func _on_animation_finished(anim_name: StringName) -> void:

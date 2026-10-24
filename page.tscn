@@ -19,6 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39043558, 0.12498373)
 text = "Blabla"
 
 [node name="LabelIndice" type="Label3D" parent="." unique_id=823470959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.11889553)
 text = "Il faut me chercher près d'un arbre"
 font_size = 11
 autowrap_mode = 2
