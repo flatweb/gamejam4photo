@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dfn04k3h5qk3s" path="res://ASSETS/SCENES/pin.tscn" id="4_b8o0u"]
 [ext_resource type="PackedScene" uid="uid://dyj3x8eqc2drt" path="res://ASSETS/SCENES/sapin.tscn" id="5_82gh3"]
 [ext_resource type="PackedScene" uid="uid://cjifo1c7k5i5x" path="res://ASSETS/SCENES/arbre.tscn" id="6_44gsj"]
+[ext_resource type="PackedScene" uid="uid://71lnoy628f58" path="res://ASSETS/SCENES/buisson.tscn" id="7_8rlno"]
+[ext_resource type="PackedScene" uid="uid://dwph1lswdeq1m" path="res://ASSETS/SCENES/map.tscn" id="8_mu3ui"]
 
 [sub_resource type="Environment" id="Environment_vpl4w"]
 ambient_light_color = Color(0.68307734, 0.6830774, 0.68307734, 1)
@@ -82,3 +84,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22343, 0, -10.968306)
 
 [node name="ARBRE" parent="." unique_id=327989009 instance=ExtResource("6_44gsj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.114577, 0, -4.424718)
+
+[node name="BUISSON" parent="." unique_id=58299986 instance=ExtResource("7_8rlno")]
+transform = Transform3D(0.30308875, 0, -0.95296234, 0, 1, 0, 0.95296234, 0, 0.30308875, 9.83, 0, 3.225)
+
+[node name="MAP" parent="." unique_id=1294606557 instance=ExtResource("8_mu3ui")]
