@@ -3,11 +3,13 @@ extends Node3D
 enum Cote {GAUCHE, DROITE}
 
 var pageon = 0
-var objectifs
+var objectifs:
+	set (ref):
+		objectifs = ref
+		load_photos()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_photos()
 	pass # Replace with function body.
 
 var opening = false

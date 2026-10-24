@@ -166,7 +166,7 @@ func _physics_process(delta: float) -> void:
 			is_aiming = false
 			$Control/ViewFinder.visible = false
 			%Tete/Camera3D.fov = 75.0
-	if velocity != Vector3.ZERO : print (velocity)
+	#if velocity != Vector3.ZERO : print (velocity)
 	move_and_slide()
 
 func _process(delta : float):
