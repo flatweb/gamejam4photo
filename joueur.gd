@@ -8,8 +8,14 @@ const BEND_SPEED = 1
 const MAX_BEND_ANGLE : float = PI/4
 
 var freezed : bool = false
+var albumopened : bool = false
+var albumopening : bool = false
 
 func _physics_process(delta: float) -> void:
+	
+	# On est freeze tant que l'album est ouvert
+	if albumopened : return
+	
 	# Add the gravity ?
 	#if not self.is_on_floor():
 		#velocity += get_gravity() * delta
@@ -45,3 +51,22 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 
 	move_and_slide()
+
+func _process(delta : float):
+	# Pas d'action autorisée sur l'album est en train de bouger
+	if albumopening : return
+	if Input.is_action_just_pressed("album") and not albumopened :
+		albumopening = true
+		$AnimationPlayer.play("open")
+	elif Input.is_action_just_pressed("album") and albumopened :
+		albumopening = true
+		$AnimationPlayer.play("close")
+
+
+func _on_animation_finished(anim_name: StringName) -> void:
+	albumopening = false
+	if anim_name == "open":
+		albumopened = true
+	elif anim_name == "close":
+		albumopened = false
+	pass # Replace with function body.

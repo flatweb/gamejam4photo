@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhf03lo0trtd5"]
 
 [ext_resource type="Script" uid="uid://b5u7rxl8fuj7q" path="res://joueur.gd" id="1_2d0qe"]
+[ext_resource type="PackedScene" uid="uid://dywsyled223nc" path="res://album.tscn" id="2_mc3kx"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_vpl4w"]
 height = 1.2
@@ -11,6 +12,94 @@ height = 0.6
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vv104"]
 height = 1.8
+
+[sub_resource type="Animation" id="Animation_mc3kx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Album:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.27687502, 0, -0.9759308)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Album:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.78539824, -1.5707964, 1.5707964)]
+}
+
+[sub_resource type="Animation" id="Animation_nhxrk"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Album:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.277, 1.46, -1), Vector3(-0.277, 0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Album:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.1134464, -0.7853982, 0.1134464), Vector3(-0.78539824, -1.5707964, 1.5707964)]
+}
+
+[sub_resource type="Animation" id="Animation_7j7mc"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Album:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.27687502, 0, -0.9759308), Vector3(-0.277, 1.46, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Album:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.78539824, -1.5707964, 1.5707964), Vector3(-0.11344535, -0.79188883, 0.11418247)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wr1qv"]
+_data = {
+&"RESET": SubResource("Animation_mc3kx"),
+&"close": SubResource("Animation_nhxrk"),
+&"open": SubResource("Animation_7j7mc")
+}
 
 [node name="Joueur" type="CharacterBody3D" unique_id=887026073]
 script = ExtResource("1_2d0qe")
@@ -29,3 +118,11 @@ shape = SubResource("CylinderShape3D_vv104")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=525025609]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.419862, -0.10738611)
+
+[node name="Album" parent="." unique_id=1819505796 instance=ExtResource("2_mc3kx")]
+transform = Transform3D(0.70710677, 1.2802769e-08, -0.70710665, 0.70710665, -3.0908616e-08, 0.70710677, -1.2802767e-08, -1, -3.0908613e-08, -0.27687502, 0, -0.9759308)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2038335865]
+libraries/ = SubResource("AnimationLibrary_wr1qv")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b7ej55gvcj4sg"]
+
+[ext_resource type="Script" uid="uid://c5e4mlsi41sll" path="res://page.gd" id="1_7tx1s"]
+[ext_resource type="Texture2D" uid="uid://ccpcf7g28uj3t" path="res://icon.svg" id="1_nl5ea"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vpl4w"]
+size = Vector3(1, 1, 0.21240234)
+
+[node name="Page" type="MeshInstance3D" unique_id=133376510]
+mesh = SubResource("BoxMesh_vpl4w")
+script = ExtResource("1_7tx1s")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1209097566]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.013645023, 0.17727247, 0.11599523)
+texture = ExtResource("1_nl5ea")
+
+[node name="LabelTitre" type="Label3D" parent="." unique_id=795662586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39043558, 0.12498373)
+text = "Blabla"
+
+[node name="LabelIndice" type="Label3D" parent="." unique_id=823470959]
+text = "Il faut me chercher près d'un arbre"
+font_size = 11
+autowrap_mode = 2
+width = 200.0

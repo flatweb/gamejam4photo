@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dywsyled223nc"]
+
+[ext_resource type="PackedScene" uid="uid://b7ej55gvcj4sg" path="res://page.tscn" id="1_5p2gi"]
+[ext_resource type="Script" uid="uid://2cjv0ktpp3ma" path="res://album.gd" id="1_uur71"]
+
+[node name="Album" type="Node3D" unique_id=1819505796]
+script = ExtResource("1_uur71")
+
+[node name="PageGauche" parent="." unique_id=1677043718 instance=ExtResource("1_5p2gi")]
+transform = Transform3D(-0.023258181, 0, 0.9997295, 0, 1, 0, -0.9997295, 0, -0.023258181, -0.59958804, 0, -0.30561638)
+
+[node name="PageDroite" parent="." unique_id=249441898 instance=ExtResource("1_5p2gi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11577237, 0, -1.0126221)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=649497298]
