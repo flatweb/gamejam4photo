@@ -13,3 +13,7 @@ transform = Transform3D(-0.023258181, 0, 0.9997295, 0, 1, 0, -0.9997295, 0, -0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11577237, 0, -1.0126221)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=649497298]
+
+[node name="AudioOpen" type="AudioStreamPlayer3D" parent="." unique_id=324274529]
+
+[node name="AudioTurn" type="AudioStreamPlayer3D" parent="." unique_id=1167697134]

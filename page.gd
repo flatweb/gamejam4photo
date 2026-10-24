@@ -12,6 +12,10 @@ func _ready() -> void:
 func change(img : Image, titre : String, indice : String):
 	if img == null:
 		$Sprite3D.hide()
+		$Image3D.hide()
+		var imgpng = ResourceLoader.load("res://icon.svg")
+		$Image3D.mesh.material.set_texture(BaseMaterial3D.TextureParam.TEXTURE_ALBEDO,img)  ##FIXME
+		#print (xx)
 	if img != null:
 		pass # TODO remplacer l'image par la photo
 		$Sprite3D.show()

@@ -15,6 +15,12 @@ func _ready() -> void:
 	changetopageon()
 	pass # Replace with function body.
 
+func open():
+	$AudioOpen.play()
+	
+func close():
+	$AudioOpen.play()
+	
 func pageprev():
 	pageon = max(0,pageon-2)
 	changetopageon()
@@ -26,6 +32,7 @@ func pagenext():
 	pass
 
 func changetopageon():
+	$AudioTurn.play()
 	change(Cote.GAUCHE,quests[pageon]["img"],quests[pageon]["titre"],quests[pageon]["indice"])
 	change(Cote.DROITE,quests[pageon+1]["img"],quests[pageon+1]["titre"],quests[pageon+1]["indice"])
 	

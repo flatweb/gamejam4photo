@@ -6,6 +6,12 @@
 [sub_resource type="BoxMesh" id="BoxMesh_vpl4w"]
 size = Vector3(1, 1, 0.21240234)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_phrhr"]
+albedo_texture = ExtResource("1_nl5ea")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7tx1s"]
+material = SubResource("StandardMaterial3D_phrhr")
+
 [node name="Page" type="MeshInstance3D" unique_id=133376510]
 mesh = SubResource("BoxMesh_vpl4w")
 script = ExtResource("1_7tx1s")
@@ -17,6 +23,7 @@ texture = ExtResource("1_nl5ea")
 [node name="LabelTitre" type="Label3D" parent="." unique_id=795662586]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39043558, 0.12498373)
 text = "Blabla"
+font_size = 28
 
 [node name="LabelIndice" type="Label3D" parent="." unique_id=823470959]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.11889553)
@@ -24,3 +31,6 @@ text = "Il faut me chercher près d'un arbre"
 font_size = 11
 autowrap_mode = 2
 width = 200.0
+
+[node name="Image3D" type="MeshInstance3D" parent="." unique_id=2017813322]
+mesh = SubResource("PlaneMesh_7tx1s")
