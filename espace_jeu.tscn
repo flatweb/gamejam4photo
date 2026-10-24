@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bhf03lo0trtd5" path="res://joueur.tscn" id="1_r28ko"]
 [ext_resource type="PackedScene" uid="uid://cbndpx1i6vgww" path="res://ASSETS/SCENES/sapin_2d.tscn" id="3_s3qqy"]
 [ext_resource type="PackedScene" uid="uid://dfn04k3h5qk3s" path="res://ASSETS/SCENES/pin.tscn" id="4_b8o0u"]
+[ext_resource type="PackedScene" uid="uid://dyj3x8eqc2drt" path="res://ASSETS/SCENES/sapin.tscn" id="5_82gh3"]
 
 [sub_resource type="Environment" id="Environment_vpl4w"]
 ambient_light_color = Color(0.68307734, 0.6830774, 0.68307734, 1)
@@ -74,3 +75,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9837456, 0, 0)
 
 [node name="PIN" parent="." unique_id=933298639 instance=ExtResource("4_b8o0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6150494, 0, -6.921749)
+
+[node name="SAPIN" parent="." unique_id=1181012005 instance=ExtResource("5_82gh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22343, 0, -10.968306)
