@@ -1,16 +1,10 @@
 [gd_scene format=3 uid="uid://b7ej55gvcj4sg"]
 
 [ext_resource type="Script" uid="uid://c5e4mlsi41sll" path="res://page.gd" id="1_7tx1s"]
-[ext_resource type="Texture2D" uid="uid://ccpcf7g28uj3t" path="res://icon.svg" id="1_nl5ea"]
+[ext_resource type="Texture2D" uid="uid://b3s5y6hdkdnj2" path="res://ASSETS/TEXTURES/photo_placeholder.png" id="2_7tx1s"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vpl4w"]
 size = Vector3(1, 1, 0.21240234)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_phrhr"]
-albedo_texture = ExtResource("1_nl5ea")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_7tx1s"]
-material = SubResource("StandardMaterial3D_phrhr")
 
 [node name="Page" type="MeshInstance3D" unique_id=133376510]
 mesh = SubResource("BoxMesh_vpl4w")
@@ -19,7 +13,7 @@ script = ExtResource("1_7tx1s")
 [node name="LabelTitre" type="Label3D" parent="." unique_id=795662586]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39043558, 0.12498373)
 text = "Blabla"
-font_size = 28
+font_size = 16
 
 [node name="LabelIndice" type="Label3D" parent="." unique_id=823470959]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.11889553)
@@ -28,5 +22,6 @@ font_size = 11
 autowrap_mode = 2
 width = 200.0
 
-[node name="Image3D" type="MeshInstance3D" parent="." unique_id=2017813322]
-mesh = SubResource("PlaneMesh_7tx1s")
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1479804928]
+transform = Transform3D(0.07999999, 0, 0, 0, 0.07999999, 0, 0, 0, 0.07999999, 0, 0, 0.110336185)
+texture = ExtResource("2_7tx1s")

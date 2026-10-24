@@ -36,6 +36,9 @@ func _ready() -> void:
 # FPS MOUSEMOTION
 func _input(event: InputEvent) -> void:
 			
+	# On est freeze tant que l'album est ouvert
+	if albumopened : return
+	
 	if mouse_captured and event is InputEventMouseMotion:
 		#rotation_degrees.y -= event.relative.x / 10
 		$Tete.rotation_degrees.x -= event.relative.y / 10
@@ -59,6 +62,10 @@ func toggle_cursor_mode():
 	mouse_captured = !mouse_captured
 
 func _handle_joypad_camera_rotation(delta: float, sens_mod: float = 1.0) -> void:
+	
+	# On est freeze tant que l'album est ouvert
+	if albumopened : return
+	
 	var joypad_dir: Vector2 = Input.get_vector(&"look_left", &"look_right", &"look_up", &"look_down")
 	if joypad_dir.length() > 0:
 		look_dir += joypad_dir * delta
@@ -129,7 +136,7 @@ func _physics_process(delta: float) -> void:
 			if not DirAccess.dir_exists_absolute(OS.get_user_data_dir() + "/photos/") :
 				DirAccess.make_dir_recursive_absolute(OS.get_user_data_dir() + "/photos/")
 			
-			var save_path = OS.get_user_data_dir() + "/photos/pic_" + Time.get_datetime_string_from_system().replace("-", "_") + ".png"
+			var save_path = OS.get_user_data_dir() + "/photos/" + Time.get_datetime_string_from_system().replace("-", "").replace(":", "").replace("T", "") + ".png"
 			screenshot_img.save_png(save_path)
 			print(save_path)
 			
@@ -160,6 +167,7 @@ func _process(delta : float):
 	
 	if Input.is_action_just_pressed("album") and not albumopened :
 		albumopening = true
+		$Album.load_photos()
 		$AnimationPlayer.play("open")
 	elif Input.is_action_just_pressed("album") and albumopened :
 		albumopening = true

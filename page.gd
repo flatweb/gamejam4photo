@@ -10,15 +10,16 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func change(img : Image, titre : String, indice : String):
+	$Sprite3D.hide()
 	if img == null:
-#a		$Sprite3D.hide()
-		$Image3D.hide()
 		var imgpng = ResourceLoader.load("res://icon.svg")
 		#$Image3D.mesh.material.set_texture(BaseMaterial3D.TextureParam.TEXTURE_ALBEDO,img)  ##FIXME
 		#print (xx)
+		$LabelIndice.show()
 	if img != null:
-		$Sprite3D.texture = img
-		$Sprite3D.show() 
+		$Sprite3D.texture = ImageTexture.create_from_image(img)
+		$Sprite3D.show()
+		$LabelIndice.hide()
 	$LabelTitre.text = titre
 	$LabelIndice.text = indice
 	
