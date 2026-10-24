@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b5u7rxl8fuj7q" path="res://joueur.gd" id="1_2d0qe"]
 [ext_resource type="PackedScene" uid="uid://dywsyled223nc" path="res://album.tscn" id="2_mc3kx"]
+[ext_resource type="Texture2D" uid="uid://b4hy25e7y7cp4" path="res://ASSETS/TEXTURES/view_finder.png" id="3_nhxrk"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_vpl4w"]
 height = 1.2
@@ -125,5 +126,19 @@ transform = Transform3D(0.70710677, 1.2802769e-08, -0.70710665, 0.70710665, -3.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2038335865]
 libraries/ = SubResource("AnimationLibrary_wr1qv")
+
+[node name="Control" type="Control" parent="." unique_id=274010228]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ViewFinder" type="TextureRect" parent="Control" unique_id=547526650]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.6002134, 0.60062164)
+texture = ExtResource("3_nhxrk")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

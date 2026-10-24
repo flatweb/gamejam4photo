@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 const SPEED = 5.0
 const SPEED_LATERAL = 3.0
 const JUMP_VELOCITY = 4.5
@@ -77,6 +76,9 @@ func _handle_joypad_camera_rotation(delta: float, sens_mod: float = 1.0) -> void
 		#look_dir = Vector2.ZERO
 
 
+var is_aiming : bool = false
+
+
 func _physics_process(delta: float) -> void:
 	
 	# On est freeze tant que l'album est ouvert
@@ -108,6 +110,42 @@ func _physics_process(delta: float) -> void:
 		# Handle jump.
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			
+		if Input.is_action_just_pressed("shoot") and is_aiming:
+			# Hide UI and way for frame refresh
+			$Control/ViewFinder.visible = false
+			await RenderingServer.frame_post_draw
+			# Get screenshot
+			var screenshot_img = get_viewport().get_texture().get_image()
+			# Show UI again
+			$Control/ViewFinder.visible = true
+			
+			# Dimensions of the crop_zone match our camera TextureRect's size
+			var crop_zone:Rect2 = Rect2(Vector2.ZERO, Vector2.ONE * 512)
+			
+			var cropped_img:Image = Image.create_empty(crop_zone.size.x, crop_zone.size.y, false, screenshot_img.get_format())
+			cropped_img.blit_rect(screenshot_img, crop_zone, screenshot_img.get_size() / 2)
+			
+			var save_path = OS.get_user_data_dir() + "/photos/pic_" + Time.get_datetime_string_from_system().replace("-", "_") + ".png"
+			screenshot_img.save_png(save_path)
+			print(save_path)
+			
+			
+			#$Photo.scale = Vector3.ONE / 10
+			#var photo_texture = ImageTexture.create_from_image(cropped_img)
+			#$Photo.texture = photo_texture # Sprite will show our viewport capture!
+			
+		if Input.is_action_just_pressed("aim"):
+			is_aiming = true
+			$Control/ViewFinder.visible = true
+			$Tete/Camera3D.fov = 50.0
+			
+		
+		if Input.is_action_just_released("aim"):
+			is_aiming = false
+			$Control/ViewFinder.visible = false
+			$Tete/Camera3D.fov = 75.0
+
 	move_and_slide()
 
 func _process(delta : float):
