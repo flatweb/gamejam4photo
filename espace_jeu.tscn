@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dwph1lswdeq1m" path="res://ASSETS/SCENES/map.tscn" id="8_mu3ui"]
 
 [sub_resource type="Environment" id="Environment_vpl4w"]
-ambient_light_color = Color(0.68307734, 0.6830774, 0.68307734, 1)
 
 [node name="EspaceJeu" type="Node3D" unique_id=1443061437]
 script = ExtResource("1_luu0b")
@@ -14,11 +13,13 @@ script = ExtResource("1_luu0b")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1991594267]
 environment = SubResource("Environment_vpl4w")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=301571981]
+transform = Transform3D(1, 0, 0, 0, 0.6107285, 0.79184, 0, -0.79184, 0.6107285, 0, 17.23639, 0)
+shadow_enabled = true
+shadow_opacity = 0.74
+
 [node name="Joueur" parent="." unique_id=887026073 instance=ExtResource("1_r28ko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=301571981]
-transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 10, 0)
 
 [node name="MAP" parent="." unique_id=1294606557 instance=ExtResource("8_mu3ui")]
 

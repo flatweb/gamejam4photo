@@ -113,6 +113,7 @@ mesh = SubResource("CapsuleMesh_vpl4w")
 [node name="Tete" type="MeshInstance3D" parent="Corps" unique_id=856882734]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8191227, 0)
+
 mesh = SubResource("SphereMesh_0pgee")
 
 [node name="Camera3D" type="Camera3D" parent="Corps/Tete" unique_id=525025609]
