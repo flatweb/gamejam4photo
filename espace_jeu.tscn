@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dwpg8fk75ly23" path="res://espace_jeu.gd" id="1_luu0b"]
 [ext_resource type="PackedScene" uid="uid://bhf03lo0trtd5" path="res://joueur.tscn" id="1_r28ko"]
 [ext_resource type="PackedScene" uid="uid://bfuiyj2mdow7x" path="res://champignon.tscn" id="4_b8o0u"]
+[ext_resource type="PackedScene" uid="uid://otv2m0s20xdx" path="res://fleur.tscn" id="5_82gh3"]
 [ext_resource type="PackedScene" uid="uid://dwph1lswdeq1m" path="res://ASSETS/SCENES/map.tscn" id="8_mu3ui"]
 
 [sub_resource type="Environment" id="Environment_vpl4w"]
@@ -27,3 +28,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
 [node name="Champignon" parent="Objectifs" unique_id=806006239 groups=["objectif"] instance=ExtResource("4_b8o0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7771606, 0.7211304, 0)
+
+[node name="Fleur" parent="Objectifs" unique_id=1733826176 instance=ExtResource("5_82gh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4114075, 0, 28.712524)
