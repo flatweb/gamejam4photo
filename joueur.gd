@@ -8,6 +8,8 @@ const MAX_BEND_ANGLE : float = PI/4
 
 var freezed : bool = false
 
+var is_aiming : bool = false
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity ?
@@ -44,10 +46,14 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			
-		if Input.is_action_just_pressed("shoot"):
-			# Calling get_data() on the result gives us an Image we can call flip_y() on.
+		if Input.is_action_just_pressed("shoot") and is_aiming:
+			# Hide UI and way for frame refresh
+			$Control/ViewFinder.visible = false
+			await RenderingServer.frame_post_draw
+			# Get screenshot
 			var screenshot_img = get_viewport().get_texture().get_image()
-			#img.flip_y()
+			# Show UI again
+			$Control/ViewFinder.visible = true
 			
 			# Dimensions of the crop_zone match our camera TextureRect's size
 			var crop_zone:Rect2 = Rect2(Vector2.ZERO, Vector2.ONE * 512)
@@ -64,5 +70,15 @@ func _physics_process(delta: float) -> void:
 			#var photo_texture = ImageTexture.create_from_image(cropped_img)
 			#$Photo.texture = photo_texture # Sprite will show our viewport capture!
 			
+		if Input.is_action_just_pressed("aim"):
+			is_aiming = true
+			$Control/ViewFinder.visible = true
+			$Camera3D.fov = 50.0
+			
+		
+		if Input.is_action_just_released("aim"):
+			is_aiming = false
+			$Control/ViewFinder.visible = false
+			$Camera3D.fov = 75.0
 
 	move_and_slide()
