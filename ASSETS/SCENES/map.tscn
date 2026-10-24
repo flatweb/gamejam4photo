@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dwph1lswdeq1m"]
+
+[ext_resource type="PackedScene" uid="uid://cpi17p0gwdfx7" path="res://ASSETS/MODELS/MAP.glb" id="1_5xahm"]
+
+[node name="MAP" type="Node3D" unique_id=1294606557]
+
+[node name="MAP" parent="." unique_id=807295233 instance=ExtResource("1_5xahm")]
