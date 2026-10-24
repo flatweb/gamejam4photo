@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dvxrpw6h6d7e7"]
+
+[ext_resource type="Script" uid="uid://c7s17x7u5g7k0" path="res://objectif_3d.gd" id="1_26fj7"]
+
+[node name="Objectif3D" type="Node3D" unique_id=1663791663 groups=["objectif"]]
+script = ExtResource("1_26fj7")

@@ -16,6 +16,10 @@ var mouse_captured : bool = true
 var look_dir : Vector2
 var camera_sens : float = 1.0
 
+var objectifs :
+	set(ref):
+		objectifs = ref
+		$Album.objectifs = ref
 
 func capture_mouse() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

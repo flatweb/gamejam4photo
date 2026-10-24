@@ -3,17 +3,11 @@ extends Node3D
 enum Cote {GAUCHE, DROITE}
 
 var pageon = 0
-var quests : Array = [
-	{"img" : null, "titre": "Champignon", "indice" : "sous les arbres"},
-	{"img" : null, "titre": "Caillou", "indice" : "partout"},
-	{"img" : null, "titre": "Arbre", "indice" : "dans la forêt"},
-	{"img" : null, "titre": "Oiseau", "indice" : "dans les arbres"},
-]
+var objectifs
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_photos()
-	changetopageon()
 	pass # Replace with function body.
 
 var opening = false
@@ -41,7 +35,7 @@ func pageprev():
 		closeandopen()
 	
 func pagenext():
-	var newpageon = min(lasteven(quests.size()-1),pageon+2)
+	var newpageon = min(lasteven(objectifs.size()-1),pageon+2)
 	if newpageon != pageon :
 		pageon = newpageon
 		closeandopen()
@@ -51,10 +45,9 @@ func closeandopen():
 	opening = true
 	
 func changetopageon():
-	$AudioTurn.play()
-	change(Cote.GAUCHE,quests[pageon]["img"],quests[pageon]["titre"],quests[pageon]["indice"])
-	if quests.size() > pageon+1:
-		change(Cote.DROITE,quests[pageon+1]["img"],quests[pageon+1]["titre"],quests[pageon+1]["indice"])
+	change(Cote.GAUCHE,objectifs[pageon]["img"],objectifs[pageon]["titre"],objectifs[pageon]["indice"])
+	if objectifs.size() > pageon+1:
+		change(Cote.DROITE,objectifs[pageon+1]["img"],objectifs[pageon+1]["titre"],objectifs[pageon+1]["indice"])
 	else :
 		change(Cote.DROITE,null,"","")
 	
@@ -78,7 +71,7 @@ func load_photos():
 				print("Found directory: " + file_name)
 			else:
 				photo = Image.load_from_file(photos_folder_path + file_name)
-				quests.append({"img" : photo, "titre": file_name, "indice" : ""})
+				objectifs.append({"img" : photo, "titre": file_name, "indice" : ""})
 				print("Loaded " + photos_folder_path + file_name)
 			file_name = dir.get_next()
 	else:
@@ -96,5 +89,6 @@ func _on_animation_finished(anim_name: StringName) -> void:
 		opening = true
 		opened = false
 		# On en profite pour changer les pages
+		$AudioTurn.play()
 		changetopageon()
 		$AnimationPlayer.play("open")
