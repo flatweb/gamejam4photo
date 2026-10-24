@@ -112,12 +112,13 @@ mesh = SubResource("CapsuleMesh_vpl4w")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4191227, 0)
 mesh = SubResource("SphereMesh_0pgee")
 
+[node name="Camera3D" type="Camera3D" parent="Tete" unique_id=525025609]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000739336, -0.10738611)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=860995187]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CylinderShape3D_vv104")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=525025609]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.419862, -0.10738611)
 
 [node name="Album" parent="." unique_id=1819505796 instance=ExtResource("2_mc3kx")]
 transform = Transform3D(0.70710677, 1.2802769e-08, -0.70710665, 0.70710665, -3.0908616e-08, 0.70710677, -1.2802767e-08, -1, -3.0908613e-08, -0.27687502, 0, -0.9759308)
