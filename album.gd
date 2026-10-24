@@ -20,16 +20,18 @@ func open():
 	
 func close():
 	$AudioOpen.play()
-	
+
+func lasteven(n :int):
+	if n % 2 == 1:
+		return n-1
+
 func pageprev():
 	pageon = max(0,pageon-2)
 	changetopageon()
-	pass
 	
 func pagenext():
-	pageon = min(quests.size(),pageon+2)
+	pageon = min(lasteven(quests.size()-1),pageon+2)
 	changetopageon()
-	pass
 
 func changetopageon():
 	$AudioTurn.play()
