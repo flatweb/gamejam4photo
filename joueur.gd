@@ -150,11 +150,13 @@ func _physics_process(delta: float) -> void:
 			if photosrestantes > 0 :
 				# Hide UI and way for frame refresh
 				$Control/ViewFinder.visible = false
+				$Pellicule.visible = false
 				await RenderingServer.frame_post_draw
 				# Get screenshot
 				var screenshot_img = get_viewport().get_texture().get_image()
 				# Show UI again
 				$Control/ViewFinder.visible = true
+				$Pellicule.visible = true
 				
 				# Dimensions of the crop_zone match our camera TextureRect's size
 				var crop_zone:Rect2 = Rect2(Vector2.ZERO, Vector2.ONE * 512)
