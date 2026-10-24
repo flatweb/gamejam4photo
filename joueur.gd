@@ -4,12 +4,13 @@ const SPEED = 5.0
 const SPEED_LATERAL = 3.0
 const SPEED_SPRINT = 25.0
 
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 4.5*2
 const ROT_SPEED = 2
 const BEND_SPEED = 1
 const MAX_BEND_ANGLE : float = PI/4
 
 var freezed : bool = false
+var accroupi : bool = false
 var albumopened : bool = false
 var albumopening : bool = false
 var mouse_captured : bool = true
@@ -47,8 +48,8 @@ func _input(event: InputEvent) -> void:
 	
 	if mouse_captured and event is InputEventMouseMotion:
 		#rotation_degrees.y -= event.relative.x / 10
-		$Tete.rotation_degrees.x -= event.relative.y / 10
-		$Tete.rotation_degrees.x = clamp($Tete.rotation_degrees.x, -70, 70)
+		%Tete.rotation_degrees.x -= event.relative.y / 10
+		%Tete.rotation_degrees.x = clamp(%Tete.rotation_degrees.x, -70, 70)
 		rotation_degrees.y -= event.relative.x / 10
 		
 
@@ -76,16 +77,16 @@ func _handle_joypad_camera_rotation(delta: float, sens_mod: float = 1.0) -> void
 	if joypad_dir.length() > 0:
 		look_dir += joypad_dir * delta
 		rotation.y -= look_dir.x * camera_sens * sens_mod
-		$Tete.rotation.x = clamp($Tete.rotation.x - look_dir.y * camera_sens * sens_mod, -1.5, 1.5)
-		$Tete.rotation_degrees.x = clamp($Tete.rotation_degrees.x, -70, 70)
-		$Tete.rotation_degrees.y = clamp($Tete.rotation_degrees.y, -70, 70)
+		%Tete.rotation.x = clamp(%Tete.rotation.x - look_dir.y * camera_sens * sens_mod, -1.5, 1.5)
+		%Tete.rotation_degrees.x = clamp(%Tete.rotation_degrees.x, -70, 70)
+		%Tete.rotation_degrees.y = clamp(%Tete.rotation_degrees.y, -70, 70)
 		look_dir = Vector2.ZERO
 	#else:
-		#look_dir = Vector2(sign($Tete.rotation_degrees.y),sign($Tete.rotation_degrees.x))*delta
-		#if sign($Tete.rotation.x - look_dir.y * camera_sens * sens_mod) != sign($Tete.rotation.x):
-			#$Tete.rotation.x = 0.0
+		#look_dir = Vector2(sign(%Tete.rotation_degrees.y),sign(%Tete.rotation_degrees.x))*delta
+		#if sign(%Tete.rotation.x - look_dir.y * camera_sens * sens_mod) != sign(%Tete.rotation.x):
+			#%Tete.rotation.x = 0.0
 		#else:
-			#$Tete.rotation.x = clamp($Tete.rotation.x - look_dir.y * camera_sens * sens_mod, -1.5, 1.5)
+			#%Tete.rotation.x = clamp(%Tete.rotation.x - look_dir.y * camera_sens * sens_mod, -1.5, 1.5)
 		#look_dir = Vector2.ZERO
 
 
@@ -98,9 +99,11 @@ func _physics_process(delta: float) -> void:
 	if albumopened : return
 	
 	# Add the gravity ?
-	#if not self.is_on_floor():
-		#velocity += get_gravity() * delta
-		##if velocity != Vector3.ZERO : print(velocity)
+	if not self.is_on_floor():
+		velocity += get_gravity() * delta
+		move_and_slide()
+		return
+		#if velocity != Vector3.ZERO : print(velocity)
 	#elif freezed :
 		## do nothing
 		#pass
@@ -125,7 +128,14 @@ func _physics_process(delta: float) -> void:
 		# Handle jump.
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
-			
+		elif Input.is_action_pressed("accroupi"):
+			if not accroupi and is_on_floor():
+				$Corps.scale.y /= 3.0
+				accroupi = true
+		else:
+			$Corps.scale.y = 1
+			accroupi = false
+		
 		if Input.is_action_just_pressed("shoot") and is_aiming:
 			# Hide UI and way for frame refresh
 			$Control/ViewFinder.visible = false
@@ -156,14 +166,14 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("aim") and not Input.is_action_pressed("run"):
 			is_aiming = true
 			$Control/ViewFinder.visible = true
-			$Tete/Camera3D.fov = 50.0
+			%Tete/Camera3D.fov = 50.0
 			
 		
 		if Input.is_action_just_released("aim"):
 			is_aiming = false
 			$Control/ViewFinder.visible = false
-			$Tete/Camera3D.fov = 75.0
-
+			%Tete/Camera3D.fov = 75.0
+	#if velocity != Vector3.ZERO : print (velocity)
 	move_and_slide()
 
 func _process(delta : float):

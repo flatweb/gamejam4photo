@@ -107,13 +107,16 @@ script = ExtResource("1_2d0qe")
 
 [node name="Corps" type="MeshInstance3D" parent="." unique_id=655277345]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_vpl4w")
 
-[node name="Tete" type="MeshInstance3D" parent="." unique_id=856882734]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4191227, 0)
+[node name="Tete" type="MeshInstance3D" parent="Corps" unique_id=856882734]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8191227, 0)
+
 mesh = SubResource("SphereMesh_0pgee")
 
-[node name="Camera3D" type="Camera3D" parent="Tete" unique_id=525025609]
+[node name="Camera3D" type="Camera3D" parent="Corps/Tete" unique_id=525025609]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000739336, -0.10738611)
 
