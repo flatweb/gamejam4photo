@@ -4,7 +4,7 @@ const SPEED = 5.0
 const SPEED_LATERAL = 3.0
 const SPEED_SPRINT = 25.0
 
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 4.5*2
 const ROT_SPEED = 2
 const BEND_SPEED = 1
 const MAX_BEND_ANGLE : float = PI/4
@@ -91,9 +91,11 @@ func _physics_process(delta: float) -> void:
 	if albumopened : return
 	
 	# Add the gravity ?
-	#if not self.is_on_floor():
-		#velocity += get_gravity() * delta
-		##if velocity != Vector3.ZERO : print(velocity)
+	if not self.is_on_floor():
+		velocity += get_gravity() * delta
+		move_and_slide()
+		return
+		#if velocity != Vector3.ZERO : print(velocity)
 	#elif freezed :
 		## do nothing
 		#pass
@@ -156,7 +158,7 @@ func _physics_process(delta: float) -> void:
 			is_aiming = false
 			$Control/ViewFinder.visible = false
 			$Tete/Camera3D.fov = 75.0
-
+	if velocity != Vector3.ZERO : print (velocity)
 	move_and_slide()
 
 func _process(delta : float):
