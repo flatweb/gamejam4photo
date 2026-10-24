@@ -11,7 +11,7 @@ const MAX_BEND_ANGLE : float = PI/4
 var freezed : bool = false
 var albumopened : bool = false
 var albumopening : bool = false
-var mouse_captured : bool = false
+var mouse_captured : bool = true
 var look_dir : Vector2
 var camera_sens : float = 1.0
 
@@ -24,15 +24,11 @@ func release_mouse() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	mouse_captured = false
 
-
-
 @onready var fps_camera: Camera3D = %Camera3D
 #@onready var interaction_ray: RayCast3D = %InteractionRay
 
 @export var camera_FOV = 55
 @export var interaction_ray_length = 3.0
-
-var cursor_locked = false
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -40,22 +36,12 @@ func _ready() -> void:
 	
 # FPS MOUSEMOTION
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton :
-		var mouseevent = event as InputEventMouseButton
-		if mouseevent.pressed and not cursor_locked :
-			# Passage en mode
-			toggle_cursor_mode()
-		elif mouseevent.pressed == false and cursor_locked :
-			$Tete.rotation_degrees.x = 0.0
-			$Tete.rotation_degrees.y	 = 0.0
-			toggle_cursor_mode()
 			
-	if cursor_locked and event is InputEventMouseMotion:
+	if mouse_captured and event is InputEventMouseMotion:
 		#rotation_degrees.y -= event.relative.x / 10
 		$Tete.rotation_degrees.x -= event.relative.y / 10
 		$Tete.rotation_degrees.x = clamp($Tete.rotation_degrees.x, -70, 70)
-		$Tete.rotation_degrees.y -= event.relative.x / 10
-		$Tete.rotation_degrees.y = clamp($Tete.rotation_degrees.y, -70, 70)
+		rotation_degrees.y -= event.relative.x / 10
 		
 
 # INTERACTION RAY
@@ -67,11 +53,11 @@ func _input(event: InputEvent) -> void:
 
 # MOUSEMODE TOGGLE
 func toggle_cursor_mode():
-	if cursor_locked:
+	if mouse_captured:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	cursor_locked = !cursor_locked
+	mouse_captured = !mouse_captured
 
 func _handle_joypad_camera_rotation(delta: float, sens_mod: float = 1.0) -> void:
 	var joypad_dir: Vector2 = Input.get_vector(&"look_left", &"look_right", &"look_up", &"look_down")
