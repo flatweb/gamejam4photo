@@ -26,7 +26,8 @@ func _ready() -> void:
 	#Lister les objectifs
 	loadobjectifs(self)
 	
-	$Joueur.objectifs = objectifs
+	$Joueur.objectifs = objectifs # Passage par référence, donc en cohérence
+
 
 func loadobjectifs(node : Node3D):
 	for child in get_children():
