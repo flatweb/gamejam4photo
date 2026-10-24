@@ -17,6 +17,9 @@ var mouse_captured : bool = true
 var look_dir : Vector2
 var camera_sens : float = 1.0
 
+const MAXPHOTOS = 24
+var photosrestantes = MAXPHOTOS
+
 var objectifs :
 	set(ref):
 		objectifs = ref
@@ -39,6 +42,13 @@ func release_mouse() -> void:
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#fps_camera.fov = camera_FOV
+	for i in range(0,MAXPHOTOS):
+		var textrect : TextureRect
+		textrect = TextureRect.new()
+		var res = load("res://ASSETS/SPRITES/pellicule.png")
+		textrect.set_texture(res)
+		textrect.expand_mode = TextureRect.EXPAND_FIT_WIDTH
+		$Pellicule/HBoxContainer.add_child(textrect)
 	
 # FPS MOUSEMOTION
 func _input(event: InputEvent) -> void:
@@ -136,31 +146,38 @@ func _physics_process(delta: float) -> void:
 			accroupi = false
 		
 		if Input.is_action_just_pressed("shoot") and is_aiming:
-			# Hide UI and way for frame refresh
-			$Control/ViewFinder.visible = false
-			await RenderingServer.frame_post_draw
-			# Get screenshot
-			var screenshot_img = get_viewport().get_texture().get_image()
-			# Show UI again
-			$Control/ViewFinder.visible = true
-			
-			# Dimensions of the crop_zone match our camera TextureRect's size
-			var crop_zone:Rect2 = Rect2(Vector2.ZERO, Vector2.ONE * 512)
-			
-			var cropped_img:Image = Image.create_empty(crop_zone.size.x, crop_zone.size.y, false, screenshot_img.get_format())
-			cropped_img.blit_rect(screenshot_img, crop_zone, screenshot_img.get_size() / 2)
-			
-			if not DirAccess.dir_exists_absolute(OS.get_user_data_dir() + "/photos/") :
-				DirAccess.make_dir_recursive_absolute(OS.get_user_data_dir() + "/photos/")
-			
-			var save_path = OS.get_user_data_dir() + "/photos/" + Time.get_datetime_string_from_system().replace("-", "").replace(":", "").replace("T", "") + ".png"
-			screenshot_img.save_png(save_path)
-			print(save_path)
-			
-			
-			#$Photo.scale = Vector3.ONE / 10
-			#var photo_texture = ImageTexture.create_from_image(cropped_img)
-			#$Photo.texture = photo_texture # Sprite will show our viewport capture!
+			# Si plus de pellicule, interdire
+			if photosrestantes > 0 :
+				# Hide UI and way for frame refresh
+				$Control/ViewFinder.visible = false
+				await RenderingServer.frame_post_draw
+				# Get screenshot
+				var screenshot_img = get_viewport().get_texture().get_image()
+				# Show UI again
+				$Control/ViewFinder.visible = true
+				
+				# Dimensions of the crop_zone match our camera TextureRect's size
+				var crop_zone:Rect2 = Rect2(Vector2.ZERO, Vector2.ONE * 512)
+				
+				var cropped_img:Image = Image.create_empty(crop_zone.size.x, crop_zone.size.y, false, screenshot_img.get_format())
+				cropped_img.blit_rect(screenshot_img, crop_zone, screenshot_img.get_size() / 2)
+				
+				if not DirAccess.dir_exists_absolute(OS.get_user_data_dir() + "/photos/") :
+					DirAccess.make_dir_recursive_absolute(OS.get_user_data_dir() + "/photos/")
+				
+				var save_path = OS.get_user_data_dir() + "/photos/" + Time.get_datetime_string_from_system().replace("-", "").replace(":", "").replace("T", "") + ".png"
+				screenshot_img.save_png(save_path)
+				print(save_path)
+				
+				photosrestantes -= 1
+				for pellicule in $Pellicule/HBoxContainer.get_children():
+					if pellicule is TextureRect :
+						pellicule.queue_free()
+						break
+				
+				#$Photo.scale = Vector3.ONE / 10
+				#var photo_texture = ImageTexture.create_from_image(cropped_img)
+				#$Photo.texture = photo_texture # Sprite will show our viewport capture!
 			
 		if Input.is_action_just_pressed("aim") and not Input.is_action_pressed("run"):
 			is_aiming = true

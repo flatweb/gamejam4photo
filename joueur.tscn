@@ -113,7 +113,6 @@ mesh = SubResource("CapsuleMesh_vpl4w")
 [node name="Tete" type="MeshInstance3D" parent="Corps" unique_id=856882734]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8191227, 0)
-
 mesh = SubResource("SphereMesh_0pgee")
 
 [node name="Camera3D" type="Camera3D" parent="Corps/Tete" unique_id=525025609]
@@ -143,5 +142,23 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.6002134, 0.60062164)
 texture = ExtResource("3_nhxrk")
+
+[node name="Pellicule" type="PanelContainer" parent="." unique_id=1752970179]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 384.0
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pellicule" unique_id=108541114]
+custom_minimum_size = Vector2(20, 20)
+custom_maximum_size = Vector2(-1, 25)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="Pellicule/HBoxContainer" unique_id=666614972]
+layout_mode = 2
+text = "-"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

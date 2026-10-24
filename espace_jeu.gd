@@ -32,19 +32,28 @@ func _ready() -> void:
 func loadobjectifs(node : Node3D):
 	for child in get_children():
 		if child.is_in_group("objectif"):
+			child["get"] = false
 			child.catched.connect(photo.bind())
 		elif child.get_child_count() > 0 :
 			loadobjectifs(child)
 		else:
 			return
-	
+
 func photo(type : String, node : Node3D, img : Image):
 	print ("Get ", type)
 	print (node)
 	for i in range(0,objectifs.size()-1):
 		if type == objectifs[i]["titre"]:
 			objectifs[i]["img"] = img
-	
+
+func check_end():
+	#TODO
+	for obj in objectifs:
+		if obj.has_key("get") and obj["get"] == false :
+			return
+	# Si on est là, c'est que tous les objectifs sont get
+	# TODO : le jeu est fini
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
