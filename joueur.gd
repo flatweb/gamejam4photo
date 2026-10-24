@@ -138,13 +138,13 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("aim"):
 			is_aiming = true
 			$Control/ViewFinder.visible = true
-			$Camera3D.fov = 50.0
+			$Tete/Camera3D.fov = 50.0
 			
 		
 		if Input.is_action_just_released("aim"):
 			is_aiming = false
 			$Control/ViewFinder.visible = false
-			$Camera3D.fov = 75.0
+			$Tete/Camera3D.fov = 75.0
 
 	move_and_slide()
 
