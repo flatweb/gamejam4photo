@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const SPEED_LATERAL = 3.0
+const SPEED_SPRINT = 25.0
+
 const JUMP_VELOCITY = 4.5
 const ROT_SPEED = 2
 const BEND_SPEED = 1
@@ -101,10 +103,12 @@ func _physics_process(delta: float) -> void:
 		#var bend = Input.get_action_strength("back")
 		var front = -Input.get_action_strength("front") + Input.get_action_strength("back")
 		var lateral = Input.get_action_strength("left") - Input.get_action_strength("right")
+		var sprint = Input.is_action_pressed("run")
 		
+		var speed = SPEED_SPRINT if sprint else SPEED
 		var direction : Vector3
 		direction = Vector3(sin(rotation.y),0,cos(rotation.y))
-		velocity = direction.normalized()*front*SPEED
+		velocity = direction.normalized()*front*speed
 		velocity +=  Vector3(-cos(rotation.y),0,sin(rotation.y)).normalized()*lateral*SPEED_LATERAL
 		
 		# Handle jump.
