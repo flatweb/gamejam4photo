@@ -75,7 +75,7 @@ shadow_mesh = SubResource("ArrayMesh_dbcc0")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_82gh3"]
 render_priority = 0
 shader = ExtResource("1_6rlf0")
-shader_parameter/albedo = Color(0.13587268, 0.27148438, 0.122486115, 1)
+shader_parameter/albedo = Color(0.12156862, 0.17104779, 0.27058825, 1)
 shader_parameter/roughness = 1.0
 shader_parameter/wave = SubResource("NoiseTexture2D_j30d5")
 shader_parameter/wave2 = SubResource("NoiseTexture2D_giey4")

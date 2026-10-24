@@ -2,11 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dwpg8fk75ly23" path="res://espace_jeu.gd" id="1_luu0b"]
 [ext_resource type="PackedScene" uid="uid://bhf03lo0trtd5" path="res://joueur.tscn" id="1_r28ko"]
-[ext_resource type="PackedScene" uid="uid://cbndpx1i6vgww" path="res://ASSETS/SCENES/sapin_2d.tscn" id="3_s3qqy"]
-[ext_resource type="PackedScene" uid="uid://dfn04k3h5qk3s" path="res://ASSETS/SCENES/pin.tscn" id="4_b8o0u"]
-[ext_resource type="PackedScene" uid="uid://dyj3x8eqc2drt" path="res://ASSETS/SCENES/sapin.tscn" id="5_82gh3"]
-[ext_resource type="PackedScene" uid="uid://cjifo1c7k5i5x" path="res://ASSETS/SCENES/arbre.tscn" id="6_44gsj"]
-[ext_resource type="PackedScene" uid="uid://71lnoy628f58" path="res://ASSETS/SCENES/buisson.tscn" id="7_8rlno"]
 [ext_resource type="PackedScene" uid="uid://dwph1lswdeq1m" path="res://ASSETS/SCENES/map.tscn" id="8_mu3ui"]
 
 [sub_resource type="Environment" id="Environment_vpl4w"]
@@ -32,15 +27,19 @@ script = ExtResource("1_luu0b")
 environment = SubResource("Environment_vpl4w")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1358932430]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=294171542]
+visible = false
 mesh = SubResource("PlaneMesh_0pgee")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1408227495]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+visible = false
 shape = SubResource("WorldBoundaryShape3D_mc3kx")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=458292242]
+visible = false
 shape = SubResource("BoxShape3D_vpl4w")
 
 [node name="Joueur" parent="." unique_id=887026073 instance=ExtResource("1_r28ko")]
@@ -48,20 +47,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=301571981]
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 10, 0)
-
-[node name="Sapin2D" parent="." unique_id=1129343268 instance=ExtResource("3_s3qqy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9837456, 0, 0)
-
-[node name="PIN" parent="." unique_id=933298639 instance=ExtResource("4_b8o0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6150494, 0, -6.921749)
-
-[node name="SAPIN" parent="." unique_id=1181012005 instance=ExtResource("5_82gh3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22343, 0, -10.968306)
-
-[node name="ARBRE" parent="." unique_id=327989009 instance=ExtResource("6_44gsj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.114577, 0, -4.424718)
-
-[node name="BUISSON" parent="." unique_id=58299986 instance=ExtResource("7_8rlno")]
-transform = Transform3D(0.30308875, 0, -0.95296234, 0, 1, 0, 0.95296234, 0, 0.30308875, 9.83, 0, 3.225)
 
 [node name="MAP" parent="." unique_id=1294606557 instance=ExtResource("8_mu3ui")]
