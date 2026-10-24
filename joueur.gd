@@ -114,7 +114,7 @@ func _physics_process(delta: float) -> void:
 		#var bend = Input.get_action_strength("back")
 		var front = -Input.get_action_strength("front") + Input.get_action_strength("back")
 		var lateral = Input.get_action_strength("left") - Input.get_action_strength("right")
-		var sprint = Input.is_action_pressed("run")
+		var sprint = Input.is_action_pressed("run") and not is_aiming
 		
 		var speed = SPEED_SPRINT if sprint else SPEED
 		var direction : Vector3
@@ -153,7 +153,7 @@ func _physics_process(delta: float) -> void:
 			#var photo_texture = ImageTexture.create_from_image(cropped_img)
 			#$Photo.texture = photo_texture # Sprite will show our viewport capture!
 			
-		if Input.is_action_just_pressed("aim"):
+		if Input.is_action_just_pressed("aim") and not Input.is_action_pressed("run"):
 			is_aiming = true
 			$Control/ViewFinder.visible = true
 			$Tete/Camera3D.fov = 50.0
