@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cpi17p0gwdfx7" path="res://ASSETS/MODELS/MAP.glb" id="1_5xahm"]
 [ext_resource type="PackedScene" uid="uid://dfn04k3h5qk3s" path="res://ASSETS/SCENES/pin.tscn" id="2_64srn"]
 [ext_resource type="PackedScene" uid="uid://71lnoy628f58" path="res://ASSETS/SCENES/buisson.tscn" id="3_2ssin"]
+[ext_resource type="PackedScene" uid="uid://dy1m1fyrrgx0x" path="res://buron.tscn" id="3_dckxu"]
 [ext_resource type="PackedScene" uid="uid://cjifo1c7k5i5x" path="res://ASSETS/SCENES/arbre.tscn" id="4_dckxu"]
 [ext_resource type="PackedScene" uid="uid://dyj3x8eqc2drt" path="res://ASSETS/SCENES/sapin.tscn" id="5_hcd6l"]
 
@@ -1417,6 +1418,9 @@ transform = Transform3D(-0.319906, 0, -1.8142773, 0, 1.842258, 0, 1.8142773, 0, 
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
 [node name="MONTAGNE" type="Node3D" parent="BIOME" unique_id=308514808]
+
+[node name="BURON" parent="BIOME/MONTAGNE" unique_id=1527873490 instance=ExtResource("3_dckxu")]
+transform = Transform3D(-0.4229945, 0, 0.9061323, 0, 1, 0, -0.9061323, 0, -0.4229945, -60.282623, 12.179903, -64.19129)
 
 [node name="PRAIRIE" type="Node3D" parent="BIOME" unique_id=2024939772]
 

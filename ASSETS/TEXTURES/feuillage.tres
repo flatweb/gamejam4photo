@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://drqribkwo02fl"]
+
+[ext_resource type="Texture2D" uid="uid://iinfrjgiwaxy" path="res://ASSETS/TEXTURES/feuillage.png" id="1_pr80t"]
+
+[resource]
+resource_name = "feuillage"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_pr80t")
+metadata/_gltf_primary_texture_coord = 0

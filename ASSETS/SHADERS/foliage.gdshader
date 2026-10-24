@@ -5,12 +5,13 @@ shader_type spatial;
 render_mode cull_disabled, diffuse_toon; // renders backfaces + toon diffuse
 
 uniform vec3 albedo : source_color;
+uniform sampler2D image : source_color;
 uniform float roughness : hint_range(0.0, 1.0) = 1.0;
 uniform sampler2D wave;
 uniform sampler2D wave2;
 uniform vec2 wave_direction = vec2(2.0, 0.0);
 uniform vec2 wave_direction2 = vec2(0.0, 1.0);
-uniform float time_scale : hint_range(0.0, 2.0, 0.005) = 0.08;
+uniform float time_scale : hint_range(0.0, 2.0, 0.005) = 0.5;
 uniform float noise_scale = 10;
 uniform float height_scale = 0.15;
 
@@ -31,8 +32,10 @@ void vertex() {
 void fragment() {
 // Simple normal texture implementation
 //vec3 normal = texture(texture_normal, UV).rgb;
-
-ALBEDO = albedo;
+vec4 map = texture(image, UV);
+ALBEDO = albedo * map.rgb;
+ALPHA = map.a;
 ROUGHNESS = roughness;
 SSS_STRENGTH = 0.0; //subsurface scattering
+ALPHA_SCISSOR_THRESHOLD = 0.5;
 }

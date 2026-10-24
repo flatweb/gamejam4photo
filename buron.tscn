@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dy1m1fyrrgx0x"]
+
+[ext_resource type="PackedScene" uid="uid://choslevekui6f" path="res://ASSETS/MODELS/BURON.glb" id="1_n8q4f"]
+
+[node name="BURON" type="Node3D" unique_id=1527873490]
+
+[node name="BURON" parent="." unique_id=1394100143 instance=ExtResource("1_n8q4f")]
