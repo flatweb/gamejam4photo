@@ -94,7 +94,6 @@ var is_aiming : bool = false
 
 
 func _physics_process(delta: float) -> void:
-	
 	# On est freeze tant que l'album est ouvert
 	if albumopened : return
 	
