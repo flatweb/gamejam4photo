@@ -13,7 +13,11 @@ albedo_color = Color(0.45490196, 0.6745098, 0.12156863, 1)
 material = SubResource("StandardMaterial3D_vpl4w")
 size = Vector2(100, 100)
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vpl4w"]
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_mc3kx"]
+plane = Plane(0, -1, 0, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vpl4w"]
+size = Vector3(200, 0, 200)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3qqy"]
 albedo_color = Color(0.76538, 0.40572, 0.23725268, 1)
@@ -41,9 +45,14 @@ environment = SubResource("Environment_vpl4w")
 mesh = SubResource("PlaneMesh_0pgee")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1408227495]
-shape = SubResource("WorldBoundaryShape3D_vpl4w")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+shape = SubResource("WorldBoundaryShape3D_mc3kx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=458292242]
+shape = SubResource("BoxShape3D_vpl4w")
 
 [node name="Joueur" parent="." unique_id=887026073 instance=ExtResource("1_r28ko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=301571981]
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 10, 0)

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bhf03lo0trtd5"]
 
+[ext_resource type="Script" uid="uid://b5u7rxl8fuj7q" path="res://joueur.gd" id="1_2d0qe"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_vpl4w"]
 height = 1.2
 
@@ -11,6 +13,7 @@ height = 0.6
 height = 1.8
 
 [node name="Joueur" type="CharacterBody3D" unique_id=887026073]
+script = ExtResource("1_2d0qe")
 
 [node name="Corps" type="MeshInstance3D" parent="." unique_id=655277345]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
