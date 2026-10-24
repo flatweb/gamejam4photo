@@ -126,6 +126,9 @@ func _physics_process(delta: float) -> void:
 			var cropped_img:Image = Image.create_empty(crop_zone.size.x, crop_zone.size.y, false, screenshot_img.get_format())
 			cropped_img.blit_rect(screenshot_img, crop_zone, screenshot_img.get_size() / 2)
 			
+			if not DirAccess.dir_exists_absolute(OS.get_user_data_dir() + "/photos/") :
+				DirAccess.make_dir_recursive_absolute(OS.get_user_data_dir() + "/photos/")
+			
 			var save_path = OS.get_user_data_dir() + "/photos/pic_" + Time.get_datetime_string_from_system().replace("-", "_") + ".png"
 			screenshot_img.save_png(save_path)
 			print(save_path)
