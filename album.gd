@@ -7,6 +7,8 @@ var objectifs:
 	set (ref):
 		objectifs = ref
 		load_photos()
+		
+var photos : Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +19,6 @@ var opened = true
 
 func open():
 	if opened == false :
-		load_photos()
 		$AnimationPlayer.play("open")
 		opening = true
 	$AudioOpen.play()
@@ -40,7 +41,7 @@ func pageprev():
 		closeandopen()
 	
 func pagenext():
-	var newpageon = min(lasteven(objectifs.size()-1),pageon+2)
+	var newpageon = min(lasteven(photos.size()-1),pageon+2)
 	if newpageon != pageon :
 		pageon = newpageon
 		closeandopen()
@@ -50,9 +51,9 @@ func closeandopen():
 	opening = true
 	
 func changetopageon():
-	change(Cote.GAUCHE,objectifs[pageon]["img"],objectifs[pageon]["titre"],objectifs[pageon]["indice"])
-	if objectifs.size() > pageon+1:
-		change(Cote.DROITE,objectifs[pageon+1]["img"],objectifs[pageon+1]["titre"],objectifs[pageon+1]["indice"])
+	change(Cote.GAUCHE,photos[pageon]["img"],photos[pageon]["titre"],photos[pageon]["indice"])
+	if photos.size() > pageon+1:
+		change(Cote.DROITE,photos[pageon+1]["img"],photos[pageon+1]["titre"],photos[pageon+1]["indice"])
 	else :
 		change(Cote.DROITE,null,"","")
 	
@@ -68,13 +69,8 @@ func load_photos():
 	var photos_folder_path = OS.get_user_data_dir() + "/photos/"
 	var photo : Image
 	var dir = DirAccess.open(photos_folder_path)
-	objectifs  = [
-		{"img" : null, "titre": "Champignon", "indice" : "sous les arbres"},
-		{"img" : null, "titre": "Caillou", "indice" : "partout"},
-		{"img" : null, "titre": "Arbre", "indice" : "dans la forêt"},
-		{"img" : null, "titre": "Oiseau", "indice" : "dans les arbres"},
-	]
-	
+	photos = []
+	photos.append_array(objectifs)
 	if dir:
 		var files = dir.get_files()
 		for file_name in files:
@@ -82,9 +78,9 @@ func load_photos():
 				print("Found directory: " + file_name)
 			else:
 				photo = Image.load_from_file(photos_folder_path + file_name)
-				objectifs.append({"img" : photo, "titre": file_name, "indice" : ""})
+				photos.append({"img" : photo, "titre": file_name, "indice" : ""})
 				print("Loaded " + photos_folder_path + file_name)
-				
+						
 		changetopageon()
 	
 	else:
