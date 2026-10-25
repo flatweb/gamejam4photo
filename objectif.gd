@@ -4,7 +4,7 @@ extends StaticBody3D
 @export var vivacity : float = 5.0
 var direction : Vector3
 
-signal catched
+signal catched(nom : String, node : Node3D, photo : Image)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

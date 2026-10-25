@@ -9,11 +9,12 @@ const ROT_SPEED = 2
 const BEND_SPEED = 1
 const MAX_BEND_ANGLE : float = PI/4
 
+var _started : bool = false
 var freezed : bool = false
 var accroupi : bool = false
 var albumopened : bool = false
 var albumopening : bool = false
-var mouse_captured : bool = true
+var mouse_captured : bool = false
 var look_dir : Vector2
 var camera_sens : float = 1.0
 
@@ -24,6 +25,10 @@ var objectifs :
 	set(ref):
 		objectifs = ref
 		$Album.objectifs = ref
+
+func start():
+	_started = true
+	capture_mouse()
 
 func capture_mouse() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -53,7 +58,9 @@ func _ready() -> void:
 	
 # FPS MOUSEMOTION
 func _input(event: InputEvent) -> void:
-			
+	# on attend que la partie soit démarée
+	if not _started: return
+	
 	# On est freeze tant que l'album est ouvert
 	if albumopened : return
 	
@@ -111,6 +118,9 @@ func _physics_process(delta: float) -> void:
 	# On est freeze tant que l'album est ouvert
 	if albumopened : return
 	
+	# on attend que la partie soit démarée
+	if not _started: return
+	
 	# Add the gravity ?
 	if not self.is_on_floor():
 		velocity += get_gravity() * delta
@@ -124,15 +134,18 @@ func _physics_process(delta: float) -> void:
 	
 	_handle_joypad_camera_rotation(delta)
 	
+	
+	var running : bool = false
+	
 	if true:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		#var bend = Input.get_action_strength("back")
 		var front = -Input.get_action_strength("front") + Input.get_action_strength("back")
 		var lateral = Input.get_action_strength("left") - Input.get_action_strength("right")
-		var sprint = Input.is_action_pressed("run") and not is_aiming
+		running = Input.is_action_pressed("run") and not is_aiming
 		
-		var speed = SPEED_SPRINT if sprint else SPEED
+		var speed = SPEED_SPRINT if running else SPEED
 		var direction : Vector3
 		direction = Vector3(sin(rotation.y),0,cos(rotation.y))
 		velocity = direction.normalized()*front*speed
@@ -198,6 +211,18 @@ func _physics_process(delta: float) -> void:
 				#var photo_texture = ImageTexture.create_from_image(cropped_img)
 				#$Photo.texture = photo_texture # Sprite will show our viewport capture!
 			
+				### For tests only
+				# On va chercher dans user:SHOOT le nom du sujet photographié
+				var file = FileAccess.open("user://SHOOT", FileAccess.READ)
+				if file != null :
+					var content = file.get_as_text()
+					print(content) #FIXME
+					var sujet = get_node("../Objectifs/"+content)
+					sujet.catched.emit(content, sujet, screenshot_img)
+					file.close()
+				###
+			
+			
 		if Input.is_action_just_pressed("aim") and not Input.is_action_pressed("run"):
 			is_aiming = true
 			$Control/ViewFinder.visible = true
@@ -208,6 +233,18 @@ func _physics_process(delta: float) -> void:
 			is_aiming = false
 			$Control/ViewFinder.visible = false
 			%Tete/Camera3D.fov = 75.0
+	
+	if (velocity.x != 0.0 or velocity.y != 0) and is_on_floor():
+		if running :
+			$AudioSteps.stop()
+			if not $AudioRun.playing :$AudioRun.play()
+		else:
+			$AudioRun.stop()
+			if not $AudioSteps.playing : $AudioSteps.play()
+	elif velocity.x == 0.0 and velocity.y == 0 :
+		$AudioSteps.stop()
+		$AudioRun.stop()
+	
 	#if velocity != Vector3.ZERO : print (velocity)
 	move_and_slide()
 	%Camera3D2.global_transform = %Tete/Camera3D.global_transform
@@ -222,10 +259,12 @@ func _process(delta : float):
 	if Input.is_action_just_pressed("album") and not albumopened :
 		albumopening = true
 		$Album.load_photos()
-		$AnimationPlayer.play("open")
+		$AnimationPlayer.play("showalbum")
+		$Album.showup()
 	elif Input.is_action_just_pressed("album") and albumopened :
 		albumopening = true
-		$AnimationPlayer.play("close")
+		$AnimationPlayer.play("hidealbum")
+		$Album.hidedown()
 		
 	if albumopened:
 		if Input.is_action_just_pressed("right"):
@@ -238,9 +277,9 @@ func _process(delta : float):
 
 func _on_animation_finished(anim_name: StringName) -> void:
 	albumopening = false
-	if anim_name == "open":
+	if anim_name == "showalbum":
 		albumopened = true
-	elif anim_name == "close":
+	elif anim_name == "hidealbum":
 		albumopened = false
 	pass # Replace with function body.
 	

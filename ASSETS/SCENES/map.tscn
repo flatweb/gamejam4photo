@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dy1m1fyrrgx0x" path="res://buron.tscn" id="3_dckxu"]
 [ext_resource type="PackedScene" uid="uid://cjifo1c7k5i5x" path="res://ASSETS/SCENES/arbre.tscn" id="4_dckxu"]
 [ext_resource type="PackedScene" uid="uid://dyj3x8eqc2drt" path="res://ASSETS/SCENES/sapin.tscn" id="5_hcd6l"]
+[ext_resource type="AudioStream" uid="uid://dr0qr007seqwj" path="res://ASSETS/SOUNDS/AMB01-Forest-V1.mp3" id="7_c28kt"]
+[ext_resource type="AudioStream" uid="uid://6jn0ypawucf1" path="res://ASSETS/SOUNDS/AMB01-Meadow-V1.mp3" id="8_jwdf8"]
 
 [node name="MAP" type="Node3D" unique_id=1294606557]
 
@@ -1799,3 +1801,15 @@ metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 [node name="SAPIN (45)" parent="BIOME/PRAIRIE" unique_id=528374546 instance=ExtResource("5_hcd6l")]
 transform = Transform3D(1.9027964, 0, 0, 0, 1.9027964, 0, 0, 0, 1.9027964, -114.147934, 36.28247, -113.11056)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="AudioForetEst" type="AudioStreamPlayer3D" parent="." unique_id=2090737066]
+stream = ExtResource("7_c28kt")
+
+[node name="AudioForetOuest" type="AudioStreamPlayer3D" parent="." unique_id=280385312]
+stream = ExtResource("7_c28kt")
+
+[node name="AudioForetPlaine" type="AudioStreamPlayer3D" parent="." unique_id=957721780]
+stream = ExtResource("8_jwdf8")
+attenuation_filter_cutoff_hz = 2000.0
+attenuation_filter_db = -15.0
+parameters/looping = true

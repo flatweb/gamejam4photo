@@ -1,7 +1,232 @@
 [gd_scene format=3 uid="uid://h4tf3n3bfgkj"]
 
 [ext_resource type="PackedScene" uid="uid://1r33p33prgmc" path="res://espace_jeu.tscn" id="1_pq8q7"]
+[ext_resource type="Script" uid="uid://c4702sop7fvpr" path="res://root.gd" id="1_pyidc"]
+[ext_resource type="Theme" uid="uid://xcmvx0jaunfs" path="res://res/design.tres" id="3_28aoi"]
+[ext_resource type="FontFile" uid="uid://db60qbp8vwpgc" path="res://res/Butterpop.ttf" id="4_jnlp7"]
+[ext_resource type="AudioStream" uid="uid://y0w0f5fcjxbh" path="res://ASSETS/SOUNDS/MUSIC-Ulysse.mp3" id="5_jnlp7"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l8v81"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_vvh5c"]
+
+[sub_resource type="Theme" id="Theme_vyht1"]
+PanelContainer/styles/panel = SubResource("StyleBoxLine_vvh5c")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bf3um"]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_nyrvt"]
+button_index = 1
+pressed = true
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_drmux"]
+device = -1
+button_index = 2
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_huihk"]
+events = [SubResource("InputEventJoypadButton_nyrvt"), SubResource("InputEventJoypadButton_drmux")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tw3kd"]
+bg_color = Color(0.18039216, 0.30588236, 0.24313726, 0.35686275)
+
+[sub_resource type="Shortcut" id="Shortcut_gd4vy"]
+events = [SubResource("InputEventJoypadButton_nyrvt"), SubResource("InputEventJoypadButton_drmux")]
 
 [node name="Root" type="Node" unique_id=414877800]
+script = ExtResource("1_pyidc")
 
 [node name="EspaceJeu" parent="." unique_id=1443061437 instance=ExtResource("1_pq8q7")]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1313754326]
+process_mode = 1
+material = SubResource("CanvasItemMaterial_l8v81")
+use_parent_material = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vyht1")
+
+[node name="IntroContainer" type="VBoxContainer" parent="PanelContainer" unique_id=176136012]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_28aoi")
+
+[node name="LabelTitre" type="Label" parent="PanelContainer/IntroContainer" unique_id=1747136164]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.6423512, 0.6429612, 1)
+theme_override_fonts/font = ExtResource("4_jnlp7")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bf3um")
+text = "Photos en Balade"
+horizontal_alignment = 1
+
+[node name="RichTextIntro" type="RichTextLabel" parent="PanelContainer/IntroContainer" unique_id=1775578605]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme = ExtResource("3_28aoi")
+bbcode_enabled = true
+text = "[b]Vous avez très envie de faire une balade dans la nature.
+
+L'occasion de prendre son appareil photo et de faire quelques clichés des curiosités locales.
+[/b]"
+fit_content = true
+
+[node name="RichTextDontWait" type="RichTextLabel" parent="PanelContainer/IntroContainer" unique_id=1308191214]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme = ExtResource("3_28aoi")
+text = "On est prêt à partir"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/IntroContainer" unique_id=1041447584]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/IntroContainer/CenterContainer" unique_id=628301914]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="PanelContainer/IntroContainer/CenterContainer/VBoxContainer" unique_id=221939222]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.25098, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+
+[node name="AideButton" type="Button" parent="PanelContainer/IntroContainer/CenterContainer/VBoxContainer" unique_id=1005482467]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_28aoi")
+action_mode = 0
+text = " On se prépare "
+
+[node name="StartButton" type="Button" parent="PanelContainer/IntroContainer/CenterContainer/VBoxContainer" unique_id=804210896]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_28aoi")
+action_mode = 0
+shortcut = SubResource("Shortcut_huihk")
+shortcut_in_tooltip = false
+text = "On y va !"
+
+[node name="PauseContainer" type="PanelContainer" parent="." unique_id=1545584117]
+unique_name_in_owner = true
+process_mode = 2
+offset_right = 403.0
+offset_bottom = 249.0
+size_flags_horizontal = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_tw3kd")
+
+[node name="PauseCenterContainer" type="CenterContainer" parent="PauseContainer" unique_id=1314376951]
+process_mode = 3
+z_index = 2
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseContainer/PauseCenterContainer" unique_id=78803063]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PauseContainer/PauseCenterContainer/VBoxContainer" unique_id=1696912082]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.698039, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Pause
+"
+horizontal_alignment = 1
+
+[node name="OutPauseButton" type="Button" parent="PauseContainer/PauseCenterContainer/VBoxContainer" unique_id=348881318]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_28aoi")
+text = "  Continue  "
+
+[node name="GiveupButton" type="Button" parent="PauseContainer/PauseCenterContainer/VBoxContainer" unique_id=497114911]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_28aoi")
+text = "On rentre..."
+
+[node name="CreditContainer" type="PanelContainer" parent="." unique_id=632956990]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+offset_right = 403.0
+offset_bottom = 249.0
+size_flags_horizontal = 4
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_tw3kd")
+
+[node name="CreditCenterContainer" type="CenterContainer" parent="CreditContainer" unique_id=1723821417]
+process_mode = 3
+z_index = 2
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditContainer/CreditCenterContainer" unique_id=1639070128]
+layout_mode = 2
+
+[node name="LabelEndOfGame" type="Label" parent="CreditContainer/CreditCenterContainer/VBoxContainer" unique_id=940215012]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Fin de la balade"
+horizontal_alignment = 1
+
+[node name="RichTextCredit" type="RichTextLabel" parent="CreditContainer/CreditCenterContainer/VBoxContainer" unique_id=1695014794]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme = ExtResource("3_28aoi")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[b]Merci pour cette agréable balade !
+
+Ce jeu a été créée durant la Game Jam dans le Cantal #4.
+L'équipe était composé de [url=https://flatweb.itch.io/]Thierry[/url] (Godot dev),[url=https://darkbean.itch.io/]Alex[/url] (3D models and design),[url=]Léo[/url] (Godot dev),[url=]Ulysse[/url] (Musique),[url=]Florentin[/url] (Sons d'ambiance).
+
+[/b]"
+fit_content = true
+
+[node name="RestartButton" type="Button" parent="CreditContainer/CreditCenterContainer/VBoxContainer" unique_id=2086070874]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_28aoi")
+action_mode = 0
+shortcut = SubResource("Shortcut_gd4vy")
+shortcut_in_tooltip = false
+text = "Repartir"
+
+[node name="TimerInactivite" type="Timer" parent="." unique_id=2056388145]
+process_mode = 1
+wait_time = 60.0
+one_shot = true
+
+[node name="AudioMusique" type="AudioStreamPlayer" parent="." unique_id=1923257212]
+stream = ExtResource("5_jnlp7")
+
+[node name="Popup" type="Node" parent="." unique_id=1943659802]
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[connection signal="gui_input" from="PanelContainer/IntroContainer/CenterContainer/VBoxContainer/AideButton" to="." method="_on_aide_button_gui_input"]
+[connection signal="pressed" from="PanelContainer/IntroContainer/CenterContainer/VBoxContainer/AideButton" to="." method="_on_aide_button_pressed"]
+[connection signal="button_up" from="PanelContainer/IntroContainer/CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_up"]
+[connection signal="gui_input" from="PanelContainer/IntroContainer/CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_gui_input"]
+[connection signal="pressed" from="PanelContainer/IntroContainer/CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="button_up" from="PauseContainer/PauseCenterContainer/VBoxContainer/OutPauseButton" to="." method="_on_out_pause_button_up"]
+[connection signal="button_up" from="PauseContainer/PauseCenterContainer/VBoxContainer/GiveupButton" to="." method="_on_giveup_button_up"]
+[connection signal="gui_input" from="PauseContainer/PauseCenterContainer/VBoxContainer/GiveupButton" to="." method="_on_giveup_button_gui_input"]
+[connection signal="gui_input" from="CreditContainer/CreditCenterContainer/VBoxContainer/RestartButton" to="." method="_on_button_gui_input"]
+[connection signal="pressed" from="CreditContainer/CreditCenterContainer/VBoxContainer/RestartButton" to="." method="_on_retart_button_pressed"]
+[connection signal="timeout" from="TimerInactivite" to="." method="_on_timer_inactivite_timeout"]
+[connection signal="child_exiting_tree" from="Popup" to="." method="_on_popup_child_exiting_tree"]

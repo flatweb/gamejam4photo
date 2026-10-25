@@ -2,15 +2,23 @@ extends Node3D
 
 const MARGEPOS = 10
 
+signal fini
 
 var objectifs : Array = [
 	{"img" : null, "titre": "Champignon", "indice" : "sous les arbres"},
-	{"img" : null, "titre": "Caillou", "indice" : "partout"},
 	{"img" : null, "titre": "Arbre", "indice" : "dans la forêt"},
 	{"img" : null, "titre": "Oiseau", "indice" : "dans les arbres"},
+	{"img" : null, "titre": "Biche", "indice" : "elle court vite !"},
+	{"img" : null, "titre": "Caillou", "indice" : "partout"},
+	{"img" : null, "titre": "Buron", "indice" : "sur la montagne"},
 ]
 
 var matched : Array
+
+var started : bool = false : 
+	set(value):
+		started = value
+		if value : $Joueur.start()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,9 +34,9 @@ func _ready() -> void:
 	#Lister les objectifs
 	loadobjectifs(self)
 	print(objectifs)
-	
 	$Joueur.objectifs = objectifs # Passage par référence, donc en cohérence
 	
+	# CONTOURNEMENT D'UN PROBLEME DE PERF SPECIFIQUE SUR PC
 	var file = FileAccess.open("user://UNLOADMAP", FileAccess.READ)
 	if file != null :
 		$MAP/BIOME/FORET_EST.visible = false
@@ -52,7 +60,7 @@ func loadobjectifs(node : Node):
 			if obj["titre"] == node.name :
 				objectifs[ind]["get"] = false
 			ind += 1
-		node.catched.connect(photo.bind())
+		node.catched.connect(photographie.bind())
 		return
 	if node.get_child_count() > 0 :
 		for child in node.get_children():
@@ -60,7 +68,19 @@ func loadobjectifs(node : Node):
 	else:
 		return
 
-func photo(type : String, node : Node3D, img : Image):
+func silence():
+	$MAP/AudioForetEst.stop()
+	$MAP/AudioForetOuest.stop()
+	$MAP/AudioForetPlaine.stop()
+	
+func start():
+	started = true
+	$MAP/AudioForetEst.play()
+	$MAP/AudioForetOuest.play()
+	$MAP/AudioForetPlaine.play()
+	
+
+func photographie(type : String, node : Node3D, img : Image):
 	print ("Get ", type)
 	print (node)
 	for i in range(0,objectifs.size()-1):
@@ -74,6 +94,7 @@ func check_end():
 			return
 	# Si on est là, c'est que tous les objectifs sont get
 	# TODO : le jeu est fini
+	fini.emit(0,0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

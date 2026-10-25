@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b7ej55gvcj4sg" path="res://page.tscn" id="1_5p2gi"]
 [ext_resource type="Script" uid="uid://2cjv0ktpp3ma" path="res://album.gd" id="1_uur71"]
+[ext_resource type="AudioStream" uid="uid://1sjv30tmknl3" path="res://ASSETS/SOUNDS/SFX04-Book open-V1.mp3" id="3_lmjgm"]
+[ext_resource type="AudioStream" uid="uid://cjuxnq3lf4u2q" path="res://ASSETS/SOUNDS/SFX05-Page turn-V1.mp3" id="4_3sn0i"]
 
 [sub_resource type="Animation" id="Animation_uur71"]
 length = 0.001
@@ -165,7 +167,13 @@ _data = {
 &"open": SubResource("Animation_lmjgm")
 }
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_vpl4w"]
+top_radius = 0.11621094
+bottom_radius = 0.11621094
+height = 0.9562988
+
 [node name="Album" type="Node3D" unique_id=1819505796]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 script = ExtResource("1_uur71")
 
 [node name="PageGauche" parent="." unique_id=1677043718 instance=ExtResource("1_5p2gi")]
@@ -177,8 +185,14 @@ transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0.116, 0, -0.
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=649497298]
 libraries/ = SubResource("AnimationLibrary_lmjgm")
 
-[node name="AudioOpen" type="AudioStreamPlayer3D" parent="." unique_id=324274529]
+[node name="AudioOpen" type="AudioStreamPlayer" parent="." unique_id=845810903]
+stream = ExtResource("3_lmjgm")
 
-[node name="AudioTurn" type="AudioStreamPlayer3D" parent="." unique_id=1167697134]
+[node name="AudioTurn" type="AudioStreamPlayer" parent="." unique_id=1609472809]
+stream = ExtResource("4_3sn0i")
+
+[node name="Spirale" type="MeshInstance3D" parent="." unique_id=102726867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47834063, 0.0028076172, -0.9021721)
+mesh = SubResource("CylinderMesh_vpl4w")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

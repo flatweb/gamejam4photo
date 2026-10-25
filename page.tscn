@@ -2,26 +2,38 @@
 
 [ext_resource type="Script" uid="uid://c5e4mlsi41sll" path="res://page.gd" id="1_7tx1s"]
 [ext_resource type="Texture2D" uid="uid://b3s5y6hdkdnj2" path="res://ASSETS/TEXTURES/photo_placeholder.png" id="2_7tx1s"]
+[ext_resource type="Texture2D" uid="uid://de6fs65twvmmu" path="res://ASSETS/SPRITES/check-vert.png" id="3_phrhr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vpl4w"]
-size = Vector3(1, 1, 0.21240234)
+size = Vector3(1, 1, 0.1)
 
 [node name="Page" type="MeshInstance3D" unique_id=133376510]
 mesh = SubResource("BoxMesh_vpl4w")
 script = ExtResource("1_7tx1s")
 
 [node name="LabelTitre" type="Label3D" parent="." unique_id=795662586]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39043558, 0.12498373)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2990313, 0.05567473)
 text = "Blabla"
 font_size = 16
 
 [node name="LabelIndice" type="Label3D" parent="." unique_id=823470959]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.11889553)
-text = "Il faut me chercher près d'un arbre"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.06)
+text = "Il faut me chercher près d'un arbre dans la forêt"
 font_size = 11
+outline_size = 0
 autowrap_mode = 2
 width = 200.0
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1479804928]
-transform = Transform3D(0.07999999, 0, 0, 0, 0.07999999, 0, 0, 0, 0.07999999, 0, 0, 0.110336185)
+transform = Transform3D(0.07999999, 0, 0, 0, 0.07999999, 0, 0, 0, 0.07999999, 0, 0.15983856, 0.06)
 texture = ExtResource("2_7tx1s")
+
+[node name="SpriteCheck" type="Sprite3D" parent="Sprite3D" unique_id=1870790229]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.503772, -3.3111799, 0.4515155)
+texture = ExtResource("3_phrhr")
+
+[node name="LabelNumPage" type="Label3D" parent="." unique_id=221477738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.42147747, 0.06)
+text = "0 / 0"
+font_size = 12
+outline_size = 2
