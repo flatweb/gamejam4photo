@@ -40,11 +40,13 @@ func _ready() -> void:
 	var file = FileAccess.open("user://UNLOADMAP", FileAccess.READ)
 	if file != null :
 		if has_node("MAP"):
-			$MAP/BIOME/FORET_EST.visible = false
-			$MAP/BIOME/FORET_OUEST.visible = false
+			#$MAP/BIOME/FORET_EST.visible = false
+			#$MAP/BIOME/FORET_OUEST.visible = false
+			pass
 		if has_node("MAP2"):
-			$MAP2/BIOME/FORET_EST.visible = false
-			$MAP2/BIOME/FORET_OUEST.visible = false
+			#$MAP2/BIOME/FORET_EST.visible = false
+			#$MAP2/BIOME/FORET_OUEST.visible = false
+			pass
 		unloadpins(self)
 	pass
 
@@ -75,13 +77,13 @@ func loadobjectifs(node : Node):
 func silence():
 	$AudioForetEst.stop()
 	$AudioForetOuest.stop()
-	$AudioForetPlaine.stop()
+	$AudioPlaine.stop()
 	
 func start():
 	started = true
 	$AudioForetEst.play()
 	$AudioForetOuest.play()
-	$AudioForetPlaine.play()
+	$AudioPlaine.play()
 
 func photographie(type : String, node : Node3D, img : Image):
 	print ("Get ", type)

@@ -117,7 +117,7 @@ func endofinactif():
 	$AudioMusique.stop()
 	$EspaceJeu/AudioForetEst.play()
 	$EspaceJeu/AudioForetOuest.play()
-	$EspaceJeu/AudioForetPlaine.play()
+	$EspaceJeu/AudioPlaine.play()
 	$EspaceJeu/DirectionalLight3D.light_energy = 1.0
 	$ColorRectHaut.hide()
 	$ColorRectBas.hide()
