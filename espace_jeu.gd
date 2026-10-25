@@ -40,13 +40,11 @@ func _ready() -> void:
 	var file = FileAccess.open("user://UNLOADMAP", FileAccess.READ)
 	if file != null :
 		if has_node("MAP"):
-			#$MAP/BIOME/FORET_EST.visible = false
-			#$MAP/BIOME/FORET_OUEST.visible = false
-			pass
+			$MAP/BIOME/FORET_EST.visible = false
+			$MAP/BIOME/FORET_OUEST.visible = false
 		if has_node("MAP2"):
-			#$MAP2/BIOME/FORET_EST.visible = false
-			#$MAP2/BIOME/FORET_OUEST.visible = false
-			pass
+			$MAP2/BIOME/FORET_EST.visible = false
+			$MAP2/BIOME/FORET_OUEST.visible = false
 		unloadpins(self)
 	pass
 
