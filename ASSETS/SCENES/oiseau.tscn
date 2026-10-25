@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dj58ksefoijut"]
+
+[ext_resource type="PackedScene" uid="uid://mbdcalavmf0a" path="res://ASSETS/MODELS/OISEAU.glb" id="1_s48x1"]
+
+[node name="OISEAU" type="Node3D" unique_id=1471016476]
+
+[node name="OISEAU" parent="." unique_id=1858068189 instance=ExtResource("1_s48x1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15886492, 0.13082993)

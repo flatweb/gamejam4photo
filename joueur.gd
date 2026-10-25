@@ -182,6 +182,7 @@ func _physics_process(delta: float) -> void:
 			# Si plus de pellicule, interdire
 			if photosrestantes > 0 :
 				inaction()
+				$AudioShoot.play()
 				
 				# Hide UI and way for frame refresh
 				$Control/ViewFinder.visible = false
@@ -241,6 +242,7 @@ func _physics_process(delta: float) -> void:
 			
 		if Input.is_action_just_pressed("aim") and not Input.is_action_pressed("run"):
 			is_aiming = true
+			$AudioAim.play()
 			$Control/ViewFinder.visible = true
 			%Tete/Camera3D.fov = 50.0
 			inaction()

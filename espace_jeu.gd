@@ -39,8 +39,12 @@ func _ready() -> void:
 	# CONTOURNEMENT D'UN PROBLEME DE PERF SPECIFIQUE SUR PC
 	var file = FileAccess.open("user://UNLOADMAP", FileAccess.READ)
 	if file != null :
-		$MAP/BIOME/FORET_EST.visible = false
-		$MAP/BIOME/FORET_OUEST.visible = false
+		if has_node("MAP"):
+			$MAP/BIOME/FORET_EST.visible = false
+			$MAP/BIOME/FORET_OUEST.visible = false
+		if has_node("MAP2"):
+			$MAP2/BIOME/FORET_EST.visible = false
+			$MAP2/BIOME/FORET_OUEST.visible = false
 		unloadpins(self)
 	pass
 
@@ -70,15 +74,15 @@ func loadobjectifs(node : Node):
 		return
 
 func silence():
-	$MAP/AudioForetEst.stop()
-	$MAP/AudioForetOuest.stop()
-	$MAP/AudioForetPlaine.stop()
+	$AudioForetEst.stop()
+	$AudioForetOuest.stop()
+	$AudioPlaine.stop()
 	
 func start():
 	started = true
-	$MAP/AudioForetEst.play()
-	$MAP/AudioForetOuest.play()
-	$MAP/AudioForetPlaine.play()
+	$AudioForetEst.play()
+	$AudioForetOuest.play()
+	$AudioPlaine.play()
 
 func photographie(type : String, node : Node3D, img : Image):
 	print ("Get ", type)
@@ -99,8 +103,10 @@ func get_nb_objectifs_atteints():
 func check_end():
 	if check_objectifs_atteints() :
 		fini.emit()
+		$Joueur/TimerNoAction.stop()
 	if check_pellicule_vide():
 		fini.emit()
+		$Joueur/TimerNoAction.stop()
 
 func check_pellicule_vide():
 	return $Joueur.photosrestantes <= 0

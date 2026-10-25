@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ck8m4tu2cplsr"]
+
+[ext_resource type="PackedScene" uid="uid://bnsjrgjgn87qo" path="res://ASSETS/MODELS/CHAMPI.glb" id="1_idlr7"]
+
+[node name="CHAMPI" type="Node3D" unique_id=401900457]
+
+[node name="CHAMPI" parent="." unique_id=631065754 instance=ExtResource("1_idlr7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6318226, 0)

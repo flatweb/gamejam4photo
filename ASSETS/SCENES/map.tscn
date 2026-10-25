@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cpi17p0gwdfx7" path="res://ASSETS/MODELS/MAP.glb" id="1_5xahm"]
 [ext_resource type="PackedScene" uid="uid://dfn04k3h5qk3s" path="res://ASSETS/SCENES/pin.tscn" id="2_64srn"]
-[ext_resource type="PackedScene" uid="uid://71lnoy628f58" path="res://ASSETS/SCENES/buisson.tscn" id="3_2ssin"]
+[ext_resource type="PackedScene" uid="uid://71lnoy628f58" path="res://ASSETS/SCENES/buisson-M.tscn" id="3_2ssin"]
 [ext_resource type="PackedScene" uid="uid://cjifo1c7k5i5x" path="res://ASSETS/SCENES/arbre.tscn" id="4_dckxu"]
 [ext_resource type="PackedScene" uid="uid://dyj3x8eqc2drt" path="res://ASSETS/SCENES/sapin.tscn" id="5_hcd6l"]
 [ext_resource type="AudioStream" uid="uid://dr0qr007seqwj" path="res://ASSETS/SOUNDS/AMB01-Forest-V1.mp3" id="7_c28kt"]
