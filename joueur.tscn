@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://b4hy25e7y7cp4" path="res://ASSETS/TEXTURES/view_finder.png" id="3_nhxrk"]
 [ext_resource type="AudioStream" uid="uid://bk2iguvb5qd21" path="res://ASSETS/SOUNDS/SFX07-Footsteps walk-V1.mp3" id="4_wr1qv"]
 [ext_resource type="AudioStream" uid="uid://giia682ulshl" path="res://ASSETS/SOUNDS/SFX08-Footsteps run-V1.mp3" id="5_kqiic"]
+[ext_resource type="AudioStream" uid="uid://ddtqmwk240jbe" path="res://ASSETS/SOUNDS/SFX03-Camera equip-V1.mp3" id="6_2l6sa"]
+[ext_resource type="AudioStream" uid="uid://drnrjl3pvcytu" path="res://ASSETS/SOUNDS/SFX01-Camera Shutter-V1.mp3" id="7_6cmlh"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_vpl4w"]
 height = 1.2
@@ -168,5 +170,11 @@ stream = ExtResource("4_wr1qv")
 
 [node name="AudioRun" type="AudioStreamPlayer" parent="." unique_id=1174247124]
 stream = ExtResource("5_kqiic")
+
+[node name="AudioAim" type="AudioStreamPlayer" parent="." unique_id=1662268302]
+stream = ExtResource("6_2l6sa")
+
+[node name="AudioShoot" type="AudioStreamPlayer" parent="." unique_id=1034023738]
+stream = ExtResource("7_6cmlh")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
