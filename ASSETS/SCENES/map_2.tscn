@@ -136,293 +136,293 @@ surface_material_override/0 = SubResource("ShaderMaterial_ii2lt")
 
 [node name="BIOME" type="Node3D" parent="." unique_id=204164245]
 
-[node name="FOREST_OUEST" type="Node3D" parent="BIOME" unique_id=678297932]
+[node name="FORET_OUEST" type="Node3D" parent="BIOME" unique_id=678297932]
 
-[node name="PIN" parent="BIOME/FOREST_OUEST" unique_id=933298639 instance=ExtResource("4_24kqk")]
+[node name="PIN" parent="BIOME/FORET_OUEST" unique_id=933298639 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.53707993, 0, 1.0294378, 0, 1.1611186, 0, -1.0294378, 0, -0.53707993, -75.384964, 2.7774963, 99.537285)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (1)" parent="BIOME/FOREST_OUEST" unique_id=1288395785 instance=ExtResource("4_24kqk")]
+[node name="PIN (1)" parent="BIOME/FORET_OUEST" unique_id=1288395785 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.1459624, 0, 1.0335419, 0, 1.0437979, 0, -1.0335419, 0, 0.1459624, -71.78431, 2.1893158, 95.85833)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (2)" parent="BIOME/FOREST_OUEST" unique_id=27658074 instance=ExtResource("4_24kqk")]
+[node name="PIN (2)" parent="BIOME/FORET_OUEST" unique_id=27658074 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.08476748, 0, 0.91337085, 0, 0.91729593, 0, -0.91337085, 0, -0.08476748, -85.66651, 2.850235, 105.258156)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (3)" parent="BIOME/FOREST_OUEST" unique_id=955657289 instance=ExtResource("4_24kqk")]
+[node name="PIN (3)" parent="BIOME/FORET_OUEST" unique_id=955657289 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.68916315, 0, 0.7246063, 0, 1, 0, -0.7246063, 0, -0.68916315, -82.86504, 2.8504944, 101.09788)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (4)" parent="BIOME/FOREST_OUEST" unique_id=274336887 instance=ExtResource("4_24kqk")]
+[node name="PIN (4)" parent="BIOME/FORET_OUEST" unique_id=274336887 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.9858126, 0, 0.1678496, 0, 1, 0, -0.1678496, 0, -0.9858126, -84.95483, 2.2164764, 83.64361)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (5)" parent="BIOME/FOREST_OUEST" unique_id=1349747183 instance=ExtResource("4_24kqk")]
+[node name="PIN (5)" parent="BIOME/FORET_OUEST" unique_id=1349747183 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.6793818, 0, 0.733785, 0, 1, 0, -0.733785, 0, -0.6793818, -68.37547, 2.5374832, 100.00406)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (6)" parent="BIOME/FOREST_OUEST" unique_id=1984976489 instance=ExtResource("4_24kqk")]
+[node name="PIN (6)" parent="BIOME/FORET_OUEST" unique_id=1984976489 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.9915088, 0, 0.13003983, 0, 1, 0, -0.13003983, 0, -0.9915088, -74.445984, 1.9131775, 87.41972)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (7)" parent="BIOME/FOREST_OUEST" unique_id=805730518 instance=ExtResource("4_24kqk")]
+[node name="PIN (7)" parent="BIOME/FORET_OUEST" unique_id=805730518 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.9972219, 0, 0.07448858, 0, 1, 0, -0.07448858, 0, 0.9972219, -61.499653, 2.5155945, 100.84535)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (8)" parent="BIOME/FOREST_OUEST" unique_id=977209360 instance=ExtResource("4_24kqk")]
+[node name="PIN (8)" parent="BIOME/FORET_OUEST" unique_id=977209360 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.18008044, 0, 0.9836519, 0, 1, 0, -0.9836519, 0, -0.18008044, -77.96894, 1.7802963, 90.90111)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (9)" parent="BIOME/FOREST_OUEST" unique_id=70912109 instance=ExtResource("4_24kqk")]
+[node name="PIN (9)" parent="BIOME/FORET_OUEST" unique_id=70912109 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.729775, 0, 0.68368745, 0, 1, 0, -0.68368745, 0, 0.729775, -87.40958, 2.540474, 91.55079)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (10)" parent="BIOME/FOREST_OUEST" unique_id=1217042292 instance=ExtResource("4_24kqk")]
+[node name="PIN (10)" parent="BIOME/FORET_OUEST" unique_id=1217042292 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.9858872, 0, 0.16741078, 0, 1, 0, -0.16741078, 0, -0.9858872, -65.53565, 2.1225739, 90.12544)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (11)" parent="BIOME/FOREST_OUEST" unique_id=2126303434 instance=ExtResource("4_24kqk")]
+[node name="PIN (11)" parent="BIOME/FORET_OUEST" unique_id=2126303434 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.9606463, 0, 0.27777466, 0, 1, 0, -0.27777466, 0, 0.9606463, -66.2952, 1.8017197, 87.106995)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (12)" parent="BIOME/FOREST_OUEST" unique_id=1846376985 instance=ExtResource("4_24kqk")]
+[node name="PIN (12)" parent="BIOME/FORET_OUEST" unique_id=1846376985 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.7257826, 0, 0.68792415, 0, 1, 0, -0.68792415, 0, 0.7257826, -77.06854, 2.7440567, 79.50555)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (13)" parent="BIOME/FOREST_OUEST" unique_id=72523287 instance=ExtResource("4_24kqk")]
+[node name="PIN (13)" parent="BIOME/FORET_OUEST" unique_id=72523287 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.84149516, 0, 0.54026467, 0, 1, 0, -0.54026467, 0, -0.84149516, -83.61204, 2.4572449, 93.626816)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (14)" parent="BIOME/FOREST_OUEST" unique_id=1546719813 instance=ExtResource("4_24kqk")]
+[node name="PIN (14)" parent="BIOME/FORET_OUEST" unique_id=1546719813 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.9179799, 0, 0.39662692, 0, 1, 0, -0.39662692, 0, -0.9179799, -72.79847, 1.6696548, 91.923386)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (15)" parent="BIOME/FOREST_OUEST" unique_id=382006671 instance=ExtResource("4_24kqk")]
+[node name="PIN (15)" parent="BIOME/FORET_OUEST" unique_id=382006671 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.99816304, 0, 0.060585003, 0, 1, 0, -0.060585003, 0, -0.99816304, -91.799736, 1.7815475, 84.56293)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (16)" parent="BIOME/FOREST_OUEST" unique_id=1533725259 instance=ExtResource("4_24kqk")]
+[node name="PIN (16)" parent="BIOME/FORET_OUEST" unique_id=1533725259 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.28873292, 0, 0.9574097, 0, 1, 0, -0.9574097, 0, -0.28873292, -78.253716, 2.2804794, 85.92165)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (17)" parent="BIOME/FOREST_OUEST" unique_id=2043713910 instance=ExtResource("4_24kqk")]
+[node name="PIN (17)" parent="BIOME/FORET_OUEST" unique_id=2043713910 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.74355644, 0, 0.6686732, 0, 1, 0, -0.6686732, 0, 0.74355644, -74.51348, 2.7612228, 99.75922)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (18)" parent="BIOME/FOREST_OUEST" unique_id=1701194780 instance=ExtResource("4_24kqk")]
+[node name="PIN (18)" parent="BIOME/FORET_OUEST" unique_id=1701194780 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.91059124, 0, 0.41330805, 0, 1, 0, -0.41330805, 0, -0.91059124, -68.28227, 1.7498093, 89.13515)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (19)" parent="BIOME/FOREST_OUEST" unique_id=1204428442 instance=ExtResource("4_24kqk")]
+[node name="PIN (19)" parent="BIOME/FORET_OUEST" unique_id=1204428442 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.46263474, 0, 0.886549, 0, 1, 0, -0.886549, 0, -0.46263474, -76.3748, 2.4050293, 85.30847)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (20)" parent="BIOME/FOREST_OUEST" unique_id=1481840262 instance=ExtResource("4_24kqk")]
+[node name="PIN (20)" parent="BIOME/FORET_OUEST" unique_id=1481840262 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.99745166, 0, 0.071345374, 0, 1, 0, -0.071345374, 0, -0.99745166, -71.82994, 2.8499146, 104.337975)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (21)" parent="BIOME/FOREST_OUEST" unique_id=810638803 instance=ExtResource("4_24kqk")]
+[node name="PIN (21)" parent="BIOME/FORET_OUEST" unique_id=810638803 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.5105936, 0, 0.8598222, 0, 1, 0, -0.8598222, 0, -0.5105936, -80.70918, 2.8504486, 100.2733)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (22)" parent="BIOME/FOREST_OUEST" unique_id=1305106035 instance=ExtResource("4_24kqk")]
+[node name="PIN (22)" parent="BIOME/FORET_OUEST" unique_id=1305106035 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.36219016, 0, 0.93210423, 0, 1, 0, -0.93210423, 0, 0.36219016, -63.729134, 2.5871124, 97.14083)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (23)" parent="BIOME/FOREST_OUEST" unique_id=177510053 instance=ExtResource("4_24kqk")]
+[node name="PIN (23)" parent="BIOME/FORET_OUEST" unique_id=177510053 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.8631745, 0, 0.5049057, 0, 1, 0, -0.5049057, 0, -0.8631745, -79.84651, 2.850441, 99.395645)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (24)" parent="BIOME/FOREST_OUEST" unique_id=666522498 instance=ExtResource("4_24kqk")]
+[node name="PIN (24)" parent="BIOME/FORET_OUEST" unique_id=666522498 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.87544155, 0, 0.483324, 0, 1, 0, -0.483324, 0, 0.87544155, -87.61997, 2.8499374, 97.619286)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (25)" parent="BIOME/FOREST_OUEST" unique_id=1248430550 instance=ExtResource("4_24kqk")]
+[node name="PIN (25)" parent="BIOME/FORET_OUEST" unique_id=1248430550 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.34460062, 0, 0.93874943, 0, 1, 0, -0.93874943, 0, 0.34460062, -71.39699, 2.5289536, 82.74282)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (26)" parent="BIOME/FOREST_OUEST" unique_id=1780629708 instance=ExtResource("4_24kqk")]
+[node name="PIN (26)" parent="BIOME/FORET_OUEST" unique_id=1780629708 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.40070415, 0, 0.9162075, 0, 1, 0, -0.9162075, 0, -0.40070415, -74.45689, 2.659401, 78.635086)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (27)" parent="BIOME/FOREST_OUEST" unique_id=652300132 instance=ExtResource("4_24kqk")]
+[node name="PIN (27)" parent="BIOME/FORET_OUEST" unique_id=652300132 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.25252149, 0, 0.9675913, 0, 1, 0, -0.9675913, 0, -0.25252149, -72.276924, 2.5809631, 79.81383)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (28)" parent="BIOME/FOREST_OUEST" unique_id=1848220832 instance=ExtResource("4_24kqk")]
+[node name="PIN (28)" parent="BIOME/FORET_OUEST" unique_id=1848220832 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.99026924, 0, 0.13916491, 0, 1, 0, -0.13916491, 0, 0.99026924, -87.02161, 2.8504868, 77.919235)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (29)" parent="BIOME/FOREST_OUEST" unique_id=836373124 instance=ExtResource("4_24kqk")]
+[node name="PIN (29)" parent="BIOME/FORET_OUEST" unique_id=836373124 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.94346714, 0, 0.3314662, 0, 1, 0, -0.3314662, 0, -0.94346714, -73.30261, 1.5933304, 69.133)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (30)" parent="BIOME/FOREST_OUEST" unique_id=854101372 instance=ExtResource("4_24kqk")]
+[node name="PIN (30)" parent="BIOME/FORET_OUEST" unique_id=854101372 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.9991671, 0, 0.040805493, 0, 1, 0, -0.040805493, 0, 0.9991671, -75.8061, 1.7686691, 91.58038)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (31)" parent="BIOME/FOREST_OUEST" unique_id=1637343346 instance=ExtResource("4_24kqk")]
+[node name="PIN (31)" parent="BIOME/FORET_OUEST" unique_id=1637343346 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.26281944, 0, 0.96484506, 0, 1, 0, -0.96484506, 0, -0.26281944, -55.369286, 2.65831, 105.61139)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (32)" parent="BIOME/FOREST_OUEST" unique_id=981087056 instance=ExtResource("4_24kqk")]
+[node name="PIN (32)" parent="BIOME/FORET_OUEST" unique_id=981087056 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.61035436, 0, 0.79212856, 0, 1, 0, -0.79212856, 0, 0.61035436, -57.87661, 2.578453, 92.59528)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (33)" parent="BIOME/FOREST_OUEST" unique_id=1125001628 instance=ExtResource("4_24kqk")]
+[node name="PIN (33)" parent="BIOME/FORET_OUEST" unique_id=1125001628 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.99789864, 0, 0.064794764, 0, 1, 0, -0.064794764, 0, 0.99789864, -56.933594, 2.7149887, 99.12267)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (34)" parent="BIOME/FOREST_OUEST" unique_id=1788426895 instance=ExtResource("4_24kqk")]
+[node name="PIN (34)" parent="BIOME/FORET_OUEST" unique_id=1788426895 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.14347227, 0, 0.98965436, 0, 1, 0, -0.98965436, 0, -0.14347227, -55.467854, 2.8506012, 97.12569)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (35)" parent="BIOME/FOREST_OUEST" unique_id=71772110 instance=ExtResource("4_24kqk")]
+[node name="PIN (35)" parent="BIOME/FORET_OUEST" unique_id=71772110 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.84769696, 0, 0.5304808, 0, 1, 0, -0.5304808, 0, 0.84769696, -52.74816, 2.8165665, 98.124825)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (36)" parent="BIOME/FOREST_OUEST" unique_id=1746938865 instance=ExtResource("4_24kqk")]
+[node name="PIN (36)" parent="BIOME/FORET_OUEST" unique_id=1746938865 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.6717337, 0, 0.74079275, 0, 1, 0, -0.74079275, 0, 0.6717337, -57.83488, 1.0732574, 83.193474)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (37)" parent="BIOME/FOREST_OUEST" unique_id=681379985 instance=ExtResource("4_24kqk")]
+[node name="PIN (37)" parent="BIOME/FORET_OUEST" unique_id=681379985 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.8976867, 0, 0.4406343, 0, 1, 0, -0.4406343, 0, 0.8976867, -59.543743, 2.1556015, 90.31026)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (38)" parent="BIOME/FOREST_OUEST" unique_id=96743531 instance=ExtResource("4_24kqk")]
+[node name="PIN (38)" parent="BIOME/FORET_OUEST" unique_id=96743531 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.66142434, 0, 0.7500119, 0, 1, 0, -0.7500119, 0, -0.66142434, -66.21377, 2.2481232, 77.59746)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (39)" parent="BIOME/FOREST_OUEST" unique_id=1663786098 instance=ExtResource("4_24kqk")]
+[node name="PIN (39)" parent="BIOME/FORET_OUEST" unique_id=1663786098 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.058547657, 0, 0.99828464, 0, 1, 0, -0.99828464, 0, -0.058547657, -66.14731, 2.3425217, 78.092606)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (40)" parent="BIOME/FOREST_OUEST" unique_id=2042643300 instance=ExtResource("4_24kqk")]
+[node name="PIN (40)" parent="BIOME/FORET_OUEST" unique_id=2042643300 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.9991898, 0, 0.04024706, 0, 1, 0, -0.04024706, 0, 0.9991898, -86.330345, 2.7309875, 71.11826)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (41)" parent="BIOME/FOREST_OUEST" unique_id=2030772477 instance=ExtResource("4_24kqk")]
+[node name="PIN (41)" parent="BIOME/FORET_OUEST" unique_id=2030772477 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.27665547, 0, 0.96096915, 0, 1, 0, -0.96096915, 0, -0.27665547, -67.85323, 2.1914368, 84.67523)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (42)" parent="BIOME/FOREST_OUEST" unique_id=1290286295 instance=ExtResource("4_24kqk")]
+[node name="PIN (42)" parent="BIOME/FORET_OUEST" unique_id=1290286295 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.030721912, 0, 0.999528, 0, 1, 0, -0.999528, 0, 0.030721912, -42.110992, 2.8287506, 100.59742)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (43)" parent="BIOME/FOREST_OUEST" unique_id=95254012 instance=ExtResource("4_24kqk")]
+[node name="PIN (43)" parent="BIOME/FORET_OUEST" unique_id=95254012 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.99940675, 0, 0.034441255, 0, 1, 0, -0.034441255, 0, -0.99940675, -54.91671, 2.5189743, 92.19677)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (44)" parent="BIOME/FOREST_OUEST" unique_id=1840422464 instance=ExtResource("4_24kqk")]
+[node name="PIN (44)" parent="BIOME/FORET_OUEST" unique_id=1840422464 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.69822705, 0, 0.71587634, 0, 1, 0, -0.71587634, 0, -0.69822705, -44.811455, 2.848755, 98.20224)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (45)" parent="BIOME/FOREST_OUEST" unique_id=1907268318 instance=ExtResource("4_24kqk")]
+[node name="PIN (45)" parent="BIOME/FORET_OUEST" unique_id=1907268318 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.3125019, 0, 0.94991714, 0, 1, 0, -0.94991714, 0, -0.3125019, -79.08337, 2.6665726, 74.65482)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (46)" parent="BIOME/FOREST_OUEST" unique_id=1283710159 instance=ExtResource("4_24kqk")]
+[node name="PIN (46)" parent="BIOME/FORET_OUEST" unique_id=1283710159 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.91570705, 0, 0.40184662, 0, 1, 0, -0.40184662, 0, 0.91570705, -73.67085, 2.40876, 84.82731)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (47)" parent="BIOME/FOREST_OUEST" unique_id=983877169 instance=ExtResource("4_24kqk")]
+[node name="PIN (47)" parent="BIOME/FORET_OUEST" unique_id=983877169 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.67618364, 0, 0.73673314, 0, 1, 0, -0.73673314, 0, -0.67618364, -81.89564, 2.0391235, 68.84476)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (48)" parent="BIOME/FOREST_OUEST" unique_id=320189579 instance=ExtResource("4_24kqk")]
+[node name="PIN (48)" parent="BIOME/FORET_OUEST" unique_id=320189579 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.6897166, 0, 0.72407943, 0, 1, 0, -0.72407943, 0, -0.6897166, -48.100613, 0.88796234, 84.443855)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (49)" parent="BIOME/FOREST_OUEST" unique_id=560327100 instance=ExtResource("4_24kqk")]
+[node name="PIN (49)" parent="BIOME/FORET_OUEST" unique_id=560327100 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.7010668, 0, 0.7130956, 0, 1, 0, -0.7130956, 0, 0.7010668, -42.17968, 1.400917, 91.80265)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (50)" parent="BIOME/FOREST_OUEST" unique_id=1036615673 instance=ExtResource("4_24kqk")]
+[node name="PIN (50)" parent="BIOME/FORET_OUEST" unique_id=1036615673 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.83448017, 0, 0.55103797, 0, 1, 0, -0.55103797, 0, -0.83448017, -48.209267, 0.98576355, 85.0955)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (51)" parent="BIOME/FOREST_OUEST" unique_id=1812974411 instance=ExtResource("4_24kqk")]
+[node name="PIN (51)" parent="BIOME/FORET_OUEST" unique_id=1812974411 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.9237084, 0, 0.3830965, 0, 1, 0, -0.3830965, 0, -0.9237084, -54.442543, 0.45449066, 74.10044)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (52)" parent="BIOME/FOREST_OUEST" unique_id=1780965301 instance=ExtResource("4_24kqk")]
+[node name="PIN (52)" parent="BIOME/FORET_OUEST" unique_id=1780965301 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.82366365, 0, 0.56707865, 0, 1, 0, -0.56707865, 0, 0.82366365, -58.636925, 0.66007996, 61.95665)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (53)" parent="BIOME/FOREST_OUEST" unique_id=1807629370 instance=ExtResource("4_24kqk")]
+[node name="PIN (53)" parent="BIOME/FORET_OUEST" unique_id=1807629370 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.9127093, 0, 0.40860954, 0, 1, 0, -0.40860954, 0, 0.9127093, -67.14279, 0.51597595, 66.720345)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (54)" parent="BIOME/FOREST_OUEST" unique_id=92500638 instance=ExtResource("4_24kqk")]
+[node name="PIN (54)" parent="BIOME/FORET_OUEST" unique_id=92500638 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.8189699, 0, 0.5738365, 0, 1, 0, -0.5738365, 0, 0.8189699, -49.994556, 1.6892853, 87.99733)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (55)" parent="BIOME/FOREST_OUEST" unique_id=820169497 instance=ExtResource("4_24kqk")]
+[node name="PIN (55)" parent="BIOME/FORET_OUEST" unique_id=820169497 instance=ExtResource("4_24kqk")]
 transform = Transform3D(-0.5162715, 0, 0.856425, 0, 1, 0, -0.856425, 0, -0.5162715, -38.760437, 2.3764877, 107.57044)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="PIN (56)" parent="BIOME/FOREST_OUEST" unique_id=467589573 instance=ExtResource("4_24kqk")]
+[node name="PIN (56)" parent="BIOME/FORET_OUEST" unique_id=467589573 instance=ExtResource("4_24kqk")]
 transform = Transform3D(0.8968593, 0, 0.442316, 0, 1, 0, -0.442316, 0, 0.8968593, -52.89061, 2.457756, 102.60951)
 metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
 
-[node name="SAPIN" parent="BIOME/FOREST_OUEST" unique_id=1181012005 instance=ExtResource("5_bmffd")]
+[node name="SAPIN" parent="BIOME/FORET_OUEST" unique_id=1181012005 instance=ExtResource("5_bmffd")]
 transform = Transform3D(-0.68916315, 0, 0.7246063, 0, 1, 0, -0.7246063, 0, -0.68916315, -52.53039, 0.6480408, 81.04656)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
-[node name="SAPIN (1)" parent="BIOME/FOREST_OUEST" unique_id=497951394 instance=ExtResource("5_bmffd")]
+[node name="SAPIN (1)" parent="BIOME/FORET_OUEST" unique_id=497951394 instance=ExtResource("5_bmffd")]
 transform = Transform3D(-0.9858126, 0, 0.1678496, 0, 1, 0, -0.1678496, 0, -0.9858126, -54.62017, 0.56108856, 63.592293)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
-[node name="SAPIN (2)" parent="BIOME/FOREST_OUEST" unique_id=1789712420 instance=ExtResource("5_bmffd")]
+[node name="SAPIN (2)" parent="BIOME/FORET_OUEST" unique_id=1789712420 instance=ExtResource("5_bmffd")]
 transform = Transform3D(-0.6793818, 0, 0.733785, 0, 1, 0, -0.733785, 0, -0.6793818, -38.040825, 0.37822723, 79.95274)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
-[node name="SAPIN (3)" parent="BIOME/FOREST_OUEST" unique_id=1962196125 instance=ExtResource("5_bmffd")]
+[node name="SAPIN (3)" parent="BIOME/FORET_OUEST" unique_id=1962196125 instance=ExtResource("5_bmffd")]
 transform = Transform3D(-0.9915088, 0, 0.13003983, 0, 1, 0, -0.13003983, 0, -0.9915088, -39.82807, 0.19916534, 84.31804)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
-[node name="SAPIN (4)" parent="BIOME/FOREST_OUEST" unique_id=1310944592 instance=ExtResource("5_bmffd")]
+[node name="SAPIN (4)" parent="BIOME/FORET_OUEST" unique_id=1310944592 instance=ExtResource("5_bmffd")]
 transform = Transform3D(0.9972219, 0, 0.07448858, 0, 1, 0, -0.07448858, 0, 0.9972219, -26.88174, 1.2612762, 97.74367)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
-[node name="SAPIN (5)" parent="BIOME/FOREST_OUEST" unique_id=2011214148 instance=ExtResource("5_bmffd")]
+[node name="SAPIN (5)" parent="BIOME/FORET_OUEST" unique_id=2011214148 instance=ExtResource("5_bmffd")]
 transform = Transform3D(-0.18008044, 0, 0.9836519, 0, 1, 0, -0.9836519, 0, -0.18008044, -43.351025, 0.78862, 87.79942)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
-[node name="SAPIN (6)" parent="BIOME/FOREST_OUEST" unique_id=779404690 instance=ExtResource("5_bmffd")]
+[node name="SAPIN (6)" parent="BIOME/FORET_OUEST" unique_id=779404690 instance=ExtResource("5_bmffd")]
 transform = Transform3D(0.729775, 0, 0.68368745, 0, 1, 0, -0.68368745, 0, 0.729775, -86.45995, 1.7888184, 65.60919)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
-[node name="SAPIN (7)" parent="BIOME/FOREST_OUEST" unique_id=1734669192 instance=ExtResource("5_bmffd")]
+[node name="SAPIN (7)" parent="BIOME/FORET_OUEST" unique_id=1734669192 instance=ExtResource("5_bmffd")]
 transform = Transform3D(-0.9858872, 0, 0.16741078, 0, 1, 0, -0.16741078, 0, -0.9858872, -64.58603, 0.5776825, 64.183846)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
-[node name="SAPIN (8)" parent="BIOME/FOREST_OUEST" unique_id=1194070430 instance=ExtResource("5_bmffd")]
+[node name="SAPIN (8)" parent="BIOME/FORET_OUEST" unique_id=1194070430 instance=ExtResource("5_bmffd")]
 transform = Transform3D(0.9606463, 0, 0.27777466, 0, 1, 0, -0.27777466, 0, 0.9606463, -65.34557, 0.6419296, 61.1654)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
-[node name="SAPIN (9)" parent="BIOME/FOREST_OUEST" unique_id=1536046325 instance=ExtResource("5_bmffd")]
+[node name="SAPIN (9)" parent="BIOME/FORET_OUEST" unique_id=1536046325 instance=ExtResource("5_bmffd")]
 transform = Transform3D(0.7257826, 0, 0.68792415, 0, 1, 0, -0.68792415, 0, 0.7257826, -54.350105, 0.45119476, 56.08303)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
-[node name="SAPIN (10)" parent="BIOME/FOREST_OUEST" unique_id=1120352505 instance=ExtResource("5_bmffd")]
+[node name="SAPIN (10)" parent="BIOME/FORET_OUEST" unique_id=1120352505 instance=ExtResource("5_bmffd")]
 transform = Transform3D(-0.84149516, 0, 0.54026467, 0, 1, 0, -0.54026467, 0, -0.84149516, -60.8936, 0.54216003, 70.2043)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
-[node name="SAPIN (11)" parent="BIOME/FOREST_OUEST" unique_id=878595179 instance=ExtResource("5_bmffd")]
+[node name="SAPIN (11)" parent="BIOME/FORET_OUEST" unique_id=878595179 instance=ExtResource("5_bmffd")]
 transform = Transform3D(-0.9179799, 0, 0.39662692, 0, 1, 0, -0.39662692, 0, -0.9179799, -50.080032, 0.5882416, 68.50087)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
-[node name="SAPIN (63)" parent="BIOME/FOREST_OUEST" unique_id=725839188 instance=ExtResource("5_bmffd")]
+[node name="SAPIN (63)" parent="BIOME/FORET_OUEST" unique_id=725839188 instance=ExtResource("5_bmffd")]
 transform = Transform3D(-0.8691966, 0, 0.49446666, 0, 1, 0, -0.49446666, 0, -0.8691966, -20.369164, 1.6525879, 93.65414)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
-[node name="SAPIN (64)" parent="BIOME/FOREST_OUEST" unique_id=1371022756 instance=ExtResource("5_bmffd")]
+[node name="SAPIN (64)" parent="BIOME/FORET_OUEST" unique_id=1371022756 instance=ExtResource("5_bmffd")]
 transform = Transform3D(0.71056837, 0, 0.7036282, 0, 1, 0, -0.7036282, 0, 0.71056837, -34.907024, 1.6001282, 100.79937)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
-[node name="SAPIN (65)" parent="BIOME/FOREST_OUEST" unique_id=1681889467 instance=ExtResource("5_bmffd")]
+[node name="SAPIN (65)" parent="BIOME/FORET_OUEST" unique_id=1681889467 instance=ExtResource("5_bmffd")]
 transform = Transform3D(0.9982261, 0, 0.059536755, 0, 1, 0, -0.059536755, 0, 0.9982261, -28.944403, 1.8830338, 94.646126)
 metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
 
