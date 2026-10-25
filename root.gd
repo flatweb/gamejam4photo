@@ -119,9 +119,12 @@ func endofinactif():
 	$EspaceJeu/MAP/AudioForetOuest.play()
 	$EspaceJeu/MAP/AudioForetPlaine.play()
 	$EspaceJeu/DirectionalLight3D.light_energy = 1.0
+	$ColorRectHaut.hide()
+	$ColorRectBas.hide()
 
 
 func endofgame():
+	endofinactif()
 	$AudioMusique.play()
 	get_tree().paused = true
 	
