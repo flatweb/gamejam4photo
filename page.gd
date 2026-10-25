@@ -9,7 +9,7 @@ class_name Page
 func _ready() -> void:
 	pass # Replace with function body.
 
-func change(img : Image, titre : String, indice : String):
+func change(numpage : int, maxpage : int, img : Image, titre : String, indice : String):
 	$Sprite3D.hide()
 	if img == null:
 		var imgpng = ResourceLoader.load("res://icon.svg")
@@ -22,6 +22,7 @@ func change(img : Image, titre : String, indice : String):
 		$LabelIndice.hide()
 	$LabelTitre.text = titre
 	$LabelIndice.text = indice
+	$LabelNumPage.text = str(numpage," / ",maxpage)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

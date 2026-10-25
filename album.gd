@@ -67,10 +67,9 @@ func changetopageon():
 func change(cote : Cote, img : Image, titre : String, indice : String):
 	var page : Page
 	if cote == Cote.GAUCHE :
-		page = $PageGauche
+		$PageGauche.change(pageon+1,photos.size(),img,titre,indice)
 	else :
-		page = $PageDroite
-	page.change(img,titre,indice)
+		$PageDroite.change(pageon+2,photos.size(),img,titre,indice)
 
 func load_photos():
 	var photos_folder_path = OS.get_user_data_dir() + "/photos/"
