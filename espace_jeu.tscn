@@ -10,7 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://ceyy21xp6ls3y" path="res://ASSETS/SCENES/map_2.tscn" id="8_ppxyf"]
 [ext_resource type="AudioStream" uid="uid://6jn0ypawucf1" path="res://ASSETS/SOUNDS/AMB01-Meadow-V1.mp3" id="9_lkouy"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_brs65"]
+sky_top_color = Color(0.41453934, 0.5754704, 0.7949219, 1)
+ground_bottom_color = Color(0.46666667, 0.4745098, 0.27450982, 1)
+ground_horizon_color = Color(0.6152727, 0.6582031, 0.52579117, 1)
+
+[sub_resource type="Sky" id="Sky_lkouy"]
+sky_material = SubResource("ProceduralSkyMaterial_brs65")
+
 [sub_resource type="Environment" id="Environment_vpl4w"]
+background_mode = 2
+sky = SubResource("Sky_lkouy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6n5ug"]
 resource_name = "buron"
@@ -436,6 +446,7 @@ environment = SubResource("Environment_vpl4w")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=301571981]
 transform = Transform3D(1, 0, 0, 0, 0.6107285, 0.79184, 0, -0.79184, 0.6107285, 0, 17.23639, 0)
+light_color = Color(0.9121094, 0.88653564, 0.7784996, 1)
 shadow_enabled = true
 shadow_opacity = 0.74
 
