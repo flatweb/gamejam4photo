@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://bpm6cqev1bh65" path="res://ASSETS/SCENES/roche_l.tscn" id="11_vt7c2"]
 [ext_resource type="PackedScene" uid="uid://bbf58mvri8oss" path="res://ASSETS/SCENES/roche_m.tscn" id="12_7kp1v"]
 [ext_resource type="PackedScene" uid="uid://r6h7yhkllh1y" path="res://ASSETS/SCENES/roche_s.tscn" id="13_3g5uj"]
-[ext_resource type="PackedScene" uid="uid://ydvetysdiaub" path="res://ASSETS/SCENES/biche.tscn" id="14_7kp1v"]
 [ext_resource type="PackedScene" uid="uid://dj58ksefoijut" path="res://ASSETS/SCENES/oiseau.tscn" id="15_3g5uj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pdri"]
@@ -1829,12 +1828,6 @@ metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
 [node name="CHAMPI (22)" parent="VEGETATION" unique_id=1804490507 instance=ExtResource("10_et52j")]
 transform = Transform3D(-0.46255383, 0, 0.88659126, 0, 1, 0, -0.88659126, 0, -0.46255383, 92.01039, -5.2786484, -79.55157)
 metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
-
-[node name="BICHE" parent="." unique_id=596528023 instance=ExtResource("14_7kp1v")]
-transform = Transform3D(-0.51771086, 0, 0.85555565, 0, 1, 0, -0.85555565, 0, -0.51771086, -57.915894, 0.5237045, 78.54871)
-
-[node name="BICHE2" parent="." unique_id=53892384 instance=ExtResource("14_7kp1v")]
-transform = Transform3D(-0.51771086, 0, 0.85555565, 0, 1, 0, -0.85555565, 0, -0.51771086, 90.714584, -15.154706, 79.46967)
 
 [node name="OISEAU" parent="." unique_id=1471016476 instance=ExtResource("15_3g5uj")]
 transform = Transform3D(0.77748346, 0, 0.6289034, 0, 1, 0, -0.6289034, 0, 0.77748346, -9.176068, 1.4275169, 37.594196)
