@@ -49,6 +49,7 @@ func _ready() -> void:
 		textrect.set_texture(res)
 		textrect.expand_mode = TextureRect.EXPAND_FIT_WIDTH
 		$Pellicule/HBoxContainer.add_child(textrect)
+	%SubViewport.get_camera_3d()
 	
 # FPS MOUSEMOTION
 func _input(event: InputEvent) -> void:
@@ -61,6 +62,9 @@ func _input(event: InputEvent) -> void:
 		%Tete.rotation_degrees.x -= event.relative.y / 10
 		%Tete.rotation_degrees.x = clamp(%Tete.rotation_degrees.x, -70, 70)
 		rotation_degrees.y -= event.relative.x / 10
+		
+		%Camera3D2.rotation_degrees.x -= event.relative.y / 10
+		%Camera3D2.rotation_degrees.x = clamp(%Tete.rotation_degrees.x, -70, 70)
 		
 
 # INTERACTION RAY
@@ -154,9 +158,19 @@ func _physics_process(delta: float) -> void:
 				await RenderingServer.frame_post_draw
 				# Get screenshot
 				var screenshot_img = get_viewport().get_texture().get_image()
+				
+				var infrared_img = %SubViewport.get_texture().get_image()
+				
+				
 				# Show UI again
 				$Control/ViewFinder.visible = true
 				$Pellicule.visible = true
+				
+				var pixel_score = image_contains_color(infrared_img, Color(0.9922, 0.0824, 0.102, 1.0))
+				if pixel_score >= 100:
+					print("Cette photo contient un champignon")
+				elif pixel_score > 0:
+					print("Cette photo contient un champignon mais il est trop petit ou masqué :(")
 				
 				# Dimensions of the crop_zone match our camera TextureRect's size
 				var crop_zone:Rect2 = Rect2(Vector2.ZERO, Vector2.ONE * 512)
@@ -166,10 +180,13 @@ func _physics_process(delta: float) -> void:
 				
 				if not DirAccess.dir_exists_absolute(OS.get_user_data_dir() + "/photos/") :
 					DirAccess.make_dir_recursive_absolute(OS.get_user_data_dir() + "/photos/")
+				var timestamp : String = Time.get_datetime_string_from_system().replace("-", "").replace(":", "").replace("T", "")
 				
-				var save_path = OS.get_user_data_dir() + "/photos/" + Time.get_datetime_string_from_system().replace("-", "").replace(":", "").replace("T", "") + ".png"
+				var save_path = OS.get_user_data_dir() + "/photos/" + timestamp + ".png"
 				screenshot_img.save_png(save_path)
-				print(save_path)
+				
+				save_path = OS.get_user_data_dir() + "/photos/" + timestamp + "_infrared.png"
+				infrared_img.save_png(save_path)
 				
 				photosrestantes -= 1
 				for pellicule in $Pellicule/HBoxContainer.get_children():
@@ -193,6 +210,7 @@ func _physics_process(delta: float) -> void:
 			%Tete/Camera3D.fov = 75.0
 	#if velocity != Vector3.ZERO : print (velocity)
 	move_and_slide()
+	%Camera3D2.global_transform = %Tete/Camera3D.global_transform
 
 func _process(delta : float):
 	# Pas d'action autorisée sur l'album est en train de bouger
@@ -225,3 +243,19 @@ func _on_animation_finished(anim_name: StringName) -> void:
 	elif anim_name == "close":
 		albumopened = false
 	pass # Replace with function body.
+	
+	
+func image_contains_color(img: Image, target_color: Color) -> int:
+	var thresold = 0.1
+	var nb_pixels = 0
+	# 2. Parcourir chaque pixel (X et Y)
+	for x in range(img.get_width()):
+		for y in range(img.get_height()):
+			# 3. Récupérer la couleur du pixel actuel
+			var pixel_color = img.get_pixel(x, y)
+			#print(pixel_color)
+			# 4. Comparer avec la couleur recherchée
+			if pixel_color.r >= target_color.r - thresold and pixel_color.r <= target_color.r + thresold and pixel_color.g >= target_color.g - thresold and pixel_color.g <= target_color.g + thresold and pixel_color.b >= target_color.b - thresold and pixel_color.b <= target_color.b + thresold:
+				nb_pixels += 1
+				
+	return nb_pixels

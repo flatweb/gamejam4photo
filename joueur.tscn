@@ -118,6 +118,22 @@ mesh = SubResource("SphereMesh_0pgee")
 [node name="Camera3D" type="Camera3D" parent="Corps/Tete" unique_id=525025609]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000739336, -0.10738611)
+cull_mask = 1048573
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Corps/Tete" unique_id=706895765]
+offset_right = 1152.0
+offset_bottom = 648.0
+scale = Vector2(0.31858128, 0.31858128)
+
+[node name="SubViewport" type="SubViewport" parent="Corps/Tete/SubViewportContainer" unique_id=1021110338]
+unique_name_in_owner = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D2" type="Camera3D" parent="Corps/Tete/SubViewportContainer/SubViewport" unique_id=1556797631]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.419862, -0.10738611)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=860995187]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
