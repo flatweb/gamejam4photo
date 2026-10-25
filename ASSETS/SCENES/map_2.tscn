@@ -3,6 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://dql3riqilklk4" path="res://ASSETS/MODELS/MAP2_sol.jpg" id="1_tuwbl"]
 [ext_resource type="Texture2D" uid="uid://cajllya22vl6f" path="res://ASSETS/MODELS/MAP2_buron.jpg" id="2_24kqk"]
 [ext_resource type="Shader" uid="uid://dfrt2w3rjh4jj" path="res://ASSETS/SHADERS/foliage.gdshader" id="2_tuwbl"]
+[ext_resource type="PackedScene" uid="uid://dfn04k3h5qk3s" path="res://ASSETS/SCENES/pin.tscn" id="4_24kqk"]
+[ext_resource type="PackedScene" uid="uid://dyj3x8eqc2drt" path="res://ASSETS/SCENES/sapin.tscn" id="5_bmffd"]
+[ext_resource type="PackedScene" uid="uid://cjifo1c7k5i5x" path="res://ASSETS/SCENES/arbre.tscn" id="6_3l56t"]
+[ext_resource type="PackedScene" uid="uid://n0mklm36xq0x" path="res://ASSETS/SCENES/buisson-S.tscn" id="7_m5o0s"]
+[ext_resource type="PackedScene" uid="uid://71lnoy628f58" path="res://ASSETS/SCENES/buisson-M.tscn" id="8_n1xvr"]
+[ext_resource type="PackedScene" uid="uid://0nle8c2rrgm2" path="res://ASSETS/SCENES/champi_l.tscn" id="9_0gms4"]
+[ext_resource type="PackedScene" uid="uid://ck8m4tu2cplsr" path="res://ASSETS/SCENES/champi.tscn" id="10_et52j"]
+[ext_resource type="PackedScene" uid="uid://bpm6cqev1bh65" path="res://ASSETS/SCENES/roche_l.tscn" id="11_vt7c2"]
+[ext_resource type="PackedScene" uid="uid://bbf58mvri8oss" path="res://ASSETS/SCENES/roche_m.tscn" id="12_7kp1v"]
+[ext_resource type="PackedScene" uid="uid://r6h7yhkllh1y" path="res://ASSETS/SCENES/roche_s.tscn" id="13_3g5uj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pdri"]
 resource_name = "sol"
@@ -125,3 +135,1695 @@ mesh = SubResource("ArrayMesh_2awdb")
 surface_material_override/0 = SubResource("ShaderMaterial_ii2lt")
 
 [node name="BIOME" type="Node3D" parent="." unique_id=204164245]
+
+[node name="FORET_OUEST" type="Node3D" parent="BIOME" unique_id=678297932]
+
+[node name="PIN" parent="BIOME/FORET_OUEST" unique_id=933298639 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.53707993, 0, 1.0294378, 0, 1.1611186, 0, -1.0294378, 0, -0.53707993, -75.384964, 2.7774963, 99.537285)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (1)" parent="BIOME/FORET_OUEST" unique_id=1288395785 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.1459624, 0, 1.0335419, 0, 1.0437979, 0, -1.0335419, 0, 0.1459624, -71.78431, 2.1893158, 95.85833)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (2)" parent="BIOME/FORET_OUEST" unique_id=27658074 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.08476748, 0, 0.91337085, 0, 0.91729593, 0, -0.91337085, 0, -0.08476748, -85.66651, 2.850235, 105.258156)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (3)" parent="BIOME/FORET_OUEST" unique_id=955657289 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.68916315, 0, 0.7246063, 0, 1, 0, -0.7246063, 0, -0.68916315, -82.86504, 2.8504944, 101.09788)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (4)" parent="BIOME/FORET_OUEST" unique_id=274336887 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.9858126, 0, 0.1678496, 0, 1, 0, -0.1678496, 0, -0.9858126, -84.95483, 2.2164764, 83.64361)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (5)" parent="BIOME/FORET_OUEST" unique_id=1349747183 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.6793818, 0, 0.733785, 0, 1, 0, -0.733785, 0, -0.6793818, -68.37547, 2.5374832, 100.00406)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (6)" parent="BIOME/FORET_OUEST" unique_id=1984976489 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.9915088, 0, 0.13003983, 0, 1, 0, -0.13003983, 0, -0.9915088, -74.445984, 1.9131775, 87.41972)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (7)" parent="BIOME/FORET_OUEST" unique_id=805730518 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.9972219, 0, 0.07448858, 0, 1, 0, -0.07448858, 0, 0.9972219, -61.499653, 2.5155945, 100.84535)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (8)" parent="BIOME/FORET_OUEST" unique_id=977209360 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.18008044, 0, 0.9836519, 0, 1, 0, -0.9836519, 0, -0.18008044, -77.96894, 1.7802963, 90.90111)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (9)" parent="BIOME/FORET_OUEST" unique_id=70912109 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.729775, 0, 0.68368745, 0, 1, 0, -0.68368745, 0, 0.729775, -87.40958, 2.540474, 91.55079)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (10)" parent="BIOME/FORET_OUEST" unique_id=1217042292 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.9858872, 0, 0.16741078, 0, 1, 0, -0.16741078, 0, -0.9858872, -65.53565, 2.1225739, 90.12544)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (11)" parent="BIOME/FORET_OUEST" unique_id=2126303434 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.9606463, 0, 0.27777466, 0, 1, 0, -0.27777466, 0, 0.9606463, -66.2952, 1.8017197, 87.106995)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (12)" parent="BIOME/FORET_OUEST" unique_id=1846376985 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.7257826, 0, 0.68792415, 0, 1, 0, -0.68792415, 0, 0.7257826, -77.06854, 2.7440567, 79.50555)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (13)" parent="BIOME/FORET_OUEST" unique_id=72523287 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.84149516, 0, 0.54026467, 0, 1, 0, -0.54026467, 0, -0.84149516, -83.61204, 2.4572449, 93.626816)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (14)" parent="BIOME/FORET_OUEST" unique_id=1546719813 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.9179799, 0, 0.39662692, 0, 1, 0, -0.39662692, 0, -0.9179799, -72.79847, 1.6696548, 91.923386)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (15)" parent="BIOME/FORET_OUEST" unique_id=382006671 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.99816304, 0, 0.060585003, 0, 1, 0, -0.060585003, 0, -0.99816304, -91.799736, 1.7815475, 84.56293)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (16)" parent="BIOME/FORET_OUEST" unique_id=1533725259 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.28873292, 0, 0.9574097, 0, 1, 0, -0.9574097, 0, -0.28873292, -78.253716, 2.2804794, 85.92165)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (17)" parent="BIOME/FORET_OUEST" unique_id=2043713910 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.74355644, 0, 0.6686732, 0, 1, 0, -0.6686732, 0, 0.74355644, -74.51348, 2.7612228, 99.75922)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (18)" parent="BIOME/FORET_OUEST" unique_id=1701194780 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.91059124, 0, 0.41330805, 0, 1, 0, -0.41330805, 0, -0.91059124, -68.28227, 1.7498093, 89.13515)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (19)" parent="BIOME/FORET_OUEST" unique_id=1204428442 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.46263474, 0, 0.886549, 0, 1, 0, -0.886549, 0, -0.46263474, -76.3748, 2.4050293, 85.30847)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (20)" parent="BIOME/FORET_OUEST" unique_id=1481840262 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.99745166, 0, 0.071345374, 0, 1, 0, -0.071345374, 0, -0.99745166, -71.82994, 2.8499146, 104.337975)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (21)" parent="BIOME/FORET_OUEST" unique_id=810638803 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.5105936, 0, 0.8598222, 0, 1, 0, -0.8598222, 0, -0.5105936, -80.70918, 2.8504486, 100.2733)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (22)" parent="BIOME/FORET_OUEST" unique_id=1305106035 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.36219016, 0, 0.93210423, 0, 1, 0, -0.93210423, 0, 0.36219016, -63.729134, 2.5871124, 97.14083)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (23)" parent="BIOME/FORET_OUEST" unique_id=177510053 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.8631745, 0, 0.5049057, 0, 1, 0, -0.5049057, 0, -0.8631745, -79.84651, 2.850441, 99.395645)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (24)" parent="BIOME/FORET_OUEST" unique_id=666522498 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.87544155, 0, 0.483324, 0, 1, 0, -0.483324, 0, 0.87544155, -87.61997, 2.8499374, 97.619286)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (25)" parent="BIOME/FORET_OUEST" unique_id=1248430550 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.34460062, 0, 0.93874943, 0, 1, 0, -0.93874943, 0, 0.34460062, -71.39699, 2.5289536, 82.74282)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (26)" parent="BIOME/FORET_OUEST" unique_id=1780629708 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.40070415, 0, 0.9162075, 0, 1, 0, -0.9162075, 0, -0.40070415, -74.45689, 2.659401, 78.635086)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (27)" parent="BIOME/FORET_OUEST" unique_id=652300132 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.25252149, 0, 0.9675913, 0, 1, 0, -0.9675913, 0, -0.25252149, -72.276924, 2.5809631, 79.81383)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (28)" parent="BIOME/FORET_OUEST" unique_id=1848220832 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.99026924, 0, 0.13916491, 0, 1, 0, -0.13916491, 0, 0.99026924, -87.02161, 2.8504868, 77.919235)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (29)" parent="BIOME/FORET_OUEST" unique_id=836373124 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.94346714, 0, 0.3314662, 0, 1, 0, -0.3314662, 0, -0.94346714, -73.30261, 1.5933304, 69.133)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (30)" parent="BIOME/FORET_OUEST" unique_id=854101372 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.9991671, 0, 0.040805493, 0, 1, 0, -0.040805493, 0, 0.9991671, -75.8061, 1.7686691, 91.58038)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (31)" parent="BIOME/FORET_OUEST" unique_id=1637343346 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.26281944, 0, 0.96484506, 0, 1, 0, -0.96484506, 0, -0.26281944, -55.369286, 2.65831, 105.61139)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (32)" parent="BIOME/FORET_OUEST" unique_id=981087056 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.61035436, 0, 0.79212856, 0, 1, 0, -0.79212856, 0, 0.61035436, -57.87661, 2.578453, 92.59528)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (33)" parent="BIOME/FORET_OUEST" unique_id=1125001628 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.99789864, 0, 0.064794764, 0, 1, 0, -0.064794764, 0, 0.99789864, -56.933594, 2.7149887, 99.12267)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (34)" parent="BIOME/FORET_OUEST" unique_id=1788426895 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.14347227, 0, 0.98965436, 0, 1, 0, -0.98965436, 0, -0.14347227, -55.467854, 2.8506012, 97.12569)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (35)" parent="BIOME/FORET_OUEST" unique_id=71772110 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.84769696, 0, 0.5304808, 0, 1, 0, -0.5304808, 0, 0.84769696, -52.74816, 2.8165665, 98.124825)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (36)" parent="BIOME/FORET_OUEST" unique_id=1746938865 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.6717337, 0, 0.74079275, 0, 1, 0, -0.74079275, 0, 0.6717337, -57.83488, 1.0732574, 83.193474)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (37)" parent="BIOME/FORET_OUEST" unique_id=681379985 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.8976867, 0, 0.4406343, 0, 1, 0, -0.4406343, 0, 0.8976867, -59.543743, 2.1556015, 90.31026)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (38)" parent="BIOME/FORET_OUEST" unique_id=96743531 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.66142434, 0, 0.7500119, 0, 1, 0, -0.7500119, 0, -0.66142434, -66.21377, 2.2481232, 77.59746)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (39)" parent="BIOME/FORET_OUEST" unique_id=1663786098 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.058547657, 0, 0.99828464, 0, 1, 0, -0.99828464, 0, -0.058547657, -66.14731, 2.3425217, 78.092606)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (40)" parent="BIOME/FORET_OUEST" unique_id=2042643300 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.9991898, 0, 0.04024706, 0, 1, 0, -0.04024706, 0, 0.9991898, -86.330345, 2.7309875, 71.11826)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (41)" parent="BIOME/FORET_OUEST" unique_id=2030772477 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.27665547, 0, 0.96096915, 0, 1, 0, -0.96096915, 0, -0.27665547, -67.85323, 2.1914368, 84.67523)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (42)" parent="BIOME/FORET_OUEST" unique_id=1290286295 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.030721912, 0, 0.999528, 0, 1, 0, -0.999528, 0, 0.030721912, -42.110992, 2.8287506, 100.59742)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (43)" parent="BIOME/FORET_OUEST" unique_id=95254012 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.99940675, 0, 0.034441255, 0, 1, 0, -0.034441255, 0, -0.99940675, -54.91671, 2.5189743, 92.19677)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (44)" parent="BIOME/FORET_OUEST" unique_id=1840422464 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.69822705, 0, 0.71587634, 0, 1, 0, -0.71587634, 0, -0.69822705, -44.811455, 2.848755, 98.20224)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (45)" parent="BIOME/FORET_OUEST" unique_id=1907268318 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.3125019, 0, 0.94991714, 0, 1, 0, -0.94991714, 0, -0.3125019, -79.08337, 2.6665726, 74.65482)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (46)" parent="BIOME/FORET_OUEST" unique_id=1283710159 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.91570705, 0, 0.40184662, 0, 1, 0, -0.40184662, 0, 0.91570705, -73.67085, 2.40876, 84.82731)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (47)" parent="BIOME/FORET_OUEST" unique_id=983877169 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.67618364, 0, 0.73673314, 0, 1, 0, -0.73673314, 0, -0.67618364, -81.89564, 2.0391235, 68.84476)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (48)" parent="BIOME/FORET_OUEST" unique_id=320189579 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.6897166, 0, 0.72407943, 0, 1, 0, -0.72407943, 0, -0.6897166, -48.100613, 0.88796234, 84.443855)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (49)" parent="BIOME/FORET_OUEST" unique_id=560327100 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.7010668, 0, 0.7130956, 0, 1, 0, -0.7130956, 0, 0.7010668, -42.17968, 1.400917, 91.80265)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (50)" parent="BIOME/FORET_OUEST" unique_id=1036615673 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.83448017, 0, 0.55103797, 0, 1, 0, -0.55103797, 0, -0.83448017, -48.209267, 0.98576355, 85.0955)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (51)" parent="BIOME/FORET_OUEST" unique_id=1812974411 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.9237084, 0, 0.3830965, 0, 1, 0, -0.3830965, 0, -0.9237084, -54.442543, 0.45449066, 74.10044)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (52)" parent="BIOME/FORET_OUEST" unique_id=1780965301 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.82366365, 0, 0.56707865, 0, 1, 0, -0.56707865, 0, 0.82366365, -58.636925, 0.66007996, 61.95665)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (53)" parent="BIOME/FORET_OUEST" unique_id=1807629370 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.9127093, 0, 0.40860954, 0, 1, 0, -0.40860954, 0, 0.9127093, -67.14279, 0.51597595, 66.720345)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (54)" parent="BIOME/FORET_OUEST" unique_id=92500638 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.8189699, 0, 0.5738365, 0, 1, 0, -0.5738365, 0, 0.8189699, -49.994556, 1.6892853, 87.99733)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (55)" parent="BIOME/FORET_OUEST" unique_id=820169497 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.5162715, 0, 0.856425, 0, 1, 0, -0.856425, 0, -0.5162715, -38.760437, 2.3764877, 107.57044)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (56)" parent="BIOME/FORET_OUEST" unique_id=467589573 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.8968593, 0, 0.442316, 0, 1, 0, -0.442316, 0, 0.8968593, -52.89061, 2.457756, 102.60951)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="SAPIN" parent="BIOME/FORET_OUEST" unique_id=1181012005 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.68916315, 0, 0.7246063, 0, 1, 0, -0.7246063, 0, -0.68916315, -52.53039, 0.6480408, 81.04656)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (1)" parent="BIOME/FORET_OUEST" unique_id=497951394 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.9858126, 0, 0.1678496, 0, 1, 0, -0.1678496, 0, -0.9858126, -54.62017, 0.56108856, 63.592293)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (2)" parent="BIOME/FORET_OUEST" unique_id=1789712420 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.6793818, 0, 0.733785, 0, 1, 0, -0.733785, 0, -0.6793818, -38.040825, 0.37822723, 79.95274)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (3)" parent="BIOME/FORET_OUEST" unique_id=1962196125 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.9915088, 0, 0.13003983, 0, 1, 0, -0.13003983, 0, -0.9915088, -39.82807, 0.19916534, 84.31804)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (4)" parent="BIOME/FORET_OUEST" unique_id=1310944592 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.9972219, 0, 0.07448858, 0, 1, 0, -0.07448858, 0, 0.9972219, -26.88174, 1.2612762, 97.74367)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (5)" parent="BIOME/FORET_OUEST" unique_id=2011214148 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.18008044, 0, 0.9836519, 0, 1, 0, -0.9836519, 0, -0.18008044, -43.351025, 0.78862, 87.79942)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (6)" parent="BIOME/FORET_OUEST" unique_id=779404690 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.729775, 0, 0.68368745, 0, 1, 0, -0.68368745, 0, 0.729775, -86.45995, 1.7888184, 65.60919)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (7)" parent="BIOME/FORET_OUEST" unique_id=1734669192 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.9858872, 0, 0.16741078, 0, 1, 0, -0.16741078, 0, -0.9858872, -64.58603, 0.5776825, 64.183846)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (8)" parent="BIOME/FORET_OUEST" unique_id=1194070430 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.9606463, 0, 0.27777466, 0, 1, 0, -0.27777466, 0, 0.9606463, -65.34557, 0.6419296, 61.1654)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (9)" parent="BIOME/FORET_OUEST" unique_id=1536046325 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.7257826, 0, 0.68792415, 0, 1, 0, -0.68792415, 0, 0.7257826, -54.350105, 0.45119476, 56.08303)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (10)" parent="BIOME/FORET_OUEST" unique_id=1120352505 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.84149516, 0, 0.54026467, 0, 1, 0, -0.54026467, 0, -0.84149516, -60.8936, 0.54216003, 70.2043)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (11)" parent="BIOME/FORET_OUEST" unique_id=878595179 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.9179799, 0, 0.39662692, 0, 1, 0, -0.39662692, 0, -0.9179799, -50.080032, 0.5882416, 68.50087)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (63)" parent="BIOME/FORET_OUEST" unique_id=725839188 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.8691966, 0, 0.49446666, 0, 1, 0, -0.49446666, 0, -0.8691966, -20.369164, 1.6525879, 93.65414)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (64)" parent="BIOME/FORET_OUEST" unique_id=1371022756 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.71056837, 0, 0.7036282, 0, 1, 0, -0.7036282, 0, 0.71056837, -34.907024, 1.6001282, 100.79937)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (65)" parent="BIOME/FORET_OUEST" unique_id=1681889467 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.9982261, 0, 0.059536755, 0, 1, 0, -0.059536755, 0, 0.9982261, -28.944403, 1.8830338, 94.646126)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="FORET_EST" type="Node3D" parent="BIOME" unique_id=495230161]
+
+[node name="PIN (57)" parent="BIOME/FORET_EST" unique_id=465160958 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.54392457, 0, 0.8391341, 0, 1, 0, -0.8391341, 0, -0.54392457, 76.2797, -4.612358, -78.08415)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (58)" parent="BIOME/FORET_EST" unique_id=1742599246 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.564313, 0, 0.825561, 0, 1, 0, -0.825561, 0, 0.564313, 75.97537, -5.277878, -89.65655)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (59)" parent="BIOME/FORET_EST" unique_id=1495332958 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.43704957, 0, 0.8994374, 0, 1, 0, -0.8994374, 0, -0.43704957, 57.809296, -3.377182, -75.63601)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (60)" parent="BIOME/FORET_EST" unique_id=1576198165 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.24036802, 0, 0.97068185, 0, 1, 0, -0.97068185, 0, -0.24036802, 65.69081, -4.636688, -87.7962)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (61)" parent="BIOME/FORET_EST" unique_id=393389105 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.061452348, 0, 0.99811006, 0, 1, 0, -0.99811006, 0, 0.061452348, 50.088364, -3.3085556, -80.59016)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (62)" parent="BIOME/FORET_EST" unique_id=666761847 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.24574235, 0, 0.9693352, 0, 1, 0, -0.9693352, 0, -0.24574235, 67.65089, -4.6071053, -95.60186)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (63)" parent="BIOME/FORET_EST" unique_id=1792862809 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.75157446, 0, 0.65964824, 0, 1, 0, -0.65964824, 0, -0.75157446, 76.43506, -4.6149826, -78.62088)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (64)" parent="BIOME/FORET_EST" unique_id=1010429240 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.9480484, 0, 0.31812617, 0, 1, 0, -0.31812617, 0, -0.9480484, 68.79969, -4.402565, -78.20782)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (65)" parent="BIOME/FORET_EST" unique_id=1758846908 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.95216596, 0, 0.30558136, 0, 1, 0, -0.30558136, 0, -0.95216596, 59.42147, -4.6066284, -87.37002)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (66)" parent="BIOME/FORET_EST" unique_id=1762218590 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.8691966, 0, 0.49446666, 0, 1, 0, -0.49446666, 0, -0.8691966, 94.48334, -5.2786865, -88.85707)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (67)" parent="BIOME/FORET_EST" unique_id=2052068705 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.71056837, 0, 0.7036282, 0, 1, 0, -0.7036282, 0, 0.71056837, 79.94548, -4.921585, -81.71184)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (68)" parent="BIOME/FORET_EST" unique_id=2121801797 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.9982261, 0, 0.059536755, 0, 1, 0, -0.059536755, 0, 0.9982261, 85.908104, -5.2782364, -87.86508)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (69)" parent="BIOME/FORET_EST" unique_id=1797507659 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.46255383, 0, 0.88659126, 0, 1, 0, -0.88659126, 0, -0.46255383, 93.18354, -5.158081, -75.58067)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (70)" parent="BIOME/FORET_EST" unique_id=361089958 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.1398378, 0, 0.9901744, 0, 1, 0, -0.9901744, 0, 0.1398378, 96.784195, -5.278084, -79.25963)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (71)" parent="BIOME/FORET_EST" unique_id=1626552161 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.092410184, 0, 0.99572104, 0, 1, 0, -0.99572104, 0, -0.092410184, 82.90199, -4.3394394, -69.8598)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (72)" parent="BIOME/FORET_EST" unique_id=1377038622 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.1088125, 0, 0.9940623, 0, 1, 0, -0.9940623, 0, -0.1088125, 97.3302, -5.2787323, -86.57021)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (73)" parent="BIOME/FORET_EST" unique_id=1086521330 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.7356788, 0, 0.6773306, 0, 1, 0, -0.6773306, 0, 0.7356788, 85.9558, -5.2779694, -82.86392)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (74)" parent="BIOME/FORET_EST" unique_id=290551069 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.3648369, 0, 0.93107146, 0, 1, 0, -0.93107146, 0, 0.3648369, 103.098145, -5.2788773, -90.26782)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (75)" parent="BIOME/FORET_EST" unique_id=1006988568 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.9281931, 0, 0.37209904, 0, 1, 0, -0.37209904, 0, 0.9281931, 100.3002, -5.2779694, -80.93218)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (76)" parent="BIOME/FORET_EST" unique_id=219271819 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.44857526, 0, 0.89374506, 0, 1, 0, -0.89374506, 0, 0.44857526, 98.57582, -4.6406097, -63.06316)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (77)" parent="BIOME/FORET_EST" unique_id=1732766680 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.88552016, 0, 0.46460107, 0, 1, 0, -0.46460107, 0, -0.88552016, 103.45715, -4.87146, -63.591824)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (78)" parent="BIOME/FORET_EST" unique_id=1234612360 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.053269476, 0, 0.99858016, 0, 1, 0, -0.99858016, 0, -0.053269476, 111.02621, -5.279133, -82.71591)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (79)" parent="BIOME/FORET_EST" unique_id=1013994441 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.14109291, 0, 0.9899964, 0, 1, 0, -0.9899964, 0, 0.14109291, 115.642944, -5.279133, -65.68206)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (80)" parent="BIOME/FORET_EST" unique_id=1341724248 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.41804865, 0, 0.9084246, 0, 1, 0, -0.9084246, 0, 0.41804865, 100.53566, -5.278656, -85.47368)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (81)" parent="BIOME/FORET_EST" unique_id=1113158244 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.45879322, 0, 0.88854307, 0, 1, 0, -0.88854307, 0, -0.45879322, 104.63911, -5.27861, -72.3209)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (82)" parent="BIOME/FORET_EST" unique_id=1502669464 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.86611086, 0, 0.499852, 0, 1, 0, -0.499852, 0, -0.86611086, 89.19174, -4.672333, -71.006805)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (83)" parent="BIOME/FORET_EST" unique_id=1100077642 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.7687541, 0, 0.6395444, 0, 1, 0, -0.6395444, 0, -0.7687541, 104.20049, -5.2785873, -72.231476)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (84)" parent="BIOME/FORET_EST" unique_id=1500982720 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.9366777, 0, 0.3501927, 0, 1, 0, -0.3501927, 0, 0.9366777, 110.01597, -5.041237, -60.323524)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (85)" parent="BIOME/FORET_EST" unique_id=1875417323 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.052774057, 0, 0.9986065, 0, 1, 0, -0.9986065, 0, 0.052774057, 102.65951, -5.278534, -76.464806)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (86)" parent="BIOME/FORET_EST" unique_id=1566668058 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.15546234, 0, 0.98784184, 0, 1, 0, -0.98784184, 0, 0.15546234, 107.073616, -5.203171, -65.55253)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (87)" parent="BIOME/FORET_EST" unique_id=526727523 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.741187, 0, 0.6712986, 0, 1, 0, -0.6712986, 0, 0.741187, 91.1699, -4.633415, -68.15381)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (88)" parent="BIOME/FORET_EST" unique_id=1647374037 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.62507254, 0, 0.7805667, 0, 1, 0, -0.7805667, 0, -0.62507254, 102.04699, -4.607155, -56.885105)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (89)" parent="BIOME/FORET_EST" unique_id=405184784 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.9589822, 0, 0.28346628, 0, 1, 0, -0.28346628, 0, 0.9589822, 90.81696, -4.5528564, -67.94098)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (90)" parent="BIOME/FORET_EST" unique_id=596576481 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.99753493, 0, 0.07017208, 0, 1, 0, -0.07017208, 0, 0.99753493, 98.2157, -4.625458, -62.550808)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (91)" parent="BIOME/FORET_EST" unique_id=2021774806 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.9967802, 0, 0.08018277, 0, 1, 0, -0.08018277, 0, 0.9967802, 93.6268, -3.8851395, -52.61348)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (92)" parent="BIOME/FORET_EST" unique_id=1776915744 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.068266585, 0, 0.99766713, 0, 1, 0, -0.99766713, 0, -0.068266585, 106.236015, -4.608917, -53.550217)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (93)" parent="BIOME/FORET_EST" unique_id=762733624 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.95205486, 0, 0.30592743, 0, 1, 0, -0.30592743, 0, 0.95205486, 97.47599, -4.920288, -67.33082)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (94)" parent="BIOME/FORET_EST" unique_id=1291327821 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.81218094, 0, 0.58340573, 0, 1, 0, -0.58340573, 0, -0.81218094, 88.56598, -5.199051, -78.50485)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (95)" parent="BIOME/FORET_EST" unique_id=270179712 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.60760826, 0, 0.7942369, 0, 1, 0, -0.7942369, 0, 0.60760826, 94.5887, -5.2510986, -75.785645)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (96)" parent="BIOME/FORET_EST" unique_id=459107873 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.751952, 0, 0.65921795, 0, 1, 0, -0.65921795, 0, -0.751952, 85.41207, -4.6473846, -73.022446)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (97)" parent="BIOME/FORET_EST" unique_id=1929610720 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.9028284, 0, 0.43000102, 0, 1, 0, -0.43000102, 0, -0.9028284, 78.40985, -4.540901, -72.801476)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (98)" parent="BIOME/FORET_EST" unique_id=1815792415 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.67916185, 0, 0.7339885, 0, 1, 0, -0.7339885, 0, 0.67916185, 87.54488, -3.7662354, -54.907173)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (99)" parent="BIOME/FORET_EST" unique_id=176508430 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.9940933, 0, 0.10852903, 0, 1, 0, -0.10852903, 0, 0.9940933, 91.912544, -4.6095276, -61.332664)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (100)" parent="BIOME/FORET_EST" unique_id=60820107 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.47091812, 0, 0.88217694, 0, 1, 0, -0.88217694, 0, 0.47091812, 94.95662, -3.4807358, -43.930428)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (101)" parent="BIOME/FORET_EST" unique_id=1049622339 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.68807065, 0, 0.7256437, 0, 1, 0, -0.7256437, 0, -0.68807065, 77.14944, -2.9570236, -50.68088)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (102)" parent="BIOME/FORET_EST" unique_id=2007223225 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.49542502, 0, 0.86865073, 0, 1, 0, -0.86865073, 0, -0.49542502, 89.735695, -5.2785645, -87.92436)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (103)" parent="BIOME/FORET_EST" unique_id=98550607 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.6618481, 0, 0.749638, 0, 1, 0, -0.749638, 0, 0.6618481, 101.15331, -5.278427, -75.580986)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (104)" parent="BIOME/FORET_EST" unique_id=944824758 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.47902495, 0, 0.8778013, 0, 1, 0, -0.8778013, 0, -0.47902495, 106.40092, -5.2787247, -83.2162)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (105)" parent="BIOME/FORET_EST" unique_id=1945556883 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.85814935, 0, 0.51340014, 0, 1, 0, -0.51340014, 0, 0.85814935, 65.11244, -4.6066513, -82.39147)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (106)" parent="BIOME/FORET_EST" unique_id=825836723 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.5450507, 0, 0.8384031, 0, 1, 0, -0.8384031, 0, -0.5450507, 74.17746, -4.869812, -84.63083)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (107)" parent="BIOME/FORET_EST" unique_id=1511969982 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.22634834, 0, 0.9740464, 0, 1, 0, -0.9740464, 0, -0.22634834, 70.76481, -5.2003174, -92.04954)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (108)" parent="BIOME/FORET_EST" unique_id=904272253 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.9842658, 0, 0.17669432, 0, 1, 0, -0.17669432, 0, 0.9842658, 72.065865, -4.447052, -75.49667)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (109)" parent="BIOME/FORET_EST" unique_id=1779917341 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.9836572, 0, 0.18005171, 0, 1, 0, -0.18005171, 0, -0.9836572, 68.91434, -3.0285187, -69.500465)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (110)" parent="BIOME/FORET_EST" unique_id=88806938 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.5442628, 0, 0.83891475, 0, 1, 0, -0.83891475, 0, 0.5442628, 59.866093, -3.0107803, -71.56266)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (111)" parent="BIOME/FORET_EST" unique_id=1503459338 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.32194906, 0, 0.946757, 0, 1, 0, -0.946757, 0, -0.32194906, 56.247997, -4.373749, -98.629234)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (112)" parent="BIOME/FORET_EST" unique_id=477887194 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.30946735, 0, 0.9509101, 0, 1, 0, -0.9509101, 0, -0.30946735, 53.407215, -3.8966446, -80.32169)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (113)" parent="BIOME/FORET_EST" unique_id=536837665 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.72644585, 0, 0.68722373, 0, 1, 0, -0.68722373, 0, 0.72644585, 51.665497, -3.9192505, -85.89386)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (114)" parent="BIOME/FORET_EST" unique_id=546021593 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.112609565, 0, 0.99363935, 0, 1, 0, -0.99363935, 0, -0.112609565, 110.76962, -4.606575, -43.46852)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (115)" parent="BIOME/FORET_EST" unique_id=2003200438 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.75624746, 0, 0.6542857, 0, 1, 0, -0.6542857, 0, 0.75624746, 100.57678, -4.06353, -48.22417)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (116)" parent="BIOME/FORET_EST" unique_id=1991940627 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.8681479, 0, 0.49630556, 0, 1, 0, -0.49630556, 0, -0.8681479, 100.09067, -4.4238434, -52.786453)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (117)" parent="BIOME/FORET_EST" unique_id=929592406 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.5878408, 0, 0.8089767, 0, 1, 0, -0.8089767, 0, -0.5878408, 106.96859, -5.278755, -79.13689)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (118)" parent="BIOME/FORET_EST" unique_id=448265081 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.96537936, 0, 0.2608499, 0, 1, 0, -0.2608499, 0, 0.96537936, 106.43813, -5.2785645, -87.898544)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (119)" parent="BIOME/FORET_EST" unique_id=1514094766 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.6349136, 0, 0.7725831, 0, 1, 0, -0.7725831, 0, 0.6349136, 111.69569, -5.2783546, -89.600525)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (120)" parent="BIOME/FORET_EST" unique_id=428299515 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.3164854, 0, 0.94859743, 0, 1, 0, -0.94859743, 0, -0.3164854, 67.81991, -4.6138535, -84.14796)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (121)" parent="BIOME/FORET_EST" unique_id=1730067593 instance=ExtResource("4_24kqk")]
+transform = Transform3D(0.27463883, 0, 0.9615475, 0, 1, 0, -0.9615475, 0, 0.27463883, 81.43448, -5.2795486, -91.50619)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="PIN (122)" parent="BIOME/FORET_EST" unique_id=1371372970 instance=ExtResource("4_24kqk")]
+transform = Transform3D(-0.7514156, 0, 0.6598292, 0, 1, 0, -0.6598292, 0, -0.7514156, 67.91324, -3.9597473, -75.79817)
+metadata/asset_placer_res_id = "uid://dfn04k3h5qk3s"
+
+[node name="SAPIN (28)" parent="BIOME/FORET_EST" unique_id=48673830 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.26281944, 0, 0.96484506, 0, 1, 0, -0.96484506, 0, -0.26281944, 41.85298, -2.2818146, -73.70827)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (29)" parent="BIOME/FORET_EST" unique_id=689778758 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.61035436, 0, 0.79212856, 0, 1, 0, -0.79212856, 0, 0.61035436, 39.345657, -2.57341, -86.72437)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (30)" parent="BIOME/FORET_EST" unique_id=1601707485 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.99789864, 0, 0.064794764, 0, 1, 0, -0.064794764, 0, 0.99789864, 50.137882, -2.9575882, -74.29302)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (31)" parent="BIOME/FORET_EST" unique_id=641129279 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.14347227, 0, 0.98965436, 0, 1, 0, -0.98965436, 0, -0.14347227, 51.603622, -3.00457, -76.29001)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (32)" parent="BIOME/FORET_EST" unique_id=1157876475 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.84769696, 0, 0.5304808, 0, 1, 0, -0.5304808, 0, 0.84769696, 54.32332, -3.0494614, -75.29087)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (33)" parent="BIOME/FORET_EST" unique_id=40509067 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.6717337, 0, 0.74079275, 0, 1, 0, -0.74079275, 0, 0.6717337, 68.81366, -2.9591446, -59.484486)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (34)" parent="BIOME/FORET_EST" unique_id=12711696 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.8976867, 0, 0.4406343, 0, 1, 0, -0.4406343, 0, 0.8976867, 67.10479, -2.9579315, -52.367706)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (35)" parent="BIOME/FORET_EST" unique_id=1762296098 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.66142434, 0, 0.7500119, 0, 1, 0, -0.7500119, 0, -0.66142434, 60.434772, -2.95961, -65.080505)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (36)" parent="BIOME/FORET_EST" unique_id=1028875584 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.058547657, 0, 0.99828464, 0, 1, 0, -0.99828464, 0, -0.058547657, 89.71502, -2.883667, -46.013775)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (37)" parent="BIOME/FORET_EST" unique_id=1614950259 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.9991898, 0, 0.04024706, 0, 1, 0, -0.04024706, 0, 0.9991898, 69.53198, -2.9579086, -52.98812)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (38)" parent="BIOME/FORET_EST" unique_id=572809105 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.27665547, 0, 0.96096915, 0, 1, 0, -0.96096915, 0, -0.27665547, 88.009094, -1.7808075, -39.43115)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (39)" parent="BIOME/FORET_EST" unique_id=1438130289 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.030721912, 0, 0.999528, 0, 1, 0, -0.999528, 0, 0.030721912, 85.1915, -3.3212814, -56.30637)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (40)" parent="BIOME/FORET_EST" unique_id=106102633 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.99940675, 0, 0.034441255, 0, 1, 0, -0.034441255, 0, -0.99940675, 72.38578, -2.9603424, -64.707016)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (41)" parent="BIOME/FORET_EST" unique_id=1643910021 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.69822705, 0, 0.71587634, 0, 1, 0, -0.71587634, 0, -0.69822705, 82.491035, -3.037735, -58.70154)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (42)" parent="BIOME/FORET_EST" unique_id=842379649 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.3125019, 0, 0.94991714, 0, 1, 0, -0.94991714, 0, -0.3125019, 102.23283, -4.0557632, -37.142227)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (43)" parent="BIOME/FORET_EST" unique_id=891906264 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.91570705, 0, 0.40184662, 0, 1, 0, -0.40184662, 0, 0.91570705, 107.64534, -3.861412, -26.969744)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (44)" parent="BIOME/FORET_EST" unique_id=703785328 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.67618364, 0, 0.73673314, 0, 1, 0, -0.73673314, 0, -0.67618364, 99.420555, -4.3500366, -42.952297)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (27)" parent="BIOME/FORET_EST" unique_id=1560834976 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.9991671, 0, 0.040805493, 0, 1, 0, -0.040805493, 0, 0.9991671, 21.416172, 0.13346863, -87.73927)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="MONTAGNE" type="Node3D" parent="BIOME" unique_id=402208445]
+
+[node name="SAPIN (12)" parent="BIOME/MONTAGNE" unique_id=81033169 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.99816304, 0, 0.060585003, 0, 1, 0, -0.060585003, 0, -0.99816304, -83.36678, 14.052826, -20.456062)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (13)" parent="BIOME/MONTAGNE" unique_id=160454438 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.28873292, 0, 0.9574097, 0, 1, 0, -0.9574097, 0, -0.28873292, -69.82076, 11.564751, -19.097332)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (14)" parent="BIOME/MONTAGNE" unique_id=793908063 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.74355644, 0, 0.6686732, 0, 1, 0, -0.6686732, 0, 0.74355644, -66.08053, 5.6154556, -5.2597723)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (15)" parent="BIOME/MONTAGNE" unique_id=1046163802 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.91059124, 0, 0.41330805, 0, 1, 0, -0.41330805, 0, -0.91059124, -48.067303, 9.678673, -27.102386)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (16)" parent="BIOME/MONTAGNE" unique_id=390272595 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.46263474, 0, 0.886549, 0, 1, 0, -0.886549, 0, -0.46263474, -56.159836, 12.146515, -30.929062)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (17)" parent="BIOME/MONTAGNE" unique_id=20766181 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.99745166, 0, 0.071345374, 0, 1, 0, -0.071345374, 0, -0.99745166, -51.61498, 5.983696, -11.899559)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (18)" parent="BIOME/MONTAGNE" unique_id=2013221643 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.5105936, 0, 0.8598222, 0, 1, 0, -0.8598222, 0, -0.5105936, -4.758216, 7.4418564, -76.99182)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (19)" parent="BIOME/MONTAGNE" unique_id=2003041851 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.36219016, 0, 0.93210423, 0, 1, 0, -0.93210423, 0, 0.36219016, 12.221833, 2.1378937, -80.12429)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (20)" parent="BIOME/MONTAGNE" unique_id=172426032 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.8631745, 0, 0.5049057, 0, 1, 0, -0.5049057, 0, -0.8631745, -3.8955402, 7.138916, -77.86948)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (21)" parent="BIOME/MONTAGNE" unique_id=239875732 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.87544155, 0, 0.483324, 0, 1, 0, -0.483324, 0, 0.87544155, -14.451304, 9.890999, -71.66108)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (22)" parent="BIOME/MONTAGNE" unique_id=1263311594 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.34460062, 0, 0.93874943, 0, 1, 0, -0.93874943, 0, 0.34460062, 1.771677, 5.7859344, -86.537544)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (23)" parent="BIOME/MONTAGNE" unique_id=370440314 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.40070415, 0, 0.9162075, 0, 1, 0, -0.9162075, 0, -0.40070415, -1.2882206, 6.2200623, -90.64528)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (24)" parent="BIOME/MONTAGNE" unique_id=1248926823 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.25252149, 0, 0.9675913, 0, 1, 0, -0.9675913, 0, -0.25252149, 10.345405, 2.5830078, -70.48592)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (25)" parent="BIOME/MONTAGNE" unique_id=1087211030 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.99026924, 0, 0.13916491, 0, 1, 0, -0.13916491, 0, 0.99026924, -4.399273, 7.047989, -72.38052)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (26)" parent="BIOME/MONTAGNE" unique_id=157436868 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.94346714, 0, 0.3314662, 0, 1, 0, -0.3314662, 0, -0.94346714, 9.319719, 3.0056, -81.16675)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="PRAIRIE" type="Node3D" parent="BIOME" unique_id=1760627541]
+
+[node name="SAPIN (45)" parent="BIOME/PRAIRIE" unique_id=1519183523 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.6897166, 0, 0.72407943, 0, 1, 0, -0.72407943, 0, -0.6897166, 98.969536, -15.26384, 95.65548)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (46)" parent="BIOME/PRAIRIE" unique_id=329772052 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.7010668, 0, 0.7130956, 0, 1, 0, -0.7130956, 0, 0.7010668, 104.890465, -15.3381195, 103.014275)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (47)" parent="BIOME/PRAIRIE" unique_id=1665165988 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.83448017, 0, 0.55103797, 0, 1, 0, -0.55103797, 0, -0.83448017, 98.86088, -15.270546, 96.30712)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (48)" parent="BIOME/PRAIRIE" unique_id=2055460628 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.9237084, 0, 0.3830965, 0, 1, 0, -0.3830965, 0, -0.9237084, 52.122112, -12.105171, 101.975815)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (49)" parent="BIOME/PRAIRIE" unique_id=1630402050 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.82366365, 0, 0.56707865, 0, 1, 0, -0.56707865, 0, 0.82366365, 47.927734, -11.779671, 89.83202)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (50)" parent="BIOME/PRAIRIE" unique_id=1049925521 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.9127093, 0, 0.40860954, 0, 1, 0, -0.40860954, 0, 0.9127093, 39.421867, -10.428055, 94.59572)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (51)" parent="BIOME/PRAIRIE" unique_id=164327385 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.8189699, 0, 0.5738365, 0, 1, 0, -0.5738365, 0, 0.8189699, 93.22665, -10.619392, 29.933231)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (52)" parent="BIOME/PRAIRIE" unique_id=333321435 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.5162715, 0, 0.856425, 0, 1, 0, -0.856425, 0, -0.5162715, 104.46077, -12.107124, 49.506348)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (53)" parent="BIOME/PRAIRIE" unique_id=66436349 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.8968593, 0, 0.442316, 0, 1, 0, -0.442316, 0, 0.8968593, 90.3306, -12.474495, 44.545418)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (54)" parent="BIOME/PRAIRIE" unique_id=685609553 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.54392457, 0, 0.8391341, 0, 1, 0, -0.8391341, 0, -0.54392457, 106.34436, -8.346466, 33.052242)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (55)" parent="BIOME/PRAIRIE" unique_id=1204582888 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.564313, 0, 0.825561, 0, 1, 0, -0.825561, 0, 0.564313, 106.04003, -7.232712, 21.479843)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (56)" parent="BIOME/PRAIRIE" unique_id=530229091 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.43704957, 0, 0.8994374, 0, 1, 0, -0.8994374, 0, -0.43704957, 87.873955, -11.904686, 35.50038)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (57)" parent="BIOME/PRAIRIE" unique_id=295843685 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.24036802, 0, 0.97068185, 0, 1, 0, -0.97068185, 0, -0.24036802, 105.24721, -6.988533, 2.37935)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (58)" parent="BIOME/PRAIRIE" unique_id=686604045 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.061452348, 0, 0.99811006, 0, 1, 0, -0.99811006, 0, 0.061452348, 89.64476, -8.40963, 9.585398)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (59)" parent="BIOME/PRAIRIE" unique_id=279426276 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.24574235, 0, 0.9693352, 0, 1, 0, -0.9693352, 0, -0.24574235, 107.207275, -6.016815, -5.426306)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (60)" parent="BIOME/PRAIRIE" unique_id=1923079729 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.75157446, 0, 0.65964824, 0, 1, 0, -0.65964824, 0, -0.75157446, 109.34815, -10.509819, 40.769257)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (61)" parent="BIOME/PRAIRIE" unique_id=547107734 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.9480484, 0, 0.31812617, 0, 1, 0, -0.31812617, 0, -0.9480484, 101.71278, -11.420258, 41.18232)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (62)" parent="BIOME/PRAIRIE" unique_id=967868054 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.95216596, 0, 0.30558136, 0, 1, 0, -0.30558136, 0, -0.95216596, 92.334564, -11.089363, 32.02012)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (66)" parent="BIOME/PRAIRIE" unique_id=2005642198 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.46255383, 0, 0.88659126, 0, 1, 0, -0.88659126, 0, -0.46255383, 104.46703, -15.254631, 98.68189)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (67)" parent="BIOME/PRAIRIE" unique_id=662419914 instance=ExtResource("5_bmffd")]
+transform = Transform3D(0.1398378, 0, 0.9901744, 0, 1, 0, -0.9901744, 0, 0.1398378, 108.06769, -15.337143, 95.00294)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="SAPIN (68)" parent="BIOME/PRAIRIE" unique_id=1189227792 instance=ExtResource("5_bmffd")]
+transform = Transform3D(-0.092410184, 0, 0.99572104, 0, 1, 0, -0.99572104, 0, -0.092410184, 94.185486, -15.331856, 104.40276)
+metadata/asset_placer_res_id = "uid://dyj3x8eqc2drt"
+
+[node name="ARBRE" parent="BIOME/PRAIRIE" unique_id=327989009 instance=ExtResource("6_3l56t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.25041, -1.1838837, 24.24263)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ARBRE (1)" parent="BIOME/PRAIRIE" unique_id=227778465 instance=ExtResource("6_3l56t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.384964, -7.0650406, 70.82668)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ARBRE (2)" parent="BIOME/PRAIRIE" unique_id=62456890 instance=ExtResource("6_3l56t")]
+transform = Transform3D(-0.058547657, 0, 0.99828464, 0, 1, 0, -0.99828464, 0, -0.058547657, 60.717197, -10.954666, 55.993824)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ARBRE (3)" parent="BIOME/PRAIRIE" unique_id=1324019877 instance=ExtResource("6_3l56t")]
+transform = Transform3D(0.030721912, 0, 0.999528, 0, 1, 0, -0.999528, 0, 0.030721912, 54.859013, -9.290634, 19.583569)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ARBRE (4)" parent="BIOME/PRAIRIE" unique_id=559171129 instance=ExtResource("6_3l56t")]
+transform = Transform3D(-0.3125019, 0, 0.94991714, 0, 1, 0, -0.94991714, 0, -0.3125019, 7.588908, -1.3642426, -17.478231)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ARBRE (5)" parent="BIOME/PRAIRIE" unique_id=1465373975 instance=ExtResource("6_3l56t")]
+transform = Transform3D(-0.6897166, 0, 0.72407943, 0, 1, 0, -0.72407943, 0, -0.6897166, 16.399128, -4.1033707, -15.3043)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ARBRE (6)" parent="BIOME/PRAIRIE" unique_id=171538306 instance=ExtResource("6_3l56t")]
+transform = Transform3D(-0.9237084, 0, 0.3830965, 0, 1, 0, -0.3830965, 0, -0.9237084, 17.29331, -3.5052261, -20.299047)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ARBRE (7)" parent="BIOME/PRAIRIE" unique_id=1942395209 instance=ExtResource("6_3l56t")]
+transform = Transform3D(0.8189699, 0, 0.5738365, 0, 1, 0, -0.5738365, 0, 0.8189699, 30.152802, -1.3924408, -50.74854)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ARBRE (8)" parent="BIOME/PRAIRIE" unique_id=1978727850 instance=ExtResource("6_3l56t")]
+transform = Transform3D(-0.54392457, 0, 0.8391341, 0, 1, 0, -0.8391341, 0, -0.54392457, -44.367733, 1.459755, 22.836088)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ARBRE (9)" parent="BIOME/PRAIRIE" unique_id=271841973 instance=ExtResource("6_3l56t")]
+transform = Transform3D(-0.24036802, 0, 0.97068185, 0, 1, 0, -0.97068185, 0, -0.24036802, -6.8788614, -3.782631, 74.86846)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ARBRE (10)" parent="BIOME/PRAIRIE" unique_id=1039875502 instance=ExtResource("6_3l56t")]
+transform = Transform3D(-0.75157446, 0, 0.65964824, 0, 1, 0, -0.65964824, 0, -0.75157446, 1.8436942, -4.9063187, 74.11503)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ARBRE (11)" parent="BIOME/PRAIRIE" unique_id=1080214563 instance=ExtResource("6_3l56t")]
+transform = Transform3D(-0.8691966, 0, 0.49446666, 0, 1, 0, -0.49446666, 0, -0.8691966, 88.526215, -14.98526, 77.96007)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ARBRE (12)" parent="BIOME/PRAIRIE" unique_id=1105377709 instance=ExtResource("6_3l56t")]
+transform = Transform3D(-0.46255383, 0, 0.88659126, 0, 1, 0, -0.88659126, 0, -0.46255383, 80.145256, -15.18573, 86.721436)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ARBRE (13)" parent="BIOME/PRAIRIE" unique_id=1368422812 instance=ExtResource("6_3l56t")]
+transform = Transform3D(0.9281931, 0, 0.37209904, 0, 1, 0, -0.37209904, 0, 0.9281931, 72.59181, -7.018898, -1.9481144)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ARBRE (14)" parent="BIOME/PRAIRIE" unique_id=1818621173 instance=ExtResource("6_3l56t")]
+transform = Transform3D(0.44857526, 0, 0.89374506, 0, 1, 0, -0.89374506, 0, 0.44857526, 71.337715, -7.052765, 11.047538)
+metadata/asset_placer_res_id = "uid://cjifo1c7k5i5x"
+
+[node name="ROCHERS" type="Node3D" parent="." unique_id=1730800485]
+
+[node name="ROCHE-L" parent="ROCHERS" unique_id=1981422751 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(-0.68916315, 0, 0.7246063, 0, 1, 0, -0.7246063, 0, -0.68916315, -30.255032, 8.35659, -36.72726)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-L (1)" parent="ROCHERS" unique_id=2073499502 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(-0.9915088, 0, 0.13003983, 0, 1, 0, -0.13003983, 0, -0.9915088, -17.770603, 11.480469, -88.38495)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-L (2)" parent="ROCHERS" unique_id=1154453988 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(0.729775, 0, 0.68368745, 0, 1, 0, -0.68368745, 0, 0.729775, -58.99156, 19.52401, -50.79134)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-L (3)" parent="ROCHERS" unique_id=1481526193 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(0.7257826, 0, 0.68792415, 0, 1, 0, -0.68792415, 0, 0.7257826, -81.689, 17.11174, -35.882492)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-L (4)" parent="ROCHERS" unique_id=2043546244 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(0.6427887, 0, 0.76604563, 0, 1, 0, -0.76604563, 0, 0.6427887, -51.94727, 4.9632416, -8.047337)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-L (5)" parent="ROCHERS" unique_id=1954010997 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(-0.5000008, 0, -0.8660276, 0, 1, 0, 0.8660276, 0, -0.5000008, -14.528846, 0.7502136, 37.02835)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-L (6)" parent="ROCHERS" unique_id=803581208 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(-0.34202057, 0, -0.9396949, 0, 1, 0, 0.9396949, 0, -0.34202057, 65.67142, -6.1175385, 18.23159)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-L (7)" parent="ROCHERS" unique_id=1148809908 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(0.5000009, 0, 0.86602867, 0, 1, 0, -0.86602867, 0, 0.5000009, 95.75243, -13.412903, 70.63404)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-L (8)" parent="ROCHERS" unique_id=1407412538 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(-8.121133e-07, 0, 1.0000035, 0, 1, 0, -1.0000035, 0, -8.121133e-07, 46.65334, -6.758423, 56.15455)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-L (9)" parent="ROCHERS" unique_id=300760290 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(-8.121133e-07, 0, 1.0000035, 0, 1, 0, -1.0000035, 0, -8.121133e-07, -35.9337, 1.249176, 95.02344)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-L (10)" parent="ROCHERS" unique_id=672525279 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(0.98481137, 0, 0.17364985, 0, 1, 0, -0.17364985, 0, 0.98481137, -75.585556, 0.7814026, 64.70666)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-L (11)" parent="ROCHERS" unique_id=2020530799 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(0.8660296, 0, -0.50000113, 0, 1, 0, 0.50000113, 0, 0.8660296, 26.354206, -1.0077057, -77.29942)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-M" parent="ROCHERS" unique_id=53079553 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.43038, -6.859474, 19.049461)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (1)" parent="ROCHERS" unique_id=1333546880 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.65317, -5.8115845, 9.055038)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (2)" parent="ROCHERS" unique_id=726116615 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.259594, -9.8161545, 65.95654)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (3)" parent="ROCHERS" unique_id=1850503354 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.944714, -10.413002, 87.87107)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (4)" parent="ROCHERS" unique_id=860377537 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.381725, -0.96208954, 43.143776)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (5)" parent="ROCHERS" unique_id=1923277880 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.828246, 0.38837433, 37.71596)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (6)" parent="ROCHERS" unique_id=274650999 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.04452, 0.44396973, 78.340485)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (7)" parent="ROCHERS" unique_id=1088482695 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.729641, -4.7256317, -15.493195)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (8)" parent="ROCHERS" unique_id=757755919 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.937572, -1.2813416, -43.74643)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (9)" parent="ROCHERS" unique_id=724872657 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.509995, 52.54329, -91.40482)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (10)" parent="ROCHERS" unique_id=1156522457 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.37195, 18.885506, -66.82518)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (11)" parent="ROCHERS" unique_id=1279377621 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.63637, 18.233719, -63.342808)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (12)" parent="ROCHERS" unique_id=989855220 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.82766, 48.29442, -76.67215)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (13)" parent="ROCHERS" unique_id=1888284462 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.651024, 28.5131, -89.375015)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (14)" parent="ROCHERS" unique_id=273483119 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.02562, 19.375992, -43.81681)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (15)" parent="ROCHERS" unique_id=442454122 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.4352, 35.37149, -70.43029)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (16)" parent="ROCHERS" unique_id=385273751 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.27811, 30.757774, -71.27415)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-S" parent="ROCHERS" unique_id=207257215 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.43917343, 0.35064363, -0.6854591, -0.57598245, 0.67328763, -0.024614483, 0.5109295, 0.4576144, 0.5614431, -70.32199, 40.50334, -75.19239)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (1)" parent="ROCHERS" unique_id=962515389 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.46051425, 0.20240286, -0.7298206, -0.3277902, 0.8232678, 0.02148433, 0.682758, 0.25872985, 0.50257206, -62.270493, 12.87859, -29.774826)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (2)" parent="ROCHERS" unique_id=1109797631 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.45972472, 0.20015086, -0.7309385, -0.40846106, 0.7855511, -0.041796792, 0.6383502, 0.35850674, 0.49966004, -69.13185, 18.04084, -36.078472)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (3)" parent="ROCHERS" unique_id=752278138 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.45727038, 0.44147092, -0.61780703, -0.44975588, 0.7385326, 0.19485152, 0.6118019, 0.21295774, 0.6050005, -48.543327, 17.50766, -52.5037)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (4)" parent="ROCHERS" unique_id=176517935 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.45418555, 0.104350835, -0.75399256, -0.48279768, 0.71829295, -0.1914147, 0.58847266, 0.5087673, 0.42489293, -69.32799, 23.299381, -57.06464)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (5)" parent="ROCHERS" unique_id=891490717 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.38014904, 0.69142395, -0.40385392, -0.735722, 0.47805336, 0.12592058, 0.31603456, 0.2812048, 0.77892506, -61.150475, 34.663857, -82.44759)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (6)" parent="ROCHERS" unique_id=376882744 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.45042226, 0.041452467, -0.76228595, -0.51290774, 0.6719875, -0.2665266, 0.5654411, 0.576535, 0.36546138, -78.21812, 37.81381, -69.80819)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (7)" parent="ROCHERS" unique_id=1030473069 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.44878736, 0.048749648, -0.7628183, -0.5240152, 0.66362065, -0.2658826, 0.5564856, 0.5855844, 0.36481914, -79.90413, 39.853497, -71.61268)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (8)" parent="ROCHERS" unique_id=23361922 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.4590911, 0.08253943, -0.7537247, -0.42185122, 0.75995976, -0.17372587, 0.63004375, 0.44869417, 0.43289334, -74.59054, 17.140942, -34.15807)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (9)" parent="ROCHERS" unique_id=243886952 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.45948318, 0.19193695, -0.7332897, -0.2955429, 0.8349963, 0.03336968, 0.6980027, 0.22719902, 0.49684104, -73.541855, 21.704037, -50.676525)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (10)" parent="ROCHERS" unique_id=508522085 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.45517743, 0.18684784, -0.73727864, -0.22951984, 0.85291, 0.07445237, 0.7251293, 0.15267752, 0.48636958, -62.391766, 16.023373, -40.200783)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (11)" parent="ROCHERS" unique_id=588516827 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.4458526, 0.15193102, -0.7508733, -0.5419239, 0.676622, -0.18487582, 0.5414906, 0.55206674, 0.43323028, -78.16499, 27.92746, -58.90403)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (12)" parent="ROCHERS" unique_id=1764443398 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.4578769, 0.313159, -0.69134545, -0.44156283, 0.7666136, 0.054806925, 0.6172918, 0.31609026, 0.5520109, -62.549057, 14.443832, -33.315563)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (13)" parent="ROCHERS" unique_id=187200620 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.45102182, 0.2669167, -0.7148519, -0.5085837, 0.72420514, -0.0504719, 0.5688585, 0.4358445, 0.52164906, -75.458206, 44.05118, -79.44785)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (14)" parent="ROCHERS" unique_id=842523260 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.4580195, 0.16309679, -0.74114496, -0.43950793, 0.76272094, -0.10376629, 0.618651, 0.4211107, 0.4749894, -50.998955, 24.789242, -79.91549)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (15)" parent="ROCHERS" unique_id=8485992 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.39757815, 0.6411597, -0.46532154, -0.70252913, 0.52596456, 0.12446686, 0.3661455, 0.31297535, 0.7440848, -65.2863, 32.052895, -68.91874)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (16)" parent="ROCHERS" unique_id=1795546081 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.4095804, 0.13049208, -0.7751736, -0.6747557, 0.5067812, -0.27121124, 0.40327007, 0.7154179, 0.33350968, -86.201996, 42.655106, -71.484726)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (18)" parent="ROCHERS" unique_id=983367320 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.37557504, 0.7076269, -0.37932307, -0.74331915, 0.46474773, 0.13101192, 0.30347663, 0.26258716, 0.7903342, -60.618843, 33.405457, -81.59323)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (19)" parent="ROCHERS" unique_id=2052120689 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.4603834, 0.16675793, -0.73886216, -0.38887495, 0.79402304, -0.06309963, 0.6500012, 0.35692742, 0.48557127, -70.38131, 20.64732, -49.912342)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (20)" parent="ROCHERS" unique_id=832276660 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.41841486, 0.3784029, -0.6836802, -0.6508473, 0.5979437, -0.06737155, 0.4324405, 0.53380954, 0.5601078, -67.98224, 39.015324, -75.1104)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (21)" parent="ROCHERS" unique_id=2114919135 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.87988865, -0.027818589, 0.10344252, 0.051223278, 0.8610317, -0.20415299, -0.094076574, 0.20863466, 0.856329, -43.382614, 13.362396, -45.63115)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (22)" parent="ROCHERS" unique_id=1103922302 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.0028356304, -0.053891905, 0.88474065, -0.08568013, 0.8805851, 0.053913392, -0.88222975, -0.08569369, -0.0023922478, -43.01423, 10.413055, -35.124393)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (23)" parent="ROCHERS" unique_id=1920610109 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.46206886, 0.29524058, 0.69642204, -0.26646635, 0.8272986, -0.17392662, -0.7079311, -0.11869224, 0.5200232, -3.7999325, 4.656189, -53.27111)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (24)" parent="ROCHERS" unique_id=371299755 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.8853273, -0.023037322, -0.036648486, 0.02390761, 0.88582003, 0.020714026, 0.03608678, -0.0216778, 0.8853847, -9.384387, 6.28994, -48.619736)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (25)" parent="ROCHERS" unique_id=565953234 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.09418708, 0.15466799, 0.86768943, 0.07304712, 0.8682575, -0.16269848, -0.87833446, 0.08879475, 0.07951468, -24.898113, 7.8894196, -41.055332)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (26)" parent="ROCHERS" unique_id=266324682 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.39142787, -0.0155661, 0.79512274, 0.26815835, 0.8368986, -0.115626656, -0.74870133, 0.29160962, 0.3742841, -27.709833, 6.641739, -31.513323)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (27)" parent="ROCHERS" unique_id=1417980345 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.7664301, 0.31522813, -0.3144748, -0.3236924, 0.82431936, 0.03739903, 0.30575538, 0.08250296, 0.8278799, -18.833626, 6.2088394, -36.60315)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (28)" parent="ROCHERS" unique_id=156450707 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.23162247, 0.25949824, 0.81528527, 0.0355787, 0.8409802, -0.2777846, -0.8548471, 0.10531313, 0.2093417, -20.378593, 10.505844, -63.95309)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (29)" parent="ROCHERS" unique_id=858712566 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.59184176, 0.34133795, 0.5647035, 0.12602456, 0.6861367, -0.5468199, -0.6477032, 0.44540182, 0.4096048, -46.210976, 12.698372, -41.59066)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (30)" parent="ROCHERS" unique_id=920736534 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(-0.44686672, 0.10007522, 0.75892913, 0.17605282, 0.8686569, -0.010882289, -0.7449791, 0.14525147, -0.4578061, -7.3669415, 7.189537, -65.835236)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (31)" parent="ROCHERS" unique_id=457772544 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(-0.4762496, 0.22533798, 0.7128026, 0.23616154, 0.84722817, -0.11004566, -0.7092901, 0.13078675, -0.51524836, -22.047207, 7.9416656, -44.675274)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (32)" parent="ROCHERS" unique_id=795595587 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.793277, 0.17612438, 0.35407633, -0.12500586, 0.86460906, -0.15000851, -0.37518448, 0.08431632, 0.7986273, -9.028977, 7.7698593, -69.73092)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (33)" parent="ROCHERS" unique_id=1084078665 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.83552265, 0.23291789, 0.1825633, -0.21118802, 0.85232806, -0.12088986, -0.20731544, 0.0704559, 0.8589148, -7.977103, 5.8530197, -55.748253)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (34)" parent="ROCHERS" unique_id=277385625 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.8274483, 0.23880045, 0.20971929, -0.20265906, 0.8470095, -0.16486977, -0.24482055, 0.10595816, 0.84528935, -7.2625694, 5.8170395, -57.393505)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (35)" parent="ROCHERS" unique_id=1786354841 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.494945, 0.022783171, 0.73497534, 0.21792936, 0.84161085, -0.17284608, -0.7022924, 0.27721825, 0.4643424, -6.416665, 6.1503296, -47.072605)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (36)" parent="ROCHERS" unique_id=201330864 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(-0.54615796, 0.25277457, 0.65076476, 0.347393, 0.815088, -0.025050607, -0.60556406, 0.23961331, -0.6012953, -8.457614, 7.9386215, -71.12018)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (37)" parent="ROCHERS" unique_id=1699855771 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.74419796, 0.25265405, 0.4098945, -0.20248517, 0.84880894, -0.15556665, -0.4368607, 0.036975827, 0.77036595, -15.594865, 4.0768433, -27.465527)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (38)" parent="ROCHERS" unique_id=232018151 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.18783757, 0.18836112, 0.8455267, 0.16287309, 0.84206635, -0.22377324, -0.8508041, 0.20278619, 0.14383455, -39.060455, 11.223724, -40.09665)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (39)" parent="ROCHERS" unique_id=1631834356 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.7985639, 0.2757998, -0.2681574, -0.29697496, 0.8347552, -0.025836103, 0.24449901, 0.11311997, 0.84445393, -28.398817, 13.610657, -68.706245)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (40)" parent="ROCHERS" unique_id=140986452 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.75345796, 0.26803434, 0.38227874, -0.16337074, 0.83123904, -0.26082447, -0.43736646, 0.1512516, 0.755984, -25.078384, 11.306358, -59.58676)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (41)" parent="ROCHERS" unique_id=491272989 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.8556429, 0.22986934, -0.02671439, -0.23114794, 0.84400994, -0.1410523, -0.011142324, 0.14312674, 0.8746821, -42.68009, 16.980957, -63.14155)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (42)" parent="ROCHERS" unique_id=1727258194 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(-0.6686434, 0.038056895, 0.7426087, 0.21768937, 0.96495223, 0.14655559, -0.7110045, 0.25965145, -0.65349346, -72.07446, 3.392952, 3.8837833)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (43)" parent="ROCHERS" unique_id=269808376 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.96424496, 0.13339907, 0.22898997, -0.1028675, 0.98472315, -0.14049393, -0.2442335, 0.11191493, 0.96323675, -42.376965, 2.4824371, -2.072359)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (44)" parent="ROCHERS" unique_id=667363063 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(-0.5846317, 0.39400405, 0.7092014, 0.5258301, 0.8497135, -0.038597792, -0.6178257, 0.35035396, -0.70394856, -61.694355, 14.3535, -34.04344)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (45)" parent="ROCHERS" unique_id=1150359777 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.22997415, 0.39027408, 0.89151466, 0.40677312, 0.7936616, -0.45236817, -0.88410836, 0.4666771, 0.023768649, -65.61132, 15.730644, -33.330235)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (46)" parent="ROCHERS" unique_id=2041327178 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.7122342, 0.14493978, 0.6868151, 0.095236935, 0.94944924, -0.29912558, -0.6954512, 0.27845764, 0.6624266, -54.360466, 10.474167, -26.207916)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (47)" parent="ROCHERS" unique_id=1168010397 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(-0.5608051, 0.030840129, 0.8273733, 0.46394056, 0.8393865, 0.2831775, -0.6857528, 0.54265946, -0.48504025, -75.366425, 10.919266, -15.071566)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (48)" parent="ROCHERS" unique_id=1058979832 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.9040063, 0.27999374, 0.32307306, -0.23675844, 0.9571084, -0.1670001, -0.3559749, 0.07447886, 0.93152285, -68.53741, 11.080978, -17.672823)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (49)" parent="ROCHERS" unique_id=1308675901 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(-0.3554298, 0.052155245, 0.9332468, 0.29702845, 0.9529902, 0.059865557, -0.8862527, 0.29847884, -0.3542127, -75.77385, 6.554451, -6.276268)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (50)" parent="ROCHERS" unique_id=1907932255 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.24897274, 0.442723, 0.8613994, 0.06957138, 0.8789334, -0.47184312, -0.9660085, 0.17740484, 0.1880296, -67.30719, 10.777763, -22.1421)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (51)" parent="ROCHERS" unique_id=1762194010 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(-0.17771178, 0.065426625, 0.9819052, 0.47920966, 0.87724483, 0.028277725, -0.8595211, 0.47556373, -0.1872498, -73.08802, 12.812927, -27.180359)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (52)" parent="ROCHERS" unique_id=1783362678 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(-0.06885064, 0.13737074, 0.988124, 0.2963256, 0.9485883, -0.111227006, -0.9526021, 0.28514838, -0.10601737, -58.979076, 12.4396515, -30.391354)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (53)" parent="ROCHERS" unique_id=1440391729 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.7327921, 0.03583458, 0.67950845, 0.20945244, 0.9382477, -0.27535614, -0.6474145, 0.34410352, 0.6800349, -80.35809, 8.488235, -11.433847)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (54)" parent="ROCHERS" unique_id=45880095 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.73122495, 0.14363384, 0.6668429, 0.07616355, 0.9542758, -0.28906208, -0.6778711, 0.2621585, 0.6868506, -48.559067, 6.6688004, -15.963013)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (55)" parent="ROCHERS" unique_id=1512560238 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.88561946, 0.033327576, 0.4632143, 0.22559537, 0.8409626, -0.49182183, -0.4059371, 0.54006594, 0.7372543, -77.059814, 12.446983, -17.341896)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (56)" parent="ROCHERS" unique_id=1581218443 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.023690015, 0.11921224, 0.99258614, 0.2084825, 0.97044617, -0.12152901, -0.97773916, 0.20981587, -0.0018637822, -50.00201, 7.4277115, -18.120855)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (57)" parent="ROCHERS" unique_id=1472513411 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(-0.60068005, 0.46022218, 0.6537424, 0.48661062, 0.85925233, -0.15778342, -0.6343451, 0.22334062, -0.74008465, -65.13435, 9.260437, -15.247395)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (58)" parent="ROCHERS" unique_id=1772445550 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.008755623, 0.011009464, 0.9999011, 0.2793981, 0.9600871, -0.013017637, -0.96013546, 0.27948442, 0.0053301374, -84.68878, 5.49205, -1.8807774)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (59)" parent="ROCHERS" unique_id=1252117083 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(-0.72292775, 0.1706568, 0.669516, 0.32777163, 0.93774486, 0.114892945, -0.60822797, 0.30250767, -0.7338582, -42.369423, 7.6490326, -23.65662)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (60)" parent="ROCHERS" unique_id=1432923036 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.047846816, 0.010353913, 0.99880105, 0.29692438, 0.95459634, -0.024119614, -0.95370156, 0.2977224, 0.04260007, -85.01139, 6.434326, -4.8947372)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (61)" parent="ROCHERS" unique_id=1379226979 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.70900905, 0.006506297, 0.70516944, 0.022472022, 0.9992412, -0.031813953, -0.70484126, 0.038402963, 0.70832485, -53.90451, 2.48526, 12.084015)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-S (62)" parent="ROCHERS" unique_id=440593844 instance=ExtResource("13_3g5uj")]
+transform = Transform3D(0.7723443, 0.023233814, 0.63477904, 0.14613734, 0.9660251, -0.2131652, -0.6181652, 0.25740188, 0.74270874, -81.34477, 2.0982132, 10.034435)
+metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
+
+[node name="ROCHE-M (17)" parent="ROCHERS" unique_id=986801226 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.018891593, 0.17690644, 0.98404634, 0.6067049, 0.7802751, -0.15192099, -0.7947026, 0.5998957, -0.09258935, -87.129105, 27.281624, -52.23654)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (18)" parent="ROCHERS" unique_id=1010166991 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.85278416, 0.3018782, -0.42617914, -0.37785718, 0.9199527, -0.104455926, 0.3605317, 0.25011322, 0.898588, -60.660217, 15.528076, -40.086193)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (19)" parent="ROCHERS" unique_id=636936150 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(-0.060211424, 0.5822643, 0.8107668, 0.3059549, 0.7839106, -0.54025537, -0.95014006, 0.21552853, -0.22534697, -56.38112, 27.771439, -79.77481)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (20)" parent="ROCHERS" unique_id=1016345039 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.45897374, 0.78570235, 0.41474685, -0.2778669, 0.5703476, -0.7729771, -0.8438799, 0.23953182, 0.48009533, -59.035027, 30.795082, -80.62283)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (21)" parent="ROCHERS" unique_id=1660290734 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.91429156, 0.35328206, 0.19814801, -0.30844757, 0.92431176, -0.22473979, -0.26254705, 0.14435942, 0.9540595, -55.341656, 23.95227, -68.00951)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (22)" parent="ROCHERS" unique_id=937392803 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.14998193, 0.019547237, 0.98849547, 0.6550876, 0.746878, -0.11416411, -0.7405172, 0.6646737, 0.09921305, -76.07129, 35.526855, -67.57911)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (23)" parent="ROCHERS" unique_id=1337033700 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.8449251, 0.18964876, -0.5001349, -0.500896, 0.60853577, -0.6154571, 0.18762928, 0.7705307, 0.6091615, -69.29773, 32.87773, -65.96222)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (24)" parent="ROCHERS" unique_id=2079930561 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.31836918, 0.41846678, 0.85060364, 0.39431354, 0.7575254, -0.52026165, -0.8620661, 0.50103986, 0.07616562, -82.93506, 32.16896, -61.506916)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (25)" parent="ROCHERS" unique_id=2011992834 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(-0.73967195, 0.054251697, 0.6707775, 0.097031526, 0.9949277, 0.026528895, -0.66593575, 0.084709235, -0.7411842, -33.851974, 18.456215, -82.67282)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (26)" parent="ROCHERS" unique_id=2021770994 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.7924703, 0.3508657, -0.49888328, -0.39262187, 0.9194136, 0.02295038, 0.4667325, 0.17768496, 0.8663654, -29.376759, 9.34977, -46.723885)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (27)" parent="ROCHERS" unique_id=58735273 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.3012018, 0.575365, 0.76041615, -0.29587105, 0.8144819, -0.49907875, -0.9064976, -0.0746617, 0.41555727, -43.060654, 21.617142, -80.64783)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (28)" parent="ROCHERS" unique_id=192434462 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.50444806, 0.5934728, 0.6271542, -0.3869111, 0.80470467, -0.45027807, -0.7719017, -0.015511014, 0.6355529, -49.977646, 19.550613, -57.460346)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (29)" parent="ROCHERS" unique_id=1973856984 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(-0.4677143, 0.18398829, 0.86451834, 0.30886817, 0.9504542, -0.035176106, -0.8281569, 0.2505698, -0.50136906, -49.89406, 13.719353, -40.511734)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (30)" parent="ROCHERS" unique_id=925234119 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(-0.5242363, 0.16786617, 0.83486366, 0.39770272, 0.91515774, 0.06571877, -0.753, 0.36647975, -0.5465198, -33.79585, 16.189995, -71.34736)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (31)" parent="ROCHERS" unique_id=1294513279 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.93069947, 0.328345, -0.16120821, -0.3495808, 0.9281499, -0.12779312, 0.107665144, 0.17529227, 0.9786117, -24.611202, 13.362091, -76.66849)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (32)" parent="ROCHERS" unique_id=1807499310 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.70374846, 0.1609459, 0.69197875, -0.01679418, 0.9774982, -0.21027446, -0.71025085, 0.13635911, 0.69061583, -23.596718, 7.952347, -43.189007)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (33)" parent="ROCHERS" unique_id=1839791470 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.8527532, -0.24379097, 0.46192878, 0.3464059, 0.92587787, -0.1508416, -0.39091578, 0.28864548, 0.8739958, -82.41559, 16.70839, -34.98474)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (34)" parent="ROCHERS" unique_id=1572572775 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(-0.8455775, 0.4534015, 0.2818258, 0.4750046, 0.8799315, 0.009548181, -0.24365823, 0.14194228, -0.9594181, -39.609863, 8.58078, -30.10572)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (35)" parent="ROCHERS" unique_id=730371756 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.99307275, 0.10034387, 0.061136086, -0.083039515, 0.9674534, -0.23903623, -0.08313213, 0.23230366, 0.96908414, -39.76086, 10.232681, -36.108006)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (36)" parent="ROCHERS" unique_id=79533482 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.9414281, 0.11966617, 0.31526673, -0.020328924, 0.9533564, -0.30116177, -0.3366004, 0.2771131, 0.8999492, -56.144745, 6.5767593, -11.999062)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (37)" parent="ROCHERS" unique_id=206400830 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(-0.230161, 0.25262505, 0.93979067, 0.08706881, 0.96719044, -0.23866667, -0.9692497, 0.026894702, -0.24460529, -72.85364, 12.710533, -21.286505)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (38)" parent="ROCHERS" unique_id=1679372596 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.8876976, 0.46022215, 0.013735171, -0.44147632, 0.85925233, -0.25842628, -0.13073547, 0.22334063, 0.9659333, -64.44363, 9.14801, -16.238195)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (39)" parent="ROCHERS" unique_id=1093568559 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.97079235, 0.113083705, -0.21159951, -0.16464262, 0.95551544, -0.24471024, 0.17451386, 0.2724011, 0.94622546, -53.965614, 6.1235657, -11.342033)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (40)" parent="ROCHERS" unique_id=1143064504 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(-0.86712164, 0.17817472, 0.46513852, 0.27228343, 0.95151496, 0.14311211, -0.41708726, 0.25074512, -0.8735932, -40.771233, 7.769989, -24.97384)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (41)" parent="ROCHERS" unique_id=537250043 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.023238802, 0.3436344, -0.938817, -0.29084286, 0.9007762, 0.32251108, 0.9564895, 0.26555336, 0.12087653, -46.2563, 18.715584, -66.805626)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (42)" parent="ROCHERS" unique_id=899767939 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.7951574, 0.51246583, 0.32419908, -0.42344707, 0.8519292, -0.30807474, -0.4340722, 0.10768668, 0.8944196, -64.60101, 16.795204, -40.530807)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (43)" parent="ROCHERS" unique_id=748953126 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.8801231, 0.18177176, 0.43857053, -0.06888552, 0.9629175, -0.26085532, -0.46972317, 0.19937356, 0.860007, -43.012783, 12.2968445, -41.022408)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (44)" parent="ROCHERS" unique_id=1375079525 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.9559186, 0.11260437, 0.271185, -0.008955764, 0.93429834, -0.35638064, -0.2934976, 0.3382421, 0.89412135, -83.988785, 25.62606, -50.70127)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (45)" parent="ROCHERS" unique_id=1257939913 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.96405405, 0.06639997, 0.25727943, 0.06302149, 0.88350314, -0.4641674, -0.25812775, 0.46369642, 0.84755987, -55.09076, 16.197151, -43.76017)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (46)" parent="ROCHERS" unique_id=175034634 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(0.066190615, 0.37354758, -0.92524725, -0.25317785, 0.90322167, 0.34654334, 0.9651536, 0.21131414, 0.15435874, -79.551094, 24.820198, -50.670994)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (47)" parent="ROCHERS" unique_id=1536352913 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(-0.21153015, 0.58658195, -0.781779, 0.052691963, 0.80555964, 0.5901679, 0.97595114, 0.0836448, -0.20130825, -39.16407, 18.63137, -77.76699)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-M (48)" parent="ROCHERS" unique_id=119584940 instance=ExtResource("12_7kp1v")]
+transform = Transform3D(-0.39177144, 0.7517226, -0.53050005, 0.0031975736, 0.5776998, 0.8162435, 0.92005813, 0.31808445, -0.22872987, -66.98657, 36.170097, -72.68179)
+metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
+
+[node name="ROCHE-L (12)" parent="ROCHERS" unique_id=204560817 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(0.88976043, 0.44574443, -0.098174766, -0.41089356, 0.6885957, -0.5974968, -0.19872813, 0.5719684, 0.7958387, -80.91206, 28.234665, -58.13074)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-L (13)" parent="ROCHERS" unique_id=889813494 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(0.80319315, 0.51407963, 0.30100337, -0.51664966, 0.8526693, -0.07764188, -0.29657045, -0.09315186, 0.9504571, -71.54846, 44.3359, -87.55446)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-L (14)" parent="ROCHERS" unique_id=436712122 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(0.66604626, 0.7439711, -0.05375278, -0.70162165, 0.60040873, -0.38371402, -0.2531985, 0.2932854, 0.9218862, -67.17091, 35.808678, -71.57947)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="ROCHE-L (15)" parent="ROCHERS" unique_id=1055704652 instance=ExtResource("11_vt7c2")]
+transform = Transform3D(0.8787842, 0.476367, 0.028510982, -0.47522822, 0.8790062, -0.038810372, -0.04354931, 0.020556716, 0.9988398, -51.91407, 20.87989, -57.058712)
+metadata/asset_placer_res_id = "uid://bpm6cqev1bh65"
+
+[node name="VEGETATION" type="Node3D" parent="." unique_id=1471957038]
+
+[node name="BUISSON-M" parent="VEGETATION" unique_id=58299986 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(-0.9915088, 0, 0.13003983, 0, 1, 0, -0.13003983, 0, -0.9915088, 16.70875, -6.488022, 41.578403)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (1)" parent="VEGETATION" unique_id=1846923396 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(0.9972219, 0, 0.07448858, 0, 1, 0, -0.07448858, 0, 0.9972219, 26.124262, -6.746498, 51.3425)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (2)" parent="VEGETATION" unique_id=805942055 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(0.729775, 0, 0.68368745, 0, 1, 0, -0.68368745, 0, 0.729775, -37.777348, -0.5944061, 53.069504)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (3)" parent="VEGETATION" unique_id=372280009 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(-0.9858872, 0, 0.16741078, 0, 1, 0, -0.16741078, 0, -0.9858872, -21.86904, -0.66483307, 52.03289)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (4)" parent="VEGETATION" unique_id=599129848 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(0.7257826, 0, 0.68792415, 0, 1, 0, -0.68792415, 0, 0.7257826, -72.18072, 0.5897827, 16.767288)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (5)" parent="VEGETATION" unique_id=295753214 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(-0.84149516, 0, 0.54026467, 0, 1, 0, -0.54026467, 0, -0.84149516, -76.93962, -0.21885681, 27.037304)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (6)" parent="VEGETATION" unique_id=637417230 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(-0.99816304, 0, 0.060585003, 0, 1, 0, -0.060585003, 0, -0.99816304, 41.115265, -2.7375488, -47.22831)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (7)" parent="VEGETATION" unique_id=1152197968 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(-0.28873292, 0, 0.9574097, 0, 1, 0, -0.9574097, 0, -0.28873292, 50.966915, -3.0147705, -46.240143)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (8)" parent="VEGETATION" unique_id=1626045447 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(-0.91059124, 0, 0.41330805, 0, 1, 0, -0.41330805, 0, -0.91059124, 9.919862, -0.23347473, -39.114285)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (9)" parent="VEGETATION" unique_id=633944902 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(-0.46263474, 0, 0.886549, 0, 1, 0, -0.886549, 0, -0.46263474, 4.034383, 1.7114258, -41.89732)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (10)" parent="VEGETATION" unique_id=2067653827 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(-0.5105936, 0, 0.8598222, 0, 1, 0, -0.8598222, 0, -0.5105936, 68.43938, -11.281998, 33.243805)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (11)" parent="VEGETATION" unique_id=2007070910 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(0.36219016, 0, 0.93210423, 0, 1, 0, -0.93210423, 0, 0.36219016, 80.788506, -11.2894745, 30.965649)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (12)" parent="VEGETATION" unique_id=155408200 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(0.87544155, 0, 0.483324, 0, 1, 0, -0.483324, 0, 0.87544155, 62.12571, -11.192978, 73.00425)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (13)" parent="VEGETATION" unique_id=17593618 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(0.34460062, 0, 0.93874943, 0, 1, 0, -0.93874943, 0, 0.34460062, 73.92424, -11.094177, 62.185)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (14)" parent="VEGETATION" unique_id=1150583561 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(-0.25252149, 0, 0.9675913, 0, 1, 0, -0.9675913, 0, -0.25252149, 73.94443, -15.304924, 89.78536)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (15)" parent="VEGETATION" unique_id=954752405 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(0.99026924, 0, 0.13916491, 0, 1, 0, -0.13916491, 0, 0.99026924, 63.221027, -14.754387, 88.40748)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (16)" parent="VEGETATION" unique_id=250045402 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(0.9991671, 0, 0.040805493, 0, 1, 0, -0.040805493, 0, 0.9991671, 91.42268, -15.338356, 82.256424)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (17)" parent="VEGETATION" unique_id=1367799716 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(-0.26281944, 0, 0.96484506, 0, 1, 0, -0.96484506, 0, -0.26281944, 106.28583, -15.327812, 92.46079)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (18)" parent="VEGETATION" unique_id=1957702006 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(0.99789864, 0, 0.064794764, 0, 1, 0, -0.064794764, 0, 0.99789864, 102.29758, -14.056374, 73.19106)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (19)" parent="VEGETATION" unique_id=662076761 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(-0.14347227, 0, 0.98965436, 0, 1, 0, -0.98965436, 0, -0.14347227, 103.36357, -14.02697, 71.73871)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (20)" parent="VEGETATION" unique_id=1986049223 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(0.6717337, 0, 0.74079275, 0, 1, 0, -0.74079275, 0, 0.6717337, 47.40845, -11.583054, 96.25291)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (21)" parent="VEGETATION" unique_id=1331272202 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(0.8976867, 0, 0.4406343, 0, 1, 0, -0.4406343, 0, 0.8976867, 46.165638, -11.113777, 101.42875)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (22)" parent="VEGETATION" unique_id=877517040 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(-0.058547657, 0, 0.99828464, 0, 1, 0, -0.99828464, 0, -0.058547657, 25.834469, -6.808777, 95.24692)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M (23)" parent="VEGETATION" unique_id=1466861111 instance=ExtResource("7_m5o0s")]
+transform = Transform3D(0.9991898, 0, 0.04024706, 0, 1, 0, -0.04024706, 0, 0.9991898, 11.155893, -4.3490906, 90.17466)
+metadata/asset_placer_res_id = "uid://n0mklm36xq0x"
+
+[node name="BUISSON-M2" parent="VEGETATION" unique_id=1808379327 instance=ExtResource("8_n1xvr")]
+transform = Transform3D(-0.68916315, 0, 0.7246063, 0, 1, 0, -0.7246063, 0, -0.68916315, 9.967901, -6.4744034, 56.089962)
+metadata/asset_placer_res_id = "uid://71lnoy628f58"
+
+[node name="BUISSON-M (1)2" parent="VEGETATION" unique_id=875731380 instance=ExtResource("8_n1xvr")]
+transform = Transform3D(-0.9915088, 0, 0.13003983, 0, 1, 0, -0.13003983, 0, -0.9915088, -36.594112, 0.19609833, 35.498203)
+metadata/asset_placer_res_id = "uid://71lnoy628f58"
+
+[node name="BUISSON-M (2)2" parent="VEGETATION" unique_id=643335908 instance=ExtResource("8_n1xvr")]
+transform = Transform3D(0.729775, 0, 0.68368745, 0, 1, 0, -0.68368745, 0, 0.729775, 61.773846, -10.746025, 33.26834)
+metadata/asset_placer_res_id = "uid://71lnoy628f58"
+
+[node name="BUISSON-M (3)2" parent="VEGETATION" unique_id=2132965181 instance=ExtResource("8_n1xvr")]
+transform = Transform3D(0.7257826, 0, 0.68792415, 0, 1, 0, -0.68792415, 0, 0.7257826, 82.37548, -13.418465, 62.571007)
+metadata/asset_placer_res_id = "uid://71lnoy628f58"
+
+[node name="BUISSON-M (4)2" parent="VEGETATION" unique_id=2106002039 instance=ExtResource("8_n1xvr")]
+transform = Transform3D(-0.99816304, 0, 0.060585003, 0, 1, 0, -0.060585003, 0, -0.99816304, 60.413574, -13.683716, 81.080055)
+metadata/asset_placer_res_id = "uid://71lnoy628f58"
+
+[node name="BUISSON-M (5)2" parent="VEGETATION" unique_id=229236431 instance=ExtResource("8_n1xvr")]
+transform = Transform3D(-0.91059124, 0, 0.41330805, 0, 1, 0, -0.41330805, 0, -0.91059124, 89.31915, -15.274376, 85.41586)
+metadata/asset_placer_res_id = "uid://71lnoy628f58"
+
+[node name="BUISSON-M (6)2" parent="VEGETATION" unique_id=1151829179 instance=ExtResource("8_n1xvr")]
+transform = Transform3D(-0.5105936, 0, 0.8598222, 0, 1, 0, -0.8598222, 0, -0.5105936, 6.897393, -2.8813324, 101.66246)
+metadata/asset_placer_res_id = "uid://71lnoy628f58"
+
+[node name="BUISSON-M (7)2" parent="VEGETATION" unique_id=1501660886 instance=ExtResource("8_n1xvr")]
+transform = Transform3D(0.87544155, 0, 0.483324, 0, 1, 0, -0.483324, 0, 0.87544155, 26.729305, -7.0537643, 5.3468633)
+metadata/asset_placer_res_id = "uid://71lnoy628f58"
+
+[node name="BUISSON-M (8)2" parent="VEGETATION" unique_id=1868460978 instance=ExtResource("8_n1xvr")]
+transform = Transform3D(-0.25252149, 0, 0.9675913, 0, 1, 0, -0.9675913, 0, -0.25252149, 42.633038, -3.385643, -36.7855)
+metadata/asset_placer_res_id = "uid://71lnoy628f58"
+
+[node name="BUISSON-M (9)2" parent="VEGETATION" unique_id=143092828 instance=ExtResource("8_n1xvr")]
+transform = Transform3D(0.99789864, 0, 0.064794764, 0, 1, 0, -0.064794764, 0, 0.99789864, -40.84769, 1.5980759, 6.0748577)
+metadata/asset_placer_res_id = "uid://71lnoy628f58"
+
+[node name="BUISSON-M (10)2" parent="VEGETATION" unique_id=1312692684 instance=ExtResource("8_n1xvr")]
+transform = Transform3D(0.6717337, 0, 0.74079275, 0, 1, 0, -0.74079275, 0, 0.6717337, -47.08958, 0.63655853, 43.61094)
+metadata/asset_placer_res_id = "uid://71lnoy628f58"
+
+[node name="BUISSON-M (11)2" parent="VEGETATION" unique_id=198580459 instance=ExtResource("8_n1xvr")]
+transform = Transform3D(-0.058547657, 0, 0.99828464, 0, 1, 0, -0.99828464, 0, -0.058547657, -74.27441, -0.11394501, 45.452812)
+metadata/asset_placer_res_id = "uid://71lnoy628f58"
+
+[node name="BUISSON-M (12)2" parent="VEGETATION" unique_id=1828492383 instance=ExtResource("8_n1xvr")]
+transform = Transform3D(0.030721912, 0, 0.999528, 0, 1, 0, -0.999528, 0, 0.030721912, 91.919495, -2.1179428, -30.965181)
+metadata/asset_placer_res_id = "uid://71lnoy628f58"
+
+[node name="CHAMPI-L" parent="VEGETATION" unique_id=81293175 instance=ExtResource("9_0gms4")]
+transform = Transform3D(-0.68916315, 0, 0.7246063, 0, 1, 0, -0.7246063, 0, -0.68916315, 82.8366, -14.043785, 102.78958)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (1)" parent="VEGETATION" unique_id=1511398450 instance=ExtResource("9_0gms4")]
+transform = Transform3D(-0.9915088, 0, 0.13003983, 0, 1, 0, -0.13003983, 0, -0.9915088, 84.63297, -13.408249, 61.032642)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (2)" parent="VEGETATION" unique_id=809269584 instance=ExtResource("9_0gms4")]
+transform = Transform3D(0.729775, 0, 0.68368745, 0, 1, 0, -0.68368745, 0, 0.729775, -8.793492, -2.8607564, 0.028116003)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (3)" parent="VEGETATION" unique_id=1731236772 instance=ExtResource("9_0gms4")]
+transform = Transform3D(-0.99816304, 0, 0.060585003, 0, 1, 0, -0.060585003, 0, -0.99816304, 100.52801, -15.336304, 84.918465)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (4)" parent="VEGETATION" unique_id=794461511 instance=ExtResource("9_0gms4")]
+transform = Transform3D(-0.91059124, 0, 0.41330805, 0, 1, 0, -0.41330805, 0, -0.91059124, 46.439556, -11.447617, 96.45676)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (5)" parent="VEGETATION" unique_id=2020787025 instance=ExtResource("9_0gms4")]
+transform = Transform3D(-0.5105936, 0, 0.8598222, 0, 1, 0, -0.8598222, 0, -0.5105936, 62.136322, -2.9593506, -69.36175)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (6)" parent="VEGETATION" unique_id=1863336456 instance=ExtResource("9_0gms4")]
+transform = Transform3D(0.36219016, 0, 0.93210423, 0, 1, 0, -0.93210423, 0, 0.36219016, 74.48545, -3.8375244, -71.63991)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (7)" parent="VEGETATION" unique_id=1907210919 instance=ExtResource("9_0gms4")]
+transform = Transform3D(-0.8631745, 0, 0.5049057, 0, 1, 0, -0.5049057, 0, -0.8631745, 62.763725, -2.9636307, -70.00004)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (8)" parent="VEGETATION" unique_id=149533463 instance=ExtResource("9_0gms4")]
+transform = Transform3D(0.87544155, 0, 0.483324, 0, 1, 0, -0.483324, 0, 0.87544155, 87.6705, -4.2668915, -67.91659)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (9)" parent="VEGETATION" unique_id=582450219 instance=ExtResource("9_0gms4")]
+transform = Transform3D(0.34460062, 0, 0.93874943, 0, 1, 0, -0.93874943, 0, 0.34460062, 99.46903, -5.2778473, -78.73584)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (10)" parent="VEGETATION" unique_id=2083867218 instance=ExtResource("9_0gms4")]
+transform = Transform3D(-0.40070415, 0, 0.9162075, 0, 1, 0, -0.9162075, 0, -0.40070415, 97.24365, -5.27845, -81.72328)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (11)" parent="VEGETATION" unique_id=280213043 instance=ExtResource("9_0gms4")]
+transform = Transform3D(-0.25252149, 0, 0.9675913, 0, 1, 0, -0.9675913, 0, -0.25252149, 103.20907, -4.6072083, -56.174294)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (12)" parent="VEGETATION" unique_id=176519446 instance=ExtResource("9_0gms4")]
+transform = Transform3D(0.99026924, 0, 0.13916491, 0, 1, 0, -0.13916491, 0, 0.99026924, 92.48567, -4.6072464, -57.55218)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (13)" parent="VEGETATION" unique_id=80221737 instance=ExtResource("9_0gms4")]
+transform = Transform3D(-0.94346714, 0, 0.3314662, 0, 1, 0, -0.3314662, 0, -0.94346714, 102.46312, -4.8456497, -63.942165)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (14)" parent="VEGETATION" unique_id=1967306691 instance=ExtResource("9_0gms4")]
+transform = Transform3D(0.9991671, 0, 0.040805493, 0, 1, 0, -0.040805493, 0, 0.9991671, 88.33219, -5.2781067, -89.86394)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (15)" parent="VEGETATION" unique_id=773215815 instance=ExtResource("9_0gms4")]
+transform = Transform3D(-0.26281944, 0, 0.96484506, 0, 1, 0, -0.96484506, 0, -0.26281944, 103.19533, -5.2785416, -79.65957)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (16)" parent="VEGETATION" unique_id=934092541 instance=ExtResource("9_0gms4")]
+transform = Transform3D(0.61035436, 0, 0.79212856, 0, 1, 0, -0.79212856, 0, 0.61035436, 101.37182, -5.278816, -89.125824)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (17)" parent="VEGETATION" unique_id=441994075 instance=ExtResource("9_0gms4")]
+transform = Transform3D(0.99789864, 0, 0.064794764, 0, 1, 0, -0.064794764, 0, 0.99789864, -50.82608, 2.6972198, 94.36639)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (18)" parent="VEGETATION" unique_id=901283694 instance=ExtResource("9_0gms4")]
+transform = Transform3D(-0.14347227, 0, 0.98965436, 0, 1, 0, -0.98965436, 0, -0.14347227, -49.760086, 2.463066, 92.91403)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (19)" parent="VEGETATION" unique_id=708555067 instance=ExtResource("9_0gms4")]
+transform = Transform3D(0.84769696, 0, 0.5304808, 0, 1, 0, -0.5304808, 0, 0.84769696, -47.782127, 2.3978806, 93.640686)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (20)" parent="VEGETATION" unique_id=1487690268 instance=ExtResource("9_0gms4")]
+transform = Transform3D(0.6717337, 0, 0.74079275, 0, 1, 0, -0.74079275, 0, 0.6717337, -63.66264, 1.3965759, 74.62705)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (21)" parent="VEGETATION" unique_id=1038633590 instance=ExtResource("9_0gms4")]
+transform = Transform3D(0.8976867, 0, 0.4406343, 0, 1, 0, -0.4406343, 0, 0.8976867, -64.90545, 2.3901062, 79.802895)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (22)" parent="VEGETATION" unique_id=1206318629 instance=ExtResource("9_0gms4")]
+transform = Transform3D(-0.66142434, 0, 0.7500119, 0, 1, 0, -0.7500119, 0, -0.66142434, -69.75638, 1.2865448, 70.55722)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (23)" parent="VEGETATION" unique_id=547671794 instance=ExtResource("9_0gms4")]
+transform = Transform3D(-0.058547657, 0, 0.99828464, 0, 1, 0, -0.99828464, 0, -0.058547657, -73.88608, 1.6449509, 90.55702)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (24)" parent="VEGETATION" unique_id=786263186 instance=ExtResource("9_0gms4")]
+transform = Transform3D(0.9991898, 0, 0.04024706, 0, 1, 0, -0.04024706, 0, 0.9991898, -88.56465, 1.7811737, 85.484764)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI-L (25)" parent="VEGETATION" unique_id=2109296606 instance=ExtResource("9_0gms4")]
+transform = Transform3D(-0.27665547, 0, 0.96096915, 0, 1, 0, -0.96096915, 0, -0.27665547, -75.12675, 2.4276276, 95.34438)
+metadata/asset_placer_res_id = "uid://0nle8c2rrgm2"
+
+[node name="CHAMPI" parent="VEGETATION" unique_id=401900457 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.68916315, 0, 0.7246063, 0, 1, 0, -0.7246063, 0, -0.68916315, -82.08624, 1.7710037, 87.62765)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (1)" parent="VEGETATION" unique_id=1842758230 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.9915088, 0, 0.13003983, 0, 1, 0, -0.13003983, 0, -0.9915088, -65.47972, 1.9014435, 86.212875)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (2)" parent="VEGETATION" unique_id=490154112 instance=ExtResource("10_et52j")]
+transform = Transform3D(0.729775, 0, 0.68368745, 0, 1, 0, -0.68368745, 0, 0.729775, -80.18679, 1.2689362, 66.155876)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (3)" parent="VEGETATION" unique_id=2026689527 instance=ExtResource("10_et52j")]
+transform = Transform3D(0.7257826, 0, 0.68792415, 0, 1, 0, -0.68792415, 0, 0.7257826, -42.42294, 0.4860611, 79.18882)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (4)" parent="VEGETATION" unique_id=240344598 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.99816304, 0, 0.060585003, 0, 1, 0, -0.060585003, 0, -0.99816304, -38.895184, 0.80581665, 89.876205)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (5)" parent="VEGETATION" unique_id=882053419 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.91059124, 0, 0.41330805, 0, 1, 0, -0.41330805, 0, -0.91059124, -32.065487, 1.5047455, 90.12865)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (6)" parent="VEGETATION" unique_id=737906771 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.5105936, 0, 0.8598222, 0, 1, 0, -0.8598222, 0, -0.5105936, 32.755863, -7.0492554, 71.380394)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (7)" parent="VEGETATION" unique_id=1288299990 instance=ExtResource("10_et52j")]
+transform = Transform3D(0.87544155, 0, 0.483324, 0, 1, 0, -0.483324, 0, 0.87544155, 49.80816, -11.982651, 88.890526)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (8)" parent="VEGETATION" unique_id=813170080 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.25252149, 0, 0.9675913, 0, 1, 0, -0.9675913, 0, -0.25252149, 55.36368, -12.615181, 98.83084)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (9)" parent="VEGETATION" unique_id=1891376274 instance=ExtResource("10_et52j")]
+transform = Transform3D(0.9991671, 0, 0.040805493, 0, 1, 0, -0.040805493, 0, 0.9991671, 90.23621, -12.34864, 42.073586)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (10)" parent="VEGETATION" unique_id=824239494 instance=ExtResource("10_et52j")]
+transform = Transform3D(0.99789864, 0, 0.064794764, 0, 1, 0, -0.064794764, 0, 0.99789864, 104.56666, -15.239151, 94.52646)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (11)" parent="VEGETATION" unique_id=382675545 instance=ExtResource("10_et52j")]
+transform = Transform3D(0.6717337, 0, 0.74079275, 0, 1, 0, -0.74079275, 0, 0.6717337, 106.93025, -15.338242, 102.327354)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (12)" parent="VEGETATION" unique_id=1508556746 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.058547657, 0, 0.99828464, 0, 1, 0, -0.99828464, 0, -0.058547657, 96.10014, -15.338188, 102.6452)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (13)" parent="VEGETATION" unique_id=2000964553 instance=ExtResource("10_et52j")]
+transform = Transform3D(0.030721912, 0, 0.999528, 0, 1, 0, -0.999528, 0, 0.030721912, 96.660484, -15.33802, 100.43224)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (14)" parent="VEGETATION" unique_id=751717414 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.3125019, 0, 0.94991714, 0, 1, 0, -0.94991714, 0, -0.3125019, 91.47159, -8.523338, 10.853811)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (15)" parent="VEGETATION" unique_id=1189887617 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.6897166, 0, 0.72407943, 0, 1, 0, -0.72407943, 0, -0.6897166, 95.67662, -3.1797638, -36.276947)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (16)" parent="VEGETATION" unique_id=534191367 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.9237084, 0, 0.3830965, 0, 1, 0, -0.3830965, 0, -0.9237084, 98.46155, -3.573906, -37.445675)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (17)" parent="VEGETATION" unique_id=557473670 instance=ExtResource("10_et52j")]
+transform = Transform3D(0.8189699, 0, 0.5738365, 0, 1, 0, -0.5738365, 0, 0.8189699, 92.33327, -5.028427, -74.349045)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (18)" parent="VEGETATION" unique_id=1936876201 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.54392457, 0, 0.8391341, 0, 1, 0, -0.8391341, 0, -0.54392457, 85.332855, -3.9782562, -66.3113)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (19)" parent="VEGETATION" unique_id=159106314 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.24036802, 0, 0.97068185, 0, 1, 0, -0.97068185, 0, -0.24036802, 81.28928, -4.7272797, -77.48458)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (20)" parent="VEGETATION" unique_id=1950173781 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.75157446, 0, 0.65964824, 0, 1, 0, -0.65964824, 0, -0.75157446, 59.42228, -4.4203033, -81.37296)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (21)" parent="VEGETATION" unique_id=1915924331 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.8691966, 0, 0.49446666, 0, 1, 0, -0.49446666, 0, -0.8691966, 77.61289, -4.609764, -76.339096)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="CHAMPI (22)" parent="VEGETATION" unique_id=1804490507 instance=ExtResource("10_et52j")]
+transform = Transform3D(-0.46255383, 0, 0.88659126, 0, 1, 0, -0.88659126, 0, -0.46255383, 92.01039, -5.2786484, -79.55157)
+metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
