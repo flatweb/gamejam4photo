@@ -2,7 +2,7 @@ extends Node3D
 
 const MARGEPOS = 10
 
-signal fini
+signal fini ()
 
 var objectifs : Array = [
 	{"img" : null, "titre": "Champignon", "indice" : "sous les arbres"},
@@ -18,7 +18,8 @@ var matched : Array
 var started : bool = false : 
 	set(value):
 		started = value
-		if value : $Joueur.start()
+		if value :
+			$Joueur.start()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,7 +29,6 @@ func _ready() -> void:
 	var randposy = randi_range(-100/2+MARGEPOS, 100/2-MARGEPOS)
 	$Joueur.position = Vector3(randposx, 0.5, randposy)
 	$Joueur.rotation = Vector3(0,randf_range(0,PI),0)
-	
 	#FIXME : il faut maintenant gérer les collisions avec le décor
 	
 	#Lister les objectifs
@@ -78,7 +78,6 @@ func start():
 	$MAP/AudioForetEst.play()
 	$MAP/AudioForetOuest.play()
 	$MAP/AudioForetPlaine.play()
-	
 
 func photographie(type : String, node : Node3D, img : Image):
 	print ("Get ", type)
@@ -86,15 +85,32 @@ func photographie(type : String, node : Node3D, img : Image):
 	for i in range(0,objectifs.size()-1):
 		if type == objectifs[i]["titre"]:
 			objectifs[i]["img"] = img
+			objectifs[i]["get"] = true
+	check_end()
+
+func get_nb_objectifs_atteints():
+	var accum = 0
+	for obj in objectifs:
+		if  obj.has("get") and obj["get"]:
+			accum +=1
+	return accum
 
 func check_end():
-	#TODO
-	for obj in objectifs:
-		if obj.has_key("get") and obj["get"] == false :
-			return
-	# Si on est là, c'est que tous les objectifs sont get
-	# TODO : le jeu est fini
-	fini.emit(0,0)
+	if check_objectifs_atteints() :
+		fini.emit()
+	if check_pellicule_vide():
+		fini.emit()
+
+func check_pellicule_vide():
+	return $Joueur.photosrestantes <= 0
+	
+func check_objectifs_atteints():
+	var nbatteints = 0
+	for obj : Dictionary in objectifs:
+		if obj.has("get") and not obj["get"] :
+			nbatteints += 1
+	if nbatteints == objectifs.size(): return true
+	return false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

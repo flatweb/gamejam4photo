@@ -11,6 +11,8 @@ func _ready() -> void:
 	$EspaceJeu.show()
 	$EspaceJeu.silence()
 	$AudioMusique.play()
+	$ColorRectHaut.hide()
+	$ColorRectBas.hide()
 
 
 ## true si en attente du tout premier Start du jeu avant le niveau 1
@@ -100,14 +102,35 @@ func start():
 	$AudioMusique.stop()
 	get_tree().paused = false
 	
-	
 	game.start()
-	
-func endofgame(score : int):
+	$EspaceJeu/Joueur.inactif.connect(inactivite.bind())
+	$EspaceJeu/Joueur.actif.connect(endofinactif.bind())
+
+func inactivite():
+	$EspaceJeu.silence()
+	$AudioMusique.play()
+	$EspaceJeu/DirectionalLight3D.light_energy = 0.5
+	$ColorRectHaut.show()
+	$ColorRectBas.show()
+
+func endofinactif():
+	$AudioMusique.stop()
+	$EspaceJeu/MAP/AudioForetEst.play()
+	$EspaceJeu/MAP/AudioForetOuest.play()
+	$EspaceJeu/MAP/AudioForetPlaine.play()
+	$EspaceJeu/DirectionalLight3D.light_energy = 1.0
+
+
+func endofgame():
 	$AudioMusique.play()
 	get_tree().paused = true
 	
-	%LabelEndOfGame.text = "%d photos prises , %d sujets dans l'album" % [score,0] #FIXME
+	var strformat = "{0} photo{1} prise{2} , {3} sujet{4} dans l'album" #FIXME
+	%LabelEndOfGame.text = strformat.format([$EspaceJeu/Joueur.get_photos_prises(),
+											"s" if $EspaceJeu/Joueur.get_photos_prises() > 1 else "",
+											"s" if $EspaceJeu/Joueur.get_photos_prises() > 1 else "",
+											 $EspaceJeu.get_nb_objectifs_atteints(),
+											"s" if $EspaceJeu.get_nb_objectifs_atteints() > 1 else ""])
 	%LabelEndOfGame.show()
 	
 	showcredits()
@@ -172,7 +195,7 @@ func _on_giveup_button_up() -> void:
 	pass # Replace with function body.
 	$PauseContainer.hide()
 	get_tree().paused = false
-	endofgame(0)
+	endofgame()
 
 
 func _on_button_gui_input(event: InputEvent) -> void:

@@ -192,8 +192,8 @@ theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[b]Merci pour cette agréable balade !
 
-Ce jeu a été créée durant la Game Jam dans le Cantal #4.
-L'équipe était composé de [url=https://flatweb.itch.io/]Thierry[/url] (Godot dev),[url=https://darkbean.itch.io/]Alex[/url] (3D models and design),[url=]Léo[/url] (Godot dev),[url=]Ulysse[/url] (Musique),[url=]Florentin[/url] (Sons d'ambiance).
+Ce jeu a été créé durant la Game Jam dans le Cantal #4.
+L'équipe était composée de [url=https://flatweb.itch.io/]Thierry[/url] (Godot dev),[url=https://darkbean.itch.io/]Alex[/url] (3D models and design),[url=]Léo[/url] (Godot dev),[url=]Ulysse[/url] (Musique),[url=]Florentin[/url] (Sons d'ambiance).
 
 [/b]"
 fit_content = true
@@ -216,6 +216,19 @@ one_shot = true
 stream = ExtResource("5_jnlp7")
 
 [node name="Popup" type="Node" parent="." unique_id=1943659802]
+
+[node name="ColorRectHaut" type="ColorRect" parent="." unique_id=681897389]
+offset_right = 1159.0
+offset_bottom = 128.0
+size_flags_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRectBas" type="ColorRect" parent="." unique_id=1994204065]
+offset_left = -8.0
+offset_top = 542.0
+offset_right = 1166.0
+offset_bottom = 667.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="gui_input" from="PanelContainer/IntroContainer/CenterContainer/VBoxContainer/AideButton" to="." method="_on_aide_button_gui_input"]
