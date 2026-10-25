@@ -213,10 +213,10 @@ func _physics_process(delta: float) -> void:
 				for i in range(scores.size()):
 					
 					if scores[i].score >= 100:
-						print("Cette photo contient un " + scores[i].objectif)
+					#	print("Cette photo contient un " + scores[i].objectif)
 						sujet_photo = scores[i].objectif
-					elif scores[i].score > 0:
-						print("Cette photo contient un " + scores[i].objectif + " mais il est trop petit ou masqué :(")
+					#elif scores[i].score > 0:
+					#	print("Cette photo contient un " + scores[i].objectif + " mais il est trop petit ou masqué :(")
 				
 				if sujet_photo:
 					var sujet = get_node("../Objectifs/"+sujet_photo)
@@ -312,7 +312,7 @@ func get_scores_objectifs(img: Image) -> Array:
 	var thresold = 0.2
 	var nb_pixels = 0
 	var scores : Array = [
-		{"objectif" : "Champignon", "color": Color(0.9922, 0.0824, 0.102, 1.0), "score": 0},	
+		{"objectif" : "Biche", "color": Color(0.9922, 0.0824, 0.102, 1.0), "score": 0},	
 		{"objectif": "Fleur", "color": Color(0.0824, 0.9922, 0.102, 1.0), "score": 0},	
 		{"objectif": "Buron", "color": Color(0.0824, 0.102, 0.9922, 1.0), "score": 0}
 	] 
@@ -327,5 +327,4 @@ func get_scores_objectifs(img: Image) -> Array:
 				# 4. Comparer avec la couleur recherchée
 				if pixel_color.r >= target_color.r - thresold and pixel_color.r <= target_color.r + thresold and pixel_color.g >= target_color.g - thresold and pixel_color.g <= target_color.g + thresold and pixel_color.b >= target_color.b - thresold and pixel_color.b <= target_color.b + thresold:
 					scores[i].score += 1
-	print(scores)
 	return scores

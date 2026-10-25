@@ -111,7 +111,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
 [node name="Objectifs" type="Node3D" parent="." unique_id=1079841214]
 
-[node name="Champignon" parent="Objectifs" unique_id=806006239 groups=["objectif"] instance=ExtResource("4_b8o0u")]
+[node name="Biche" parent="Objectifs" unique_id=806006239 groups=["objectif"] instance=ExtResource("4_b8o0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7771606, 0.7211304, 0)
 
 [node name="Fleur" parent="Objectifs" unique_id=1733826176 groups=["objectif"] instance=ExtResource("5_82gh3")]

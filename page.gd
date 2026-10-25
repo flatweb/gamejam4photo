@@ -20,9 +20,17 @@ func change(numpage : int, maxpage : int, img : Image, titre : String, indice : 
 		$Sprite3D.texture = ImageTexture.create_from_image(img)
 		$Sprite3D.show()
 		$LabelIndice.hide()
+		if titre.ends_with(".png"):
+			$Sprite3D/SpriteCheck.hide()
+		else:
+			$Sprite3D/SpriteCheck.show()
 	$LabelTitre.text = titre
 	$LabelIndice.text = indice
-	$LabelNumPage.text = str(numpage," / ",maxpage)
+	if numpage <= maxpage:
+		$LabelNumPage.text = str(numpage," / ",maxpage)
+		$LabelNumPage.show()
+	else:
+		$LabelNumPage.hide()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

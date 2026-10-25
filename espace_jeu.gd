@@ -6,11 +6,11 @@ signal fini ()
 
 var objectifs : Array = [
 	{"img" : null, "titre": "Champignon", "indice" : "sous les arbres"},
-	{"img" : null, "titre": "Arbre", "indice" : "dans la forêt"},
 	{"img" : null, "titre": "Oiseau", "indice" : "dans les arbres"},
 	{"img" : null, "titre": "Biche", "indice" : "elle court vite !"},
 	{"img" : null, "titre": "Caillou", "indice" : "partout"},
 	{"img" : null, "titre": "Buron", "indice" : "sur la montagne"},
+	{"img" : null, "titre": "Fleur", "indice" : "dans la forêt"},
 ]
 
 var matched : Array
@@ -60,6 +60,7 @@ func loadobjectifs(node : Node):
 			if obj["titre"] == node.name :
 				objectifs[ind]["get"] = false
 			ind += 1
+		print("Dinde")
 		node.catched.connect(photographie.bind())
 		return
 	if node.get_child_count() > 0 :
@@ -82,7 +83,7 @@ func start():
 func photographie(type : String, node : Node3D, img : Image):
 	print ("Get ", type)
 	print (node)
-	for i in range(0,objectifs.size()-1):
+	for i in range(0,objectifs.size()):
 		if type == objectifs[i]["titre"]:
 			objectifs[i]["img"] = img
 			objectifs[i]["get"] = true
