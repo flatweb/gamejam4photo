@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bpm6cqev1bh65" path="res://ASSETS/SCENES/roche_l.tscn" id="11_vt7c2"]
 [ext_resource type="PackedScene" uid="uid://bbf58mvri8oss" path="res://ASSETS/SCENES/roche_m.tscn" id="12_7kp1v"]
 [ext_resource type="PackedScene" uid="uid://r6h7yhkllh1y" path="res://ASSETS/SCENES/roche_s.tscn" id="13_3g5uj"]
+[ext_resource type="PackedScene" uid="uid://ydvetysdiaub" path="res://ASSETS/SCENES/biche.tscn" id="14_7kp1v"]
+[ext_resource type="PackedScene" uid="uid://dj58ksefoijut" path="res://ASSETS/SCENES/oiseau.tscn" id="15_3g5uj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pdri"]
 resource_name = "sol"
@@ -1187,7 +1189,7 @@ transform = Transform3D(0.8853273, -0.023037322, -0.036648486, 0.02390761, 0.885
 metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
 
 [node name="ROCHE-S (25)" parent="ROCHERS" unique_id=565953234 instance=ExtResource("13_3g5uj")]
-transform = Transform3D(0.09418708, 0.15466799, 0.86768943, 0.07304712, 0.8682575, -0.16269848, -0.87833446, 0.08879475, 0.07951468, -24.898113, 7.8894196, -41.055332)
+transform = Transform3D(0.09418708, 0.15466799, 0.86768943, 0.07304712, 0.8682575, -0.16269848, -0.87833446, 0.08879475, 0.07951468, -26.16021, 7.8894196, -36.67673)
 metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
 
 [node name="ROCHE-S (26)" parent="ROCHERS" unique_id=266324682 instance=ExtResource("13_3g5uj")]
@@ -1211,7 +1213,7 @@ transform = Transform3D(-0.44686672, 0.10007522, 0.75892913, 0.17605282, 0.86865
 metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
 
 [node name="ROCHE-S (31)" parent="ROCHERS" unique_id=457772544 instance=ExtResource("13_3g5uj")]
-transform = Transform3D(-0.4762496, 0.22533798, 0.7128026, 0.23616154, 0.84722817, -0.11004566, -0.7092901, 0.13078675, -0.51524836, -22.047207, 7.9416656, -44.675274)
+transform = Transform3D(-0.4762496, 0.22533798, 0.7128026, 0.23616154, 0.84722817, -0.11004566, -0.7092901, 0.13078675, -0.51524836, -19.221783, 7.586508, -46.417408)
 metadata/asset_placer_res_id = "uid://r6h7yhkllh1y"
 
 [node name="ROCHE-S (32)" parent="ROCHERS" unique_id=795595587 instance=ExtResource("13_3g5uj")]
@@ -1399,7 +1401,7 @@ transform = Transform3D(0.93069947, 0.328345, -0.16120821, -0.3495808, 0.9281499
 metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
 
 [node name="ROCHE-M (32)" parent="ROCHERS" unique_id=1807499310 instance=ExtResource("12_7kp1v")]
-transform = Transform3D(0.70374846, 0.1609459, 0.69197875, -0.01679418, 0.9774982, -0.21027446, -0.71025085, 0.13635911, 0.69061583, -23.596718, 7.952347, -43.189007)
+transform = Transform3D(0.70374846, 0.1609459, 0.69197875, -0.01679418, 0.9774982, -0.21027446, -0.71025085, 0.13635911, 0.69061583, -22.794744, 7.868373, -36.33875)
 metadata/asset_placer_res_id = "uid://bbf58mvri8oss"
 
 [node name="ROCHE-M (33)" parent="ROCHERS" unique_id=1839791470 instance=ExtResource("12_7kp1v")]
@@ -1827,3 +1829,15 @@ metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
 [node name="CHAMPI (22)" parent="VEGETATION" unique_id=1804490507 instance=ExtResource("10_et52j")]
 transform = Transform3D(-0.46255383, 0, 0.88659126, 0, 1, 0, -0.88659126, 0, -0.46255383, 92.01039, -5.2786484, -79.55157)
 metadata/asset_placer_res_id = "uid://ck8m4tu2cplsr"
+
+[node name="BICHE" parent="." unique_id=596528023 instance=ExtResource("14_7kp1v")]
+transform = Transform3D(-0.51771086, 0, 0.85555565, 0, 1, 0, -0.85555565, 0, -0.51771086, -57.915894, 0.5237045, 78.54871)
+
+[node name="BICHE2" parent="." unique_id=53892384 instance=ExtResource("14_7kp1v")]
+transform = Transform3D(-0.51771086, 0, 0.85555565, 0, 1, 0, -0.85555565, 0, -0.51771086, 90.714584, -15.154706, 79.46967)
+
+[node name="OISEAU" parent="." unique_id=1471016476 instance=ExtResource("15_3g5uj")]
+transform = Transform3D(0.77748346, 0, 0.6289034, 0, 1, 0, -0.6289034, 0, 0.77748346, -9.176068, 1.4275169, 37.594196)
+
+[node name="OISEAU2" parent="." unique_id=930791154 instance=ExtResource("15_3g5uj")]
+transform = Transform3D(-0.99015343, 0, 0.13998649, 0, 1, 0, -0.13998649, 0, -0.99015343, 26.943516, -5.8407173, 5.4394946)
