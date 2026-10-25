@@ -27,10 +27,25 @@ func _ready() -> void:
 	loadobjectifs(self)
 	
 	$Joueur.objectifs = objectifs # Passage par référence, donc en cohérence
+	
+	var file = FileAccess.open("user://UNLOADMAP", FileAccess.READ)
+	if file != null :
+		$MAP/BIOME/FORET_EST.visible = false
+		$MAP/BIOME/FORET_OUEST.visible = false
+		unloadpins(self)
+	pass
 
+# Méthode spécifique pour alléger le modèle au run (perf PC Thierry)
+func unloadpins(node : Node):
+	for child in node.get_children():
+		if child.name == "SAPIN" or child.name == "PIN":
+			child.queue_free()
+		elif child.get_child_count() > 0 :
+			unloadpins(child)
+		
 
 func loadobjectifs(node : Node3D):
-	for child in get_children():
+	for child in node.get_children():
 		if child.is_in_group("objectif"):
 			child["get"] = false
 			child.catched.connect(photo.bind())
