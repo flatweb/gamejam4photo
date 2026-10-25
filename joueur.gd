@@ -9,6 +9,11 @@ const ROT_SPEED = 2
 const BEND_SPEED = 1
 const MAX_BEND_ANGLE : float = PI/4
 
+const NOACTION_PERIOD : float = 10.0
+signal inactif
+signal actif
+var pausing = false
+
 var _started : bool = false
 var freezed : bool = false
 var accroupi : bool = false
@@ -106,9 +111,19 @@ func _handle_joypad_camera_rotation(delta: float, sens_mod: float = 1.0) -> void
 			#%Tete.rotation.x = clamp(%Tete.rotation.x - look_dir.y * camera_sens * sens_mod, -1.5, 1.5)
 		#look_dir = Vector2.ZERO
 
-
 var is_aiming : bool = false
 
+func _on_no_action_timeout() -> void:
+	# Il ne s'est rien passé depuis X secondes
+	inactif.emit()
+	pausing = true
+	pass # Replace with function body.
+
+func inaction():
+	$TimerNoAction.start(NOACTION_PERIOD)
+	if pausing :
+		pausing = false
+		actif.emit()
 
 func _physics_process(delta: float) -> void:
 	# On est freeze tant que l'album est ouvert
@@ -121,6 +136,7 @@ func _physics_process(delta: float) -> void:
 	if not self.is_on_floor():
 		velocity += get_gravity() * delta
 		move_and_slide()
+		inaction()
 		return
 		#if velocity != Vector3.ZERO : print(velocity)
 	#elif freezed :
@@ -161,6 +177,8 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("shoot") and is_aiming:
 			# Si plus de pellicule, interdire
 			if photosrestantes > 0 :
+				inaction()
+				
 				# Hide UI and way for frame refresh
 				$Control/ViewFinder.visible = false
 				$Pellicule.visible = false
@@ -210,12 +228,14 @@ func _physics_process(delta: float) -> void:
 			is_aiming = true
 			$Control/ViewFinder.visible = true
 			%Tete/Camera3D.fov = 50.0
+			inaction()
 			
 		
 		if Input.is_action_just_released("aim"):
 			is_aiming = false
 			$Control/ViewFinder.visible = false
 			%Tete/Camera3D.fov = 75.0
+			inaction()
 	
 	if (velocity.x != 0.0 or velocity.y != 0) and is_on_floor():
 		if running :
@@ -229,7 +249,9 @@ func _physics_process(delta: float) -> void:
 		$AudioRun.stop()
 	
 	#if velocity != Vector3.ZERO : print (velocity)
-	move_and_slide()
+	if velocity != Vector3.ZERO :
+		inaction()
+		move_and_slide()
 
 func _process(delta : float):
 	# Pas d'action autorisée sur l'album est en train de bouger
@@ -256,6 +278,8 @@ func _process(delta : float):
 			$Album.pageprev()
 			pass
 
+func get_photos_prises():
+	return MAXPHOTOS - photosrestantes
 
 func _on_animation_finished(anim_name: StringName) -> void:
 	albumopening = false

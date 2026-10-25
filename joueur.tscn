@@ -213,4 +213,9 @@ stream = ExtResource("6_2l6sa")
 [node name="AudioShoot" type="AudioStreamPlayer" parent="." unique_id=1034023738]
 stream = ExtResource("7_6cmlh")
 
+[node name="TimerNoAction" type="Timer" parent="." unique_id=535681760]
+wait_time = 15.0
+one_shot = true
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
+[connection signal="timeout" from="TimerNoAction" to="." method="_on_no_action_timeout"]
