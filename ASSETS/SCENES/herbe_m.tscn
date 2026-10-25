@@ -1,0 +1,73 @@
+[gd_scene format=4 uid="uid://5mrsoryuhbdb"]
+
+[ext_resource type="Texture2D" uid="uid://d16fvj1w7rof5" path="res://ASSETS/MODELS/HERBE-M_herbe.png" id="1_5otwc"]
+[ext_resource type="Shader" uid="uid://dfrt2w3rjh4jj" path="res://ASSETS/SHADERS/foliage.gdshader" id="2_tno2f"]
+[ext_resource type="Texture2D" uid="uid://ci8wcxi136swv" path="res://ASSETS/MODELS/CHAMPI_herbe.png" id="3_tj2e8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4r2sr"]
+resource_name = "herbe"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_5otwc")
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8f60t"]
+_surfaces = [{
+"aabb": AABB(-0.6988037, -2.9836276e-08, -1.082089, 1.3976074, 1e-05, 1.1001099),
+"format": 34896613377,
+"index_count": 96,
+"index_data": PackedByteArray("AwARABIAEgARAAAAEQACAAAAEgAAAAcAEQABAAIAEwABABEAAwATABEAEwAEAAEAFAASAAcAFAAHAAgABgAUAAgABgAIAAkABQAUAAYAFQASABQABQAVABQAFQADABIACwAVAAUACwAWABUAFgADABUACgAWAAsACgAPABYAFgAXAAMADwAXABYAFwATAAMADwAQABcAFwAYABMAEAAYABcAGAAEABMAEAAMABgAGAANAAQADAANABgADAAOAA0A"),
+"lods": [0.00012315769, PackedByteArray("AAABAAIAAwABAAAAAwAEAAEABQADAAAABQAAAAYABgAAAAcABgAHAAgABgAIAAkACgADAAUACwAKAAUADAAEAAMACgAMAAMADAANAAQADAAOAA0ADwAMAAoADwAQAAwA")],
+"name": "herbe",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 25,
+"vertex_data": PackedByteArray("//8/AGFkAAAcwA0AzQwAAD3vKAANMAAA/39HAFqXAAD/fwAAAAAAAP9/VgD//wAAVKtWAA/+AABJ+08AX50AADfrVQDezgAAyNBWAL7wAAA2L1YAvvAAAKpUVgAP/gAAAAA/AGFkAADiPw0AzQwAAMEQKAANMAAAxxRVAN7OAAC1BE8AX50AAPXAMAAvVgAApL1KADuZAAD/fykADlAAAPG1VAD3zwAA/39UAA3QAAANSlQA988AAFpCSgA7mQAACT8wAC9WAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gd16u"]
+resource_name = "HERBE_L_Plane_003"
+_surfaces = [{
+"aabb": AABB(-0.6988037, -2.9836276e-08, -1.082089, 1.3976074, 1e-05, 1.1001099),
+"attribute_data": PackedByteArray("Vki2yto62LvUSEvA4Cw30+AsZrfgLGbkIDZm5NdHItWbQ8TcXz9m5GEaZuSgI2bkahG2yuYe2LvsEEvAJRbE3OkRItWNOm7I1jma0+AsQ8cwOJXc4CyG3JAhldzpH5rTMh9uyA=="),
+"format": 34896613399,
+"index_count": 96,
+"index_data": PackedByteArray("AwARABIAEgARAAAAEQACAAAAEgAAAAcAEQABAAIAEwABABEAAwATABEAEwAEAAEAFAASAAcAFAAHAAgABgAUAAgABgAIAAkABQAUAAYAFQASABQABQAVABQAFQADABIACwAVAAUACwAWABUAFgADABUACgAWAAsACgAPABYAFgAXAAMADwAXABYAFwATAAMADwAQABcAFwAYABMAEAAYABcAGAAEABMAEAAMABgAGAANAAQADAANABgADAAOAA0A"),
+"lods": [0.00012315769, PackedByteArray("AAABAAIAAwABAAAAAwAEAAEABQADAAAABQAAAAYABgAAAAcABgAHAAgABgAIAAkACgADAAUACwAKAAUADAAEAAMACgAMAAMADAANAAQADAAOAA0ADwAMAAoADwAQAAwA")],
+"material": SubResource("StandardMaterial3D_4r2sr"),
+"name": "herbe",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 25,
+"vertex_data": PackedByteArray("//8/AGFk/78cwA0AzQwAwD3vKAANMBPA/39HAFqX/7//fwAAAAAAwP9/VgD///+/VKtWAA/+B8BJ+08AX50GwDfrVQDezgfAyNBWAL7wwMA2L1YAvvAnwKpUVgAP/hzAAAA/AGFkBcDiPw0AzQwMwMEQKAANMJ/AxxRVAN7OBcC1BE8AX50DwPXAMAAvVgHApL1KADuZAMD/fykADlAAwPG1VAD3zwHA/39UAA3Q/78NSlQA988IwFpCSgA7mQHACT8wAC9WAMDR/6V/pf0sgYL1PYX0/+l/kP4ifdv+kYCp/FR54vzGeZz8Onk18mxky/EZh63zKIb6/PZ5VvdThDDzYWYo+uqCIPtugqn8qoF1/ux80P6ifUr+lnx7/0GArfiog/37AILY/JKB")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_8f60t")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ah3gn"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_krw6m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vabjv"]
+render_priority = 0
+shader = ExtResource("2_tno2f")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/image = ExtResource("3_tj2e8")
+shader_parameter/roughness = 1.0
+shader_parameter/wave = SubResource("NoiseTexture2D_ah3gn")
+shader_parameter/wave2 = SubResource("NoiseTexture2D_krw6m")
+shader_parameter/wave_direction = Vector2(2, 0)
+shader_parameter/wave_direction2 = Vector2(0, 1)
+shader_parameter/time_scale = 0.5
+shader_parameter/noise_scale = 10.0
+shader_parameter/height_scale = 0.15
+
+[node name="HERBE-M" type="Node3D" unique_id=888572409]
+
+[node name="HERBE_L" type="Node3D" parent="." unique_id=925735170]
+
+[node name="Plane" type="MeshInstance3D" parent="HERBE_L" unique_id=1891397818]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+mesh = SubResource("ArrayMesh_gd16u")
+surface_material_override/0 = SubResource("ShaderMaterial_vabjv")

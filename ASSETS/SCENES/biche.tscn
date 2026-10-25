@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ydvetysdiaub"]
+
+[ext_resource type="PackedScene" uid="uid://buvldjf0g3tap" path="res://ASSETS/MODELS/BICHE.glb" id="1_08bnf"]
+
+[node name="BICHE" type="Node3D" unique_id=596528023]
+
+[node name="BICHE_export" parent="." unique_id=409985646 instance=ExtResource("1_08bnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3286405, -0.4962392)

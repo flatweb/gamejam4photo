@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://otv2m0s20xdx" path="res://fleur.tscn" id="5_82gh3"]
 [ext_resource type="Script" uid="uid://dco21a1w216gl" path="res://objectif.gd" id="6_8rlno"]
 [ext_resource type="Texture2D" uid="uid://clmnrepcln118" path="res://ASSETS/MODELS/BURON_buron.jpg" id="6_44gsj"]
-[ext_resource type="PackedScene" uid="uid://dwph1lswdeq1m" path="res://ASSETS/SCENES/map.tscn" id="8_mu3ui"]
+[ext_resource type="PackedScene" uid="uid://ceyy21xp6ls3y" path="res://ASSETS/SCENES/map_2.tscn" id="8_ppxyf"]
 
 [sub_resource type="Environment" id="Environment_vpl4w"]
 
@@ -107,8 +107,6 @@ shadow_opacity = 0.74
 [node name="Joueur" parent="." unique_id=887026073 instance=ExtResource("1_r28ko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
-[node name="MAP" parent="." unique_id=1294606557 instance=ExtResource("8_mu3ui")]
-
 [node name="Objectifs" type="Node3D" parent="." unique_id=1079841214]
 
 [node name="Champignon" parent="Objectifs" unique_id=806006239 groups=["objectif"] instance=ExtResource("4_b8o0u")]
@@ -143,3 +141,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_c28kt")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objectifs/Buron" unique_id=966019783]
 transform = Transform3D(1.0000014, 0, -1.7881393e-07, 0, 1, 0, 1.7881393e-07, 0, 1.0000014, 0, 0, -0.010499954)
 shape = SubResource("BoxShape3D_7x0ad")
+
+[node name="MAP2" parent="." unique_id=1441329596 instance=ExtResource("8_ppxyf")]

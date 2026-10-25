@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://0nle8c2rrgm2"]
+
+[ext_resource type="PackedScene" uid="uid://yucak4ckw627" path="res://ASSETS/MODELS/CHAMPIS.glb" id="1_fyrm6"]
+
+[node name="CHAMPI-L" type="Node3D" unique_id=81293175]
+
+[node name="CHAMPIS" parent="." unique_id=1364823478 instance=ExtResource("1_fyrm6")]

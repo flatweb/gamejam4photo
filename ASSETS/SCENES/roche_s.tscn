@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://r6h7yhkllh1y"]
+
+[ext_resource type="PackedScene" uid="uid://bgix6x642mh4c" path="res://ASSETS/MODELS/ROCHE-S.glb" id="1_m2f4t"]
+
+[node name="ROCHE-S" type="Node3D" unique_id=207257215]
+
+[node name="ROCHE_S" parent="." unique_id=2116994027 instance=ExtResource("1_m2f4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4322083, 0)
