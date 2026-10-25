@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://3i1he7oi4k73"]
+
+[ext_resource type="Theme" uid="uid://xcmvx0jaunfs" path="res://res/design.tres" id="1_u8qen"]
+[ext_resource type="Script" uid="uid://rd2yta6mp7t5" path="res://aide.gd" id="2_birqf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7apej"]
+bg_color = Color(0.33741325, 0.8296558, 0.47234225, 1)
+
+[node name="Aide" type="PanelContainer" unique_id=1032275009]
+process_mode = 3
+offset_right = 1155.0
+offset_bottom = 647.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_u8qen")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7apej")
+script = ExtResource("2_birqf")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=753074794]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1682954728]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=787116715]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0784314, 0.313726, 0.313726, 1)
+theme_override_font_sizes/font_size = 32
+text = "Préparation avant la balade"
+horizontal_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1894233364]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RichText" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBox" unique_id=1042864322]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[b]Votre envie[/b] : Partir en balade avec son appareil photo, pour capturer quelques sujets.
+
+[u][b]Le matériel[/b][/u]
+- [b]bouger[/b] :  WASD/flèches ou  joypad gauche (XBox), Shift pour courir
+ - [b]s'orienter[/b] :  souris ou joypad droite (XBox), Shift pour courir
+- [b]pause[/b] : Esc
+- [b]photographier[/b] : Clic droit pour cadrer, +clic gauche pour déclencher
+- [b]voir l'album[/b] : touche A ou A (Xbox) pour afficher et ranger
+
+[center][b][color=#d36d00][font_size=40]Bonne balade ![/font_size][/color][/b][/center]
+"
+fit_content = true
+scroll_active = false
+
+[node name="FermerButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=514210484]
+unique_name_in_owner = true
+layout_mode = 2
+text = "On est prêt !"
+
+[connection signal="gui_input" from="CenterContainer/VBoxContainer/FermerButton" to="." method="_on_fermer_button_gui_input"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/FermerButton" to="." method="_on_fermer_pressed"]

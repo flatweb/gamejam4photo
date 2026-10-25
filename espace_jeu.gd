@@ -2,15 +2,23 @@ extends Node3D
 
 const MARGEPOS = 10
 
+signal fini
 
 var objectifs : Array = [
 	{"img" : null, "titre": "Champignon", "indice" : "sous les arbres"},
-	{"img" : null, "titre": "Caillou", "indice" : "partout"},
 	{"img" : null, "titre": "Arbre", "indice" : "dans la forêt"},
 	{"img" : null, "titre": "Oiseau", "indice" : "dans les arbres"},
+	{"img" : null, "titre": "Biche", "indice" : "elle court vite !"},
+	{"img" : null, "titre": "Caillou", "indice" : "partout"},
+	{"img" : null, "titre": "Buron", "indice" : "sur la montagne"},
 ]
 
 var matched : Array
+
+var started : bool = false : 
+	set(value):
+		started = value
+		if value : $Joueur.start()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,10 +35,6 @@ func _ready() -> void:
 	loadobjectifs(self)
 	print(objectifs)
 	$Joueur.objectifs = objectifs # Passage par référence, donc en cohérence
-	
-	#$MAP/AudioForetEst.play()
-	#$MAP/AudioForetOuest.play()
-	$MAP/AudioForetPlaine.play()
 	
 	# CONTOURNEMENT D'UN PROBLEME DE PERF SPECIFIQUE SUR PC
 	var file = FileAccess.open("user://UNLOADMAP", FileAccess.READ)
@@ -64,6 +68,18 @@ func loadobjectifs(node : Node):
 	else:
 		return
 
+func silence():
+	$MAP/AudioForetEst.stop()
+	$MAP/AudioForetOuest.stop()
+	$MAP/AudioForetPlaine.stop()
+	
+func start():
+	started = true
+	$MAP/AudioForetEst.play()
+	$MAP/AudioForetOuest.play()
+	$MAP/AudioForetPlaine.play()
+	
+
 func photographie(type : String, node : Node3D, img : Image):
 	print ("Get ", type)
 	print (node)
@@ -78,6 +94,7 @@ func check_end():
 			return
 	# Si on est là, c'est que tous les objectifs sont get
 	# TODO : le jeu est fini
+	fini.emit(0,0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

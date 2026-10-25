@@ -9,11 +9,12 @@ const ROT_SPEED = 2
 const BEND_SPEED = 1
 const MAX_BEND_ANGLE : float = PI/4
 
+var _started : bool = false
 var freezed : bool = false
 var accroupi : bool = false
 var albumopened : bool = false
 var albumopening : bool = false
-var mouse_captured : bool = true
+var mouse_captured : bool = false
 var look_dir : Vector2
 var camera_sens : float = 1.0
 
@@ -24,6 +25,10 @@ var objectifs :
 	set(ref):
 		objectifs = ref
 		$Album.objectifs = ref
+
+func start():
+	_started = true
+	capture_mouse()
 
 func capture_mouse() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -52,7 +57,9 @@ func _ready() -> void:
 	
 # FPS MOUSEMOTION
 func _input(event: InputEvent) -> void:
-			
+	# on attend que la partie soit démarée
+	if not _started: return
+	
 	# On est freeze tant que l'album est ouvert
 	if albumopened : return
 	
@@ -106,6 +113,9 @@ var is_aiming : bool = false
 func _physics_process(delta: float) -> void:
 	# On est freeze tant que l'album est ouvert
 	if albumopened : return
+	
+	# on attend que la partie soit démarée
+	if not _started: return
 	
 	# Add the gravity ?
 	if not self.is_on_floor():

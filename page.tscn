@@ -29,7 +29,7 @@ transform = Transform3D(0.07999999, 0, 0, 0, 0.07999999, 0, 0, 0, 0.07999999, 0,
 texture = ExtResource("2_7tx1s")
 
 [node name="SpriteCheck" type="Sprite3D" parent="Sprite3D" unique_id=1870790229]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.503772, -3.3111799, 0.7617493)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.503772, -3.3111799, 0.4515155)
 texture = ExtResource("3_phrhr")
 
 [node name="LabelNumPage" type="Label3D" parent="." unique_id=221477738]
