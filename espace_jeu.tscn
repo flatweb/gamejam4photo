@@ -1,12 +1,97 @@
-[gd_scene format=3 uid="uid://1r33p33prgmc"]
+[gd_scene format=4 uid="uid://1r33p33prgmc"]
 
 [ext_resource type="Script" uid="uid://dwpg8fk75ly23" path="res://espace_jeu.gd" id="1_luu0b"]
 [ext_resource type="PackedScene" uid="uid://bhf03lo0trtd5" path="res://joueur.tscn" id="1_r28ko"]
 [ext_resource type="PackedScene" uid="uid://bfuiyj2mdow7x" path="res://champignon.tscn" id="4_b8o0u"]
 [ext_resource type="PackedScene" uid="uid://otv2m0s20xdx" path="res://fleur.tscn" id="5_82gh3"]
+[ext_resource type="Script" uid="uid://dco21a1w216gl" path="res://objectif.gd" id="6_8rlno"]
+[ext_resource type="Texture2D" uid="uid://clmnrepcln118" path="res://ASSETS/MODELS/BURON_buron.jpg" id="6_44gsj"]
 [ext_resource type="PackedScene" uid="uid://dwph1lswdeq1m" path="res://ASSETS/SCENES/map.tscn" id="8_mu3ui"]
 
 [sub_resource type="Environment" id="Environment_vpl4w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6n5ug"]
+resource_name = "buron"
+cull_mode = 2
+albedo_texture = ExtResource("6_44gsj")
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2q10q"]
+_surfaces = [{
+"aabb": AABB(-3.1680229, -1.4104118, -2.2342794, 6.3360457, 4.2055483, 4.468559),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAwAAAAQABAAAAAIAAwAEAAUABAACAAYABQAEAAYAAwAFAAcAAwAHAAEABQAGAAcAAgAIAAYABwAJAAEAAQAKAAIAAgAKAAgAAQAJAAoABgAIAAsABgALAAcACwAIAAoABwALAAkACwAKAAkA"),
+"name": "buron",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AAAAAP//AAAAALSrAAAAAAAAtKv//wAAAAAAAAAAAAD//wAA//8AAP//AAAAAAAA//+0q///AAD//7SrAAAAAP7////SgwAAAAD//yx8AAAAAP//0oMAAP7///8sfAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8rlno"]
+resource_name = "BURON_Cube_011"
+_surfaces = [{
+"aabb": AABB(-3.1680229, -1.4104118, -2.2342794, 6.3360457, 4.2055483, 4.468559),
+"attribute_data": PackedByteArray("AYLO9W5SxtcBgsbXblLO9e5qCMmCaQjJblLO9fkOxtduUsbX+Q7O9Qn1zvV2xcbXCfXG13bFzvX23QjJitwIyXbFzvUBgsbXdsXG1wGCzvVOPhlBRUJNPkVCGUFOPk0+3ORqo2eh1qRnoWqj3OTWpGehOMDc5Nak3OQ4wGeh1qTc5AiIZ6Fqo2ehCIjc5Gqj"),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAQAEAAIAAQAFAAQABgAHAAgABgAJAAcACgALAAwACgANAAsACwAOAAwACwAPAA4AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEA"),
+"material": SubResource("StandardMaterial3D_6n5ug"),
+"name": "buron",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("AAAAAP///78AALSrAAD/vwAAtKv///+/AAAAAAAA/78AAP//0oP/vwAA//8sfP+/AAAAAAAA/////7SrAAD//wAAtKsAAP////8AAAAA/////wAAAAD/v///tKv///+///+0qwAA/7///wAA////v/7///8sfP+//v///9KD/7///wAA//8AgAAAtKv//wCA//+0q///AIAAAAAA//8AgAAAAAAAAP+///8AAP///7///wAAAAD/vwAAAAD///+//v///yx8/78AAP//0oP/vwAA//8sfP+//v///9KD/78AALSr///VqP7////Sg9Wo//+0q///1agAAP//0oPVqP//tKsAACnXAAD//yx8KdcAALSrAAAp1/7///8sfCnX/3////9//v//f////3/+//9/////f////3////9//v//f////3/+//9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/////f////3////9///8AAP9/AAD/fwAA/38AAP9/////f/7//3/+//9/////f////3////9//v//f////3/+//9/////f////3/+//9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_2q10q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcd6l"]
+shading_mode = 0
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_us5ho"]
+_surfaces = [{
+"aabb": AABB(-3.8479872, -0.62523156, -0.6277358, 4.314126, 1.2504631, 3.5718272),
+"format": 34896613377,
+"index_count": 180,
+"index_data": PackedByteArray("FgACABcAFwACAAcAAwAWABcAGAADABcAFwAHABgAAwAAABYABAAAAAMAGAAEAAMABAAFAAAAGAAFAAQABQAWAAAAGAAZAAUABQAZABYAGAAHAAYAGAAGABkAGQABABYAGQAGAAEAFgABAAIABwAaAAYABgAbAAEABgAaABsAAQAKAAIAAQAbAAoAAgAJAAcABwAJABoAAgAKAAkAGgANABsAGwAMAAoAGwANAAwACgALAAkACgAMAAsACQAIABoAGgAIAA0ACQALAAgADQARAAwADAAOAAsADAARAA4ACwAPAAgACwAOAA8ACAAQAA0ADQAQABEACAAPABAAEQAcAA4ADgAdAA8ADgAcAB0ADwAeABAADwAdAB4AEAAfABEAEQAfABwAEAAeAB8AHQAVAB4AHwASABwAHAATAB0AHQATABUAHAASABMAHgAVABQAHgAUAB8AEwAUABUAHwAUABIAEwASABQA"),
+"lods": [0.28521484, PackedByteArray("AAABAAIAAwAAAAIABAAAAAMABAADAAIABAAFAAAABQAGAAAABAAGAAUABgABAAAAAgAHAAQABAAHAAYABwAIAAYABgAIAAEAAgAJAAcABwAJAAgAAgAKAAkAAQAKAAIACgALAAkACQALAAgAAQAMAAoACgAMAAsAAQANAAwACAANAAEADAAOAAsACwAPAAgACwAOAA8ACAAPABAACAAQAA0ADQARAAwADAARAA4ADQAQABEAEQASAA4ADgATAA8ADgASABMADwATABAAEQAUABIAEwASABQAEAAUABEAEwAUABUAEAAVABQAEwAVABAA")],
+"name": "buron",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("/////2ZOAADxi///s0IAADiP//8AAAAA/////5QLAAD//wAAlAsAAP//AABmTgAA8YsAALNCAAA4jwAAAAAAAJpFAAA6aQAAXk4AABETAABeTv//ERMAAFgUAADPSgAAWBT//89KAACaRf//OmkAAAAAAADEjQAAUDcAALyMAABQN///vIwAAAAA///EjQAAyxAAAP//AAANRwAA9fIAAMsQ/////wAADUf///XyAAAgxP//8U0AADnN//8JDAAAOc0AAAkMAAAgxAAA8U0AAAhgAABjUgAACGD//2NSAAB8CgAA4NgAAGw/AAB4xQAAbD///3jFAAB8Cv//4NgAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mu3ui"]
+resource_name = "BURON_Cube_013"
+_surfaces = [{
+"aabb": AABB(-3.8479872, -0.62523156, -0.6277358, 4.314126, 1.2504631, 3.5718272),
+"attribute_data": PackedByteArray("PEdu0gI5/8XAPhm/j0w0y8I067q9KF27wCxlw78gpsAOKNzF1xmezvchbtLAjVyqwI1ltlN7ZbZTe1yqhEc9PjNDdEEzQz0+hEd0QWcPXKpbIlyqZw9ltlsiZbYjPvU6LkEmOvc+FTxJQBM5FkO+OddBbTi2Q3840UMhOvREUTnDRBU8B0Z9O1N7ZbZ/cFyqU3tcqn9wZbZbIlyqDi9cqlsiZbYOL2W2f3BltnhkXKp/cFyqeGRltuNaZbZNS1yq41pcqk1LZbZ4ZGW241pcqnhkXKrjWmW2Di9cqlw0ZbYOL2W2XDRcqlw0XKpUQlyqXDRltlRCZbZUQlyqTUtltlRCZbZNS1yqcz+ezORFXsYFMnjDIhzIyZgkxsyDhVyqg4Vlth4ZZbYeGVyqLT81Oi1ALjtEQsE5W0Q0O6xFvTqDhWW2g4Vcqh4ZXKoeGWW2ySlltskpXKrJKVyqySlltqhQXKqoUGW2GDxlthg8XKqoUGW2qFBcqhg8XKoYPGW2"),
+"format": 34896613399,
+"index_count": 180,
+"index_data": PackedByteArray("QgACAEMAAwBCAEMAAwAAAEIAQgABAAIAAQAEAAIAAQBEAAQARAAFAAQARAAGAAUABgAHAAUABgAIAAcACABFAAcACABGAEUARgAJAEUARgAKAAkARwAMAEgARwALAAwADwAQABEADwASABAAEwBJABUAEwBKAEkASwAZABcASwBMABkASwAYAEwASwAaABgAGgBNABgAGgAcAE0AHAAbAE0AHAAdABsAHQAeABsAHQAfAB4AHwBOAB4AHwBPAE4ATwAgAE4ATwAhACAAIgAjACQAIgAlACMAUAAOAFEAUAANAA4AUgAWAFMAUgAUABYAJgBUACgAJgBVAFQAKgArACwAKgAtACsAVgApAFcAVgAnACkALgBYADAALgBZAFgAMgAzADQAMgA1ADMANgA3ADgANgA5ADcAOgBaADwAOgBbAFoAPgA/AEAAPgBBAD8AXAAvAF0AXAAxAC8AXgA9AF8AXgA7AD0A"),
+"lods": [0.28521484, PackedByteArray("AAABAAIAAwAAAAIAAQAEAAIAAQAFAAQAAQAGAAUABgAHAAUABgAIAAcACAAJAAcACAAKAAkACwAMAA0ADQAOAAsADwAQABEADwASABAAEwAUABUAFAAWABUAFwAYABkAFwAaABgAGgAbABgAGgAcABsAHAAdABsAHQAeABsAHQAfAB4AHwAgAB4AHwAhACAAIgAjACQAIgAlACMAJgAnACgAJwApACgAKgArACwAKgAtACsALgAvADAALgAxAC8AMgAzADQAMgA1ADMANgA3ADgANgA5ADcAOgA7ADwAOwA9ADwAPgA/AEAAPgBBAD8A")],
+"material": SubResource("StandardMaterial3D_6n5ug"),
+"name": "buron",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 96,
+"vertex_data": PackedByteArray("/////2ZO+cPxi///s0L5wziP//8AAPnD/////5QL+cNeTv//ERP5w1gU///PSvnDmkX//zpp+cMAAP//xI35w1A3//+8jPnDyxD/////+cMNR///9fL5w///AACUC////////5QL//84j///AAD//ziPAAAAAP////8AAJQLVNX/////Zk5U1f////+UC1TV//8AAGZOVNX//wAAZk7///GLAACzQv///////2ZO///xi///s0L/////AACUC9zt8YsAALNC3O3//wAAZk7c7TiPAAAAANztmkUAADpp3O1eTgAAERPc7VgUAADPStztUDcAALyM3O0AAAAAxI3c7Q1HAAD18tztyxAAAP//3O04j///AAD//15OAAARE///OI8AAAAA//9eTv//ERP///GLAACzQv//mkUAADpp///xi///s0L//5pF//86af//Xk7//xET//9YFAAAz0r//15OAAARE///WBT//89K//8AAP//xI3//8sQAAD/////AAAAAMSN///LEP///////1gU///PSv//AAAAAMSN//9YFAAAz0r//wAA///Ejf//mkUAADpp//9QN///vIz//5pF//86af//UDcAALyM//9QNwAAvIz//w1HAAD18v//UDf//7yM//8NR///9fL//w1HAAD18v//yxD///////8NR///9fL//8sQAAD/////IMT///FN+cM5zf//CQz5wwhg//9jUvnDfAr//+DY+cNsP///eMX5wznNAAAJDP//Oc3//wkM//8gxP//8U3//yDEAADxTf//Oc0AAAkM3O0gxAAA8U3c7QhgAABjUtztbD8AAHjF3O18CgAA4Njc7TnN//8JDP//Oc0AAAkM//8gxAAA8U3//yDE///xTf//CGD//2NS//8IYAAAY1L//whgAABjUv//CGD//2NS//98CgAA4Nj//3wK///g2P//bD///3jF//9sPwAAeMX//3wK///g2P//fAoAAODY//9sPwAAeMX//2w///94xf//neY9TZ3mPU2d5j1NneY9TZ3mPU2d5j1NneY9TZ3mPU2d5j1NneY9TZ3mPU3+/3iA/v94gIf2/3+H9v9/qqpUVaqqVFWqqlRVqqpUVZh//39Ddv9/mH//f0N2/3/3Nu/t9zbv7fc27+33Nu/t9zbv7fc27+33Nu/t9zbv7fc27+33Nu/t9zbv7f//tY3//7WN//+1jf//tY0vkP9/GJ//fy+Q/38Yn/9//v8gof7/IKH+/yCh//8goVtF/38sRv9/W0X/fyxG/3///6C0//+gtP//oLT//6C0RLH/f0Sx/39Esf9/RLH/f3rF/39pxv9/esX/f2nG/395i/9/eYv/f3mL/395i/9/neY9TZ3mPU2d5j1NneY9TZ3mPU3+/3iA/v94gJh//3+Yf/9/9zbv7fc27+33Nu/t9zbv7fc27+2H9v9/h/b/f0N2/39Ddv9/L5D/fy+Q/38Yn/9/GJ//f1tF/39bRf9/esX/f3rF/38sRv9/LEb/f2nG/39pxv9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_us5ho")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c28kt"]
+shading_mode = 0
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7x0ad"]
+size = Vector3(1, 1, 0.9790039)
 
 [node name="EspaceJeu" type="Node3D" unique_id=1443061437]
 script = ExtResource("1_luu0b")
@@ -31,3 +116,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7771606, 0.7211304, 0)
 
 [node name="Fleur" parent="Objectifs" unique_id=1733826176 groups=["objectif"] instance=ExtResource("5_82gh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4114075, 0, 28.712524)
+
+[node name="Buron" type="StaticBody3D" parent="Objectifs" unique_id=1958804636 groups=["objectif"]]
+transform = Transform3D(-0.39175844, 0, 0.9200681, 0, 1, 0, -0.9200681, 0, -0.39175844, -60.523605, 11.987379, -64.44152)
+script = ExtResource("6_8rlno")
+
+[node name="Cube_009" type="MeshInstance3D" parent="Objectifs/Buron" unique_id=768176051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14003, 0)
+mesh = SubResource("ArrayMesh_8rlno")
+
+[node name="Cube_010" type="MeshInstance3D" parent="Objectifs/Buron/Cube_009" unique_id=1595860365]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+layers = 2
+mesh = SubResource("ArrayMesh_8rlno")
+surface_material_override/0 = SubResource("StandardMaterial3D_hcd6l")
+
+[node name="Cube_011" type="MeshInstance3D" parent="Objectifs/Buron" unique_id=1165544401]
+transform = Transform3D(0.030522346, 0, 0.99953413, 0, 1, 0, -0.99953413, 0, 0.030522346, -2.7060778, 0.3532067, 2.2622097)
+mesh = SubResource("ArrayMesh_mu3ui")
+
+[node name="Cube_012" type="MeshInstance3D" parent="Objectifs/Buron/Cube_011" unique_id=39504456]
+layers = 2
+mesh = SubResource("ArrayMesh_mu3ui")
+surface_material_override/0 = SubResource("StandardMaterial3D_c28kt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objectifs/Buron" unique_id=966019783]
+transform = Transform3D(1.0000014, 0, -1.7881393e-07, 0, 1, 0, 1.7881393e-07, 0, 1.0000014, 0, 0, -0.010499954)
+shape = SubResource("BoxShape3D_7x0ad")

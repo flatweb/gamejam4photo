@@ -179,47 +179,45 @@ func _physics_process(delta: float) -> void:
 				$Control/ViewFinder.visible = true
 				$Pellicule.visible = true
 				
-				var pixel_score = image_contains_color(infrared_img, Color(0.9922, 0.0824, 0.102, 1.0))
-				if pixel_score >= 100:
-					print("Cette photo contient un champignon")
-				elif pixel_score > 0:
-					print("Cette photo contient un champignon mais il est trop petit ou masqué :(")
-				
-				# Dimensions of the crop_zone match our camera TextureRect's size
-				var crop_zone:Rect2 = Rect2(Vector2.ZERO, Vector2.ONE * 512)
-				
-				var cropped_img:Image = Image.create_empty(crop_zone.size.x, crop_zone.size.y, false, screenshot_img.get_format())
-				cropped_img.blit_rect(screenshot_img, crop_zone, screenshot_img.get_size() / 2)
-				
-				if not DirAccess.dir_exists_absolute(OS.get_user_data_dir() + "/photos/") :
-					DirAccess.make_dir_recursive_absolute(OS.get_user_data_dir() + "/photos/")
-				var timestamp : String = Time.get_datetime_string_from_system().replace("-", "").replace(":", "").replace("T", "")
-				
-				var save_path = OS.get_user_data_dir() + "/photos/" + timestamp + ".png"
-				screenshot_img.save_png(save_path)
-				
-				save_path = OS.get_user_data_dir() + "/photos/" + timestamp + "_infrared.png"
-				infrared_img.save_png(save_path)
-				
 				photosrestantes -= 1
 				for pellicule in $Pellicule/HBoxContainer.get_children():
 					if pellicule is TextureRect :
 						pellicule.queue_free()
 						break
+						
+				var scores
+				var sujet_photo
+				var objectif
+				var color
 				
-				#$Photo.scale = Vector3.ONE / 10
-				#var photo_texture = ImageTexture.create_from_image(cropped_img)
-				#$Photo.texture = photo_texture # Sprite will show our viewport capture!
-			
-				### For tests only
-				# On va chercher dans user:SHOOT le nom du sujet photographié
-				var file = FileAccess.open("user://SHOOT", FileAccess.READ)
-				if file != null :
-					var content = file.get_as_text()
-					print(content) #FIXME
-					var sujet = get_node("../Objectifs/"+content)
-					sujet.catched.emit(content, sujet, screenshot_img)
-					file.close()
+				scores = get_scores_objectifs(infrared_img)
+				
+				for i in range(scores.size()):
+					
+					if scores[i].score >= 100:
+						print("Cette photo contient un " + scores[i].objectif)
+						sujet_photo = scores[i].objectif
+					elif scores[i].score > 0:
+						print("Cette photo contient un " + scores[i].objectif + " mais il est trop petit ou masqué :(")
+				
+				if sujet_photo:
+					var sujet = get_node("../Objectifs/"+sujet_photo)
+					sujet.catched.emit(sujet_photo, sujet, screenshot_img)
+				else:
+					if not DirAccess.dir_exists_absolute(OS.get_user_data_dir() + "/photos/") :
+						DirAccess.make_dir_recursive_absolute(OS.get_user_data_dir() + "/photos/")
+					var timestamp : String = Time.get_datetime_string_from_system().replace("-", "").replace(":", "").replace("T", "")
+					
+					var save_path = OS.get_user_data_dir() + "/photos/" + timestamp + ".png"
+					screenshot_img.save_png(save_path)
+				
+				#var file = FileAccess.open("user://SHOOT", FileAccess.READ)
+				#if file != null :
+				#	var content = file.get_as_text()
+				#	print(content) #FIXME
+				#	var sujet = get_node("../Objectifs/"+content)
+				#	sujet.catched.emit(content, sujet, screenshot_img)
+				#	file.close()
 				###
 			
 			
@@ -284,17 +282,24 @@ func _on_animation_finished(anim_name: StringName) -> void:
 	pass # Replace with function body.
 	
 	
-func image_contains_color(img: Image, target_color: Color) -> int:
-	var thresold = 0.1
+func get_scores_objectifs(img: Image) -> Array:
+	var thresold = 0.2
 	var nb_pixels = 0
+	var scores : Array = [
+		{"objectif" : "Champignon", "color": Color(0.9922, 0.0824, 0.102, 1.0), "score": 0},	
+		{"objectif": "Fleur", "color": Color(0.0824, 0.9922, 0.102, 1.0), "score": 0},	
+		{"objectif": "Buron", "color": Color(0.0824, 0.102, 0.9922, 1.0), "score": 0}
+	] 
+	var target_color
 	# 2. Parcourir chaque pixel (X et Y)
 	for x in range(img.get_width()):
 		for y in range(img.get_height()):
 			# 3. Récupérer la couleur du pixel actuel
 			var pixel_color = img.get_pixel(x, y)
-			#print(pixel_color)
-			# 4. Comparer avec la couleur recherchée
-			if pixel_color.r >= target_color.r - thresold and pixel_color.r <= target_color.r + thresold and pixel_color.g >= target_color.g - thresold and pixel_color.g <= target_color.g + thresold and pixel_color.b >= target_color.b - thresold and pixel_color.b <= target_color.b + thresold:
-				nb_pixels += 1
-				
-	return nb_pixels
+			for i in range(scores.size()):
+				target_color = scores[i].color
+				# 4. Comparer avec la couleur recherchée
+				if pixel_color.r >= target_color.r - thresold and pixel_color.r <= target_color.r + thresold and pixel_color.g >= target_color.g - thresold and pixel_color.g <= target_color.g + thresold and pixel_color.b >= target_color.b - thresold and pixel_color.b <= target_color.b + thresold:
+					scores[i].score += 1
+	print(scores)
+	return scores

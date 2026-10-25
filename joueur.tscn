@@ -161,8 +161,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000739336, -0.10738611)
 cull_mask = 1048573
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Corps/Tete" unique_id=706895765]
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = -369.99997
+offset_top = 3.9999995
+offset_right = 782.0
+offset_bottom = 652.0
 scale = Vector2(0.31858128, 0.31858128)
 
 [node name="SubViewport" type="SubViewport" parent="Corps/Tete/SubViewportContainer" unique_id=1021110338]
