@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1sjv30tmknl3"
+path="res://.godot/imported/SFX04-Book open-V1.mp3-9e3be7dd7ac4ec0511e07456e27f428b.mp3str"
+
+[deps]
+
+source_file="res://ASSETS/SOUNDS/SFX04-Book open-V1.mp3"
+dest_files=["res://.godot/imported/SFX04-Book open-V1.mp3-9e3be7dd7ac4ec0511e07456e27f428b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

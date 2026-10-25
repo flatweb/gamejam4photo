@@ -120,15 +120,18 @@ func _physics_process(delta: float) -> void:
 	
 	_handle_joypad_camera_rotation(delta)
 	
+	
+	var running : bool = false
+	
 	if true:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		#var bend = Input.get_action_strength("back")
 		var front = -Input.get_action_strength("front") + Input.get_action_strength("back")
 		var lateral = Input.get_action_strength("left") - Input.get_action_strength("right")
-		var sprint = Input.is_action_pressed("run") and not is_aiming
+		running = Input.is_action_pressed("run") and not is_aiming
 		
-		var speed = SPEED_SPRINT if sprint else SPEED
+		var speed = SPEED_SPRINT if running else SPEED
 		var direction : Vector3
 		direction = Vector3(sin(rotation.y),0,cos(rotation.y))
 		velocity = direction.normalized()*front*speed
@@ -191,6 +194,18 @@ func _physics_process(delta: float) -> void:
 			is_aiming = false
 			$Control/ViewFinder.visible = false
 			%Tete/Camera3D.fov = 75.0
+	
+	if (velocity.x != 0.0 or velocity.y != 0) and is_on_floor():
+		if running :
+			$AudioSteps.stop()
+			if not $AudioRun.playing :$AudioRun.play()
+		else:
+			$AudioRun.stop()
+			if not $AudioSteps.playing : $AudioSteps.play()
+	elif velocity.x == 0.0 and velocity.y == 0 :
+		$AudioSteps.stop()
+		$AudioRun.stop()
+	
 	#if velocity != Vector3.ZERO : print (velocity)
 	move_and_slide()
 
