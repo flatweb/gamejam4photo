@@ -26,9 +26,13 @@ func _ready() -> void:
 	#Lister les objectifs
 	loadobjectifs(self)
 	print(objectifs)
-	
 	$Joueur.objectifs = objectifs # Passage par référence, donc en cohérence
 	
+	#$MAP/AudioForetEst.play()
+	#$MAP/AudioForetOuest.play()
+	$MAP/AudioForetPlaine.play()
+	
+	# CONTOURNEMENT D'UN PROBLEME DE PERF SPECIFIQUE SUR PC
 	var file = FileAccess.open("user://UNLOADMAP", FileAccess.READ)
 	if file != null :
 		$MAP/BIOME/FORET_EST.visible = false
