@@ -25,6 +25,7 @@ func _ready() -> void:
 	
 	#Lister les objectifs
 	loadobjectifs(self)
+	print(objectifs)
 	
 	$Joueur.objectifs = objectifs # Passage par référence, donc en cohérence
 	
@@ -44,15 +45,20 @@ func unloadpins(node : Node):
 			unloadpins(child)
 		
 
-func loadobjectifs(node : Node3D):
-	for child in node.get_children():
-		if child.is_in_group("objectif"):
-			child["get"] = false
-			child.catched.connect(photo.bind())
-		elif child.get_child_count() > 0 :
+func loadobjectifs(node : Node):
+	if node.is_in_group("objectif"):
+		var ind : int = 0
+		for obj in objectifs :
+			if obj["titre"] == node.name :
+				objectifs[ind]["get"] = false
+			ind += 1
+		node.catched.connect(photo.bind())
+		return
+	if node.get_child_count() > 0 :
+		for child in node.get_children():
 			loadobjectifs(child)
-		else:
-			return
+	else:
+		return
 
 func photo(type : String, node : Node3D, img : Image):
 	print ("Get ", type)
