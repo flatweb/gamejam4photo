@@ -12,6 +12,7 @@ var photos : Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	clean_photos()
 	pass # Replace with function body.
 
 var opening = false
@@ -71,6 +72,20 @@ func change(cote : Cote, img : Image, titre : String, indice : String):
 	else :
 		$PageDroite.change(pageon+2,photos.size(),img,titre,indice)
 
+func clean_photos():
+	var photos_folder_path = OS.get_user_data_dir() + "/photos/"
+	var photo : Image
+	var dir : DirAccess = DirAccess.open(photos_folder_path)
+	if dir:
+		var files = dir.get_files()
+		for file_name in files:
+			if dir.current_is_dir():
+				print("Found directory: " + file_name)
+			else:
+				print (photos_folder_path + "/" + file_name)
+				DirAccess.remove_absolute(photos_folder_path + "/" + file_name)
+	
+	photos = []
 func load_photos():
 	var photos_folder_path = OS.get_user_data_dir() + "/photos/"
 	var photo : Image

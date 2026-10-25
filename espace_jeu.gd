@@ -45,17 +45,36 @@ func _ready() -> void:
 		if has_node("MAP2"):
 			$MAP2/BIOME/FORET_EST.visible = false
 			$MAP2/BIOME/FORET_OUEST.visible = false
-		unloadpins(self)
+		unloadpins(self.get_node("MAP2"))
 	pass
 
 # Méthode spécifique pour alléger le modèle au run (perf PC Thierry)
 func unloadpins(node : Node):
 	for child in node.get_children():
-		if child.name == "SAPIN" or child.name == "PIN":
-			child.queue_free()
+		if child.name == "SAPIN" :
+			child.free()
+		elif child.name == "PIN":
+			child.free()
+		elif child.name.begins_with("ROCHE"):
+			child.free()
+		elif child.name.begins_with("ARBRE"):
+			child.free()
+		elif child.name.begins_with("CHAMP"):
+			child.free()
+		elif child.name.begins_with("HERBE"):
+			child.free()
+		elif child.name.begins_with("ARBRE"):
+			child.free()
+		elif child.name.begins_with("Cube"):
+			child.free()
+		elif child.name.begins_with("Plane"):
+			child.free()
 		elif child.get_child_count() > 0 :
 			unloadpins(child)
-		
+		else:
+			print (child.name)
+			pass
+	pass
 
 func loadobjectifs(node : Node):
 	if node.is_in_group("objectif"):
