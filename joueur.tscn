@@ -44,6 +44,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-0.78539824, -1.5707964, 1.5707964)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Album:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1)]
+}
 
 [sub_resource type="Animation" id="Animation_nhxrk"]
 resource_name = "hidealbum"
@@ -57,7 +69,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-0.277, 1.46, -1), Vector3(-0.277, 0, -1)]
+"values": [Vector3(-0.277, 1.46, -1), Vector3(-0.277, -0.4, -1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -70,6 +82,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-0.1134464, -0.7853982, 0.1134464), Vector3(-0.78539824, -1.5707964, 1.5707964)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Album:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.1, 0.1)]
 }
 
 [sub_resource type="Animation" id="Animation_7j7mc"]
@@ -97,6 +121,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-0.78539824, -1.5707964, 1.5707964), Vector3(-0.11344535, -0.79188883, 0.11418247)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Album:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1), Vector3(1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wr1qv"]
@@ -128,7 +164,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CylinderShape3D_vv104")
 
 [node name="Album" parent="." unique_id=1819505796 instance=ExtResource("2_mc3kx")]
-transform = Transform3D(0.70710677, 1.2802769e-08, -0.70710665, 0.70710665, -3.0908616e-08, 0.70710677, -1.2802767e-08, -1, -3.0908613e-08, -0.27687502, 0, -0.9759308)
+transform = Transform3D(0.07071068, 1.2802769e-09, -0.070710674, 0.070710674, -3.0908616e-09, 0.07071068, -1.2802769e-09, -0.1, -3.0908616e-09, -0.27687502, 0, -0.9759308)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2038335865]
 libraries/ = SubResource("AnimationLibrary_wr1qv")

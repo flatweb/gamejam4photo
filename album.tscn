@@ -173,6 +173,7 @@ bottom_radius = 0.11621094
 height = 0.9562988
 
 [node name="Album" type="Node3D" unique_id=1819505796]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 script = ExtResource("1_uur71")
 
 [node name="PageGauche" parent="." unique_id=1677043718 instance=ExtResource("1_5p2gi")]

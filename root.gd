@@ -107,7 +107,7 @@ func endofgame(score : int):
 	$AudioMusique.play()
 	get_tree().paused = true
 	
-	%LabelEndOfGame.text = "%d photos prises , % sujets dans l'album" % [score,0] #FIXME
+	%LabelEndOfGame.text = "%d photos prises , %d sujets dans l'album" % [score,0] #FIXME
 	%LabelEndOfGame.show()
 	
 	showcredits()
