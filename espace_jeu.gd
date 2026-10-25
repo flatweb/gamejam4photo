@@ -56,7 +56,7 @@ func loadobjectifs(node : Node):
 			if obj["titre"] == node.name :
 				objectifs[ind]["get"] = false
 			ind += 1
-		node.catched.connect(photo.bind())
+		node.catched.connect(photographie.bind())
 		return
 	if node.get_child_count() > 0 :
 		for child in node.get_children():
@@ -64,7 +64,7 @@ func loadobjectifs(node : Node):
 	else:
 		return
 
-func photo(type : String, node : Node3D, img : Image):
+func photographie(type : String, node : Node3D, img : Image):
 	print ("Get ", type)
 	print (node)
 	for i in range(0,objectifs.size()-1):

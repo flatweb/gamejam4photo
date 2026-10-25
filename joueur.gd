@@ -156,7 +156,7 @@ func _physics_process(delta: float) -> void:
 				$Pellicule.visible = false
 				await RenderingServer.frame_post_draw
 				# Get screenshot
-				var screenshot_img = get_viewport().get_texture().get_image()
+				var screenshot_img : Image = get_viewport().get_texture().get_image()
 				# Show UI again
 				$Control/ViewFinder.visible = true
 				$Pellicule.visible = true
@@ -183,6 +183,18 @@ func _physics_process(delta: float) -> void:
 				#$Photo.scale = Vector3.ONE / 10
 				#var photo_texture = ImageTexture.create_from_image(cropped_img)
 				#$Photo.texture = photo_texture # Sprite will show our viewport capture!
+			
+				### For tests only
+				# On va chercher dans user:SHOOT le nom du sujet photographié
+				var file = FileAccess.open("user://SHOOT", FileAccess.READ)
+				if file != null :
+					var content = file.get_as_text()
+					print(content) #FIXME
+					var sujet = get_node("../Objectifs/"+content)
+					sujet.catched.emit(content, sujet, screenshot_img)
+					file.close()
+				###
+			
 			
 		if Input.is_action_just_pressed("aim") and not Input.is_action_pressed("run"):
 			is_aiming = true
