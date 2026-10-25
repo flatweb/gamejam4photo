@@ -124,8 +124,13 @@ func endofinactif():
 func endofgame():
 	$AudioMusique.play()
 	get_tree().paused = true
-	var strformat = "{0} photos prises , {1} sujets dans l'album" #FIXME
-	%LabelEndOfGame.text = strformat.format([$EspaceJeu/Joueur.get_photos_prises(),$EspaceJeu.get_nb_objectifs_atteints()])
+	
+	var strformat = "{0} photo{1} prise{2} , {3} sujet{4} dans l'album" #FIXME
+	%LabelEndOfGame.text = strformat.format([$EspaceJeu/Joueur.get_photos_prises(),
+											"s" if $EspaceJeu/Joueur.get_photos_prises() > 1 else "",
+											"s" if $EspaceJeu/Joueur.get_photos_prises() > 1 else "",
+											 $EspaceJeu.get_nb_objectifs_atteints(),
+											"s" if $EspaceJeu.get_nb_objectifs_atteints() > 1 else ""])
 	%LabelEndOfGame.show()
 	
 	showcredits()
