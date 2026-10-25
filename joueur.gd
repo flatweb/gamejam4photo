@@ -204,10 +204,12 @@ func _process(delta : float):
 	if Input.is_action_just_pressed("album") and not albumopened :
 		albumopening = true
 		$Album.load_photos()
-		$AnimationPlayer.play("open")
+		$AnimationPlayer.play("showalbum")
+		$Album.showup()
 	elif Input.is_action_just_pressed("album") and albumopened :
 		albumopening = true
-		$AnimationPlayer.play("close")
+		$AnimationPlayer.play("hidealbum")
+		$Album.hidedown()
 		
 	if albumopened:
 		if Input.is_action_just_pressed("right"):
@@ -220,8 +222,8 @@ func _process(delta : float):
 
 func _on_animation_finished(anim_name: StringName) -> void:
 	albumopening = false
-	if anim_name == "open":
+	if anim_name == "showalbum":
 		albumopened = true
-	elif anim_name == "close":
+	elif anim_name == "hidealbum":
 		albumopened = false
 	pass # Replace with function body.

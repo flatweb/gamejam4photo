@@ -17,16 +17,22 @@ func _ready() -> void:
 var opening = false
 var opened = true
 
+func showup():
+		$AudioOpen.play()
+
+func hidedown():
+		$AudioOpen.play()
+
 func open():
 	if opened == false :
 		$AnimationPlayer.play("open")
 		opening = true
-	$AudioOpen.play()
+		#$AudioOpen.play()
 	
 func close():
 	if opened == true :
 		$AnimationPlayer.play("close")
-	$AudioOpen.play()
+		$AudioTurn.play()
 
 func lasteven(n :int):
 	if n % 2 == 1:
@@ -48,6 +54,7 @@ func pagenext():
 
 func closeandopen():
 	$AnimationPlayer.play("close")
+	$AudioTurn.play()
 	opening = true
 	
 func changetopageon():

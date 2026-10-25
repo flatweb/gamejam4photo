@@ -42,7 +42,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_nhxrk"]
-resource_name = "close"
+resource_name = "hidealbum"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -69,7 +69,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_7j7mc"]
-resource_name = "open"
+resource_name = "showalbum"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -98,8 +98,8 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wr1qv"]
 _data = {
 &"RESET": SubResource("Animation_mc3kx"),
-&"close": SubResource("Animation_nhxrk"),
-&"open": SubResource("Animation_7j7mc")
+&"hidealbum": SubResource("Animation_nhxrk"),
+&"showalbum": SubResource("Animation_7j7mc")
 }
 
 [node name="Joueur" type="CharacterBody3D" unique_id=887026073]
