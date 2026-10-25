@@ -182,16 +182,6 @@ func _on_button_gui_input(event: InputEvent) -> void:
 		if mouse.button_mask & MOUSE_BUTTON_RIGHT :
 			get_tree().quit()
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
-
-
-func _on_giveup_button_gui_input(event: InputEvent) -> void:
-	pass # Replace with function body.
-
-
-func _on_child_exiting_tree(node: Node) -> void:
-	pass # Replace with function body.

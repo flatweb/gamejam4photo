@@ -157,7 +157,7 @@ text = "  Continue  "
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_28aoi")
-text = "On repart !"
+text = "On rentre..."
 
 [node name="CreditContainer" type="PanelContainer" parent="." unique_id=632956990]
 unique_name_in_owner = true
@@ -229,3 +229,4 @@ stream = ExtResource("5_jnlp7")
 [connection signal="gui_input" from="CreditContainer/CreditCenterContainer/VBoxContainer/RestartButton" to="." method="_on_button_gui_input"]
 [connection signal="pressed" from="CreditContainer/CreditCenterContainer/VBoxContainer/RestartButton" to="." method="_on_retart_button_pressed"]
 [connection signal="timeout" from="TimerInactivite" to="." method="_on_timer_inactivite_timeout"]
+[connection signal="child_exiting_tree" from="Popup" to="." method="_on_popup_child_exiting_tree"]
