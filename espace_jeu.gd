@@ -1,3 +1,4 @@
+@tool
 extends Node3D
 
 const MARGEPOS = 10
@@ -21,8 +22,34 @@ var started : bool = false :
 		if value :
 			$Joueur.start()
 
+func _init() -> void :
+	if Engine.is_editor_hint():
+		# CONTOURNEMENT D'UN PROBLEME DE PERF SPECIFIQUE SUR PC
+		var file = FileAccess.open("user://UNLOADMAP", FileAccess.READ)
+		if file == null :
+			# On n'est pas en mode optimisé (pb perf Thierry), donc on peut charger la MAP2
+			print ("Loading MAP2")
+			var maptscn : PackedScene = load("res://ASSETS/SCENES/map_2.tscn")
+			var scene = maptscn.instantiate()
+			add_child(scene)
+			return
+		else:
+			print ("Loading MAP2 light !")
+			var maptscn : PackedScene = load("res://ASSETS/SCENES/map_2_light.tscn")
+			var scene = maptscn.instantiate()
+			add_child(scene)
+	
+	
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
+
+	var maptscn : PackedScene = load("res://ASSETS/SCENES/map_2.tscn")
+	var scene = maptscn.instantiate()
+	add_child(scene)
+	
 	# Repositionnement aléatoire du joueur dans l'Area3D
 	#var asize = $Area3D/MeshInstance3D.mesh.size
 	var randposx = randi_range(100/2+MARGEPOS, 100/2-MARGEPOS)

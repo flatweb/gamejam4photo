@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://ydvetysdiaub"]
 
 [ext_resource type="Texture2D" uid="uid://fmhmy8ogfwwu" path="res://ASSETS/MODELS/BICHE_animaux.jpg" id="1_08bnf"]
+[ext_resource type="Script" uid="uid://l6oxp20p7t85" path="res://objectif_moving.gd" id="1_scfq0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ewav0"]
 resource_name = "animaux"
@@ -328,10 +329,16 @@ _data = {
 &"Armature_001Action": SubResource("Animation_ubhr1")
 }
 
-[node name="BICHE" type="Node3D" unique_id=596528023]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vpl4w"]
+size = Vector3(1, 2.3203125, 2.4882202)
+
+[node name="BICHE" type="CharacterBody3D" unique_id=849651692 groups=["objectif"]]
+script = ExtResource("1_scfq0")
+speed = 5.0
+vivacity = 3.0
 
 [node name="BICHE_export" type="Node3D" parent="." unique_id=409985646]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3286405, -0.4962392)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.01601553, 1.3286405, 0.6033256)
 
 [node name="Armature" type="Node3D" parent="BICHE_export" unique_id=547973387]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
@@ -487,3 +494,7 @@ skeleton = NodePath("..")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BICHE_export" unique_id=1631962638]
 libraries/ = SubResource("AnimationLibrary_y7yw5")
 autoplay = &"ArmatureAction"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1441882539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1658152, 0.05557251)
+shape = SubResource("BoxShape3D_vpl4w")
