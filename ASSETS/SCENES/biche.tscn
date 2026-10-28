@@ -338,7 +338,7 @@ speed = 5.0
 vivacity = 3.0
 
 [node name="BICHE_export" type="Node3D" parent="." unique_id=409985646]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.01601553, 1.3286405, 0.6033256)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.01601553, 1.2428653, 0.6033256)
 
 [node name="Armature" type="Node3D" parent="BICHE_export" unique_id=547973387]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)

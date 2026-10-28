@@ -178,68 +178,12 @@ func _physics_process(delta: float) -> void:
 			$Corps.scale.y = 1
 			accroupi = false
 		
-		if Input.is_action_just_pressed("shoot") and is_aiming:
-			# Si plus de pellicule, interdire
+		# Prise de vue
+		if Input.is_action_just_pressed("shoot") and is_aiming :
 			if photosrestantes > 0 :
-				inaction()
-				$AudioShoot.play()
-				
-				# Hide UI and way for frame refresh
-				$Control/ViewFinder.visible = false
-				$Pellicule.visible = false
-				await RenderingServer.frame_post_draw
-				# Get screenshot
-				var screenshot_img = get_viewport().get_texture().get_image()
-				
-				var infrared_img = %SubViewport.get_texture().get_image()
-				
-				
-				# Show UI again
-				$Control/ViewFinder.visible = true
-				$Pellicule.visible = true
-				
-				photosrestantes -= 1
-				for pellicule in $Pellicule/HBoxContainer.get_children():
-					if pellicule is TextureRect :
-						pellicule.queue_free()
-						break
-						
-				var scores
-				var sujet_photo
-				var objectif
-				var color
-				
-				scores = get_scores_objectifs(infrared_img)
-				
-				for i in range(scores.size()):
-					
-					if scores[i].score >= 100:
-					#	print("Cette photo contient un " + scores[i].objectif)
-						sujet_photo = scores[i].objectif
-					#elif scores[i].score > 0:
-					#	print("Cette photo contient un " + scores[i].objectif + " mais il est trop petit ou masqué :(")
-				
-				if sujet_photo:
-					var sujet = get_node("../Objectifs/"+sujet_photo)
-					sujet.catched.emit(sujet_photo, sujet, screenshot_img)
-				else:
-					if not DirAccess.dir_exists_absolute(OS.get_user_data_dir() + "/photos/") :
-						DirAccess.make_dir_recursive_absolute(OS.get_user_data_dir() + "/photos/")
-					var timestamp : String = Time.get_datetime_string_from_system().replace("-", "").replace(":", "").replace("T", "")
-					
-					var save_path = OS.get_user_data_dir() + "/photos/" + timestamp + ".png"
-					screenshot_img.save_png(save_path)
-				
-				#var file = FileAccess.open("user://SHOOT", FileAccess.READ)
-				#if file != null :
-				#	var content = file.get_as_text()
-				#	print(content) #FIXME
-				#	var sujet = get_node("../Objectifs/"+content)
-				#	sujet.catched.emit(content, sujet, screenshot_img)
-				#	file.close()
-				###
-			
-			
+				shootphoto()
+		
+		# Visée
 		if Input.is_action_just_pressed("aim") and not Input.is_action_pressed("run"):
 			is_aiming = true
 			$AudioAim.play()
@@ -272,6 +216,53 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 	%Camera3D2.global_transform = %Tete/Camera3D.global_transform
+
+func shootphoto():
+		inaction()
+		$AudioShoot.play()
+		
+		# Hide UI and way for frame refresh
+		$Control/ViewFinder.visible = false
+		$Pellicule.visible = false
+		await RenderingServer.frame_post_draw
+		
+		# Get screenshot FIXME pour avoir un zoom de la vue
+		var screenshot_img = get_viewport().get_texture().get_image()
+		
+		# Controle de l'objectif visé
+		var sujet_photo
+		sujet_photo = check_objectif_by_infrared()
+		
+		# Show UI again
+		$Control/ViewFinder.visible = true
+		$Pellicule.visible = true
+		
+		photosrestantes -= 1
+		for pellicule in $Pellicule/HBoxContainer.get_children():
+			if pellicule is TextureRect :
+				pellicule.queue_free()
+				break
+		
+		if sujet_photo:
+			var sujet = get_node("../Objectifs/"+sujet_photo)
+			sujet.catched.emit(sujet_photo, sujet, screenshot_img)
+		else:
+			if not DirAccess.dir_exists_absolute(OS.get_user_data_dir() + "/photos/") :
+				DirAccess.make_dir_recursive_absolute(OS.get_user_data_dir() + "/photos/")
+			var timestamp : String = Time.get_datetime_string_from_system().replace("-", "").replace(":", "").replace("T", "")
+			
+			var save_path = OS.get_user_data_dir() + "/photos/" + timestamp + ".png"
+			screenshot_img.save_png(save_path)
+		
+		#var file = FileAccess.open("user://SHOOT", FileAccess.READ)
+		#if file != null :
+		#	var content = file.get_as_text()
+		#	print(content) #FIXME
+		#	var sujet = get_node("../Objectifs/"+content)
+		#	sujet.catched.emit(content, sujet, screenshot_img)
+		#	file.close()
+		###
+			
 
 func _process(delta : float):
 	# Pas d'action autorisée sur l'album est en train de bouger
@@ -308,13 +299,37 @@ func _on_animation_finished(anim_name: StringName) -> void:
 	elif anim_name == "hidealbum":
 		albumopened = false
 	pass # Replace with function body.
-	
+
+func check_objectif_by_raycast():
+	pass
+
+func check_objectif_by_infrared() :
+		var scores
+		var sujet_photo
+		var objectif
+		var color
+		
+		var infrared_img = %SubViewport.get_texture().get_image()
+		var save_path_infrared = OS.get_user_data_dir() + "/photos/infrared.png"
+		infrared_img.save_png(save_path_infrared)
+		
+		scores = get_scores_objectifs(infrared_img)
+		
+		for i in range(scores.size()):
+			
+			if scores[i].score >= 100:
+			#	print("Cette photo contient un " + scores[i].objectif)
+				sujet_photo = scores[i].objectif
+			#elif scores[i].score > 0:
+			#	print("Cette photo contient un " + scores[i].objectif + " mais il est trop petit ou masqué :(")
+		
+
 	
 func get_scores_objectifs(img: Image) -> Array:
 	var thresold = 0.2
 	var nb_pixels = 0
 	var scores : Array = [
-		{"objectif" : "Biche", "color": Color(0.9922, 0.0824, 0.102, 1.0), "score": 0},	
+		{"objectif": "Biche", "color": Color(0.9922, 0.0824, 0.102, 1.0), "score": 0},	
 		{"objectif": "Fleur", "color": Color(0.0824, 0.9922, 0.102, 1.0), "score": 0},	
 		{"objectif": "Buron", "color": Color(0.0824, 0.102, 0.9922, 1.0), "score": 0}
 	] 
