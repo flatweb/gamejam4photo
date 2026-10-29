@@ -15,6 +15,10 @@ run/main_scene="uid://h4tf3n3bfgkj"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://bnmatmhl0ok7u"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -23,6 +27,11 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/asset_placer/plugin.cfg")
+
+[global_group]
+
+floor=""
+objectif=""
 
 [input]
 
