@@ -44,7 +44,6 @@ func release_mouse() -> void:
 	mouse_captured = false
 
 @onready var fps_camera: Camera3D = %Camera3D
-#@onready var interaction_ray: RayCast3D = %InteractionRay
 
 @export var camera_FOV = 55
 @export var interaction_ray_length = 3.0
@@ -258,15 +257,6 @@ func shootphoto():
 			var save_path = OS.get_user_data_dir() + "/photos/" + timestamp + ".png"
 			screenshot_img.save_png(save_path)
 		
-		#var file = FileAccess.open("user://SHOOT", FileAccess.READ)
-		#if file != null :
-		#	var content = file.get_as_text()
-		#	print(content) #FIXME
-		#	var sujet = get_node("../Objectifs/"+content)
-		#	sujet.catched.emit(content, sujet, screenshot_img)
-		#	file.close()
-		###
-			
 
 func _process(delta : float):
 	# Pas d'action autorisée sur l'album est en train de bouger
@@ -304,6 +294,10 @@ func _on_animation_finished(anim_name: StringName) -> void:
 		albumopened = false
 	pass # Replace with function body.
 
+##################################################################
+## Algorithme de recherche d'objectif par envoi de rayon (raycast)
+##################################################################
+
 func check_objectif_by_raycast():
 	var body : PhysicsBody3D
 	# Cherche un body dans le cadre en utilisant le raycast
@@ -316,10 +310,10 @@ func check_objectif_by_raycast():
 	if check_obstacles_in_photo(body):
 		# Il y a un obstacle
 		return null
-
-##################################################################
-## Algorithme de recherche d'objectif par envoi de rayon (raycast)
-##################################################################
+	
+	if body.get("ObjectifName") != null and body.get("ObjectifName") != "":
+		return body.get("ObjectifName")
+	return body.name
 
 ## Pourcentage minimum pour considérer que le sujet est bien pris
 ## dans la zone centrale (container ZoneCentre)

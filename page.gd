@@ -14,7 +14,6 @@ func change(numpage : int, maxpage : int, img : Image, titre : String, indice : 
 	if img == null:
 		var imgpng = ResourceLoader.load("res://icon.svg")
 		#$Image3D.mesh.material.set_texture(BaseMaterial3D.TextureParam.TEXTURE_ALBEDO,img)  ##FIXME
-		#print (xx)
 		$LabelIndice.show()
 	if img != null:
 		$Sprite3D.texture = ImageTexture.create_from_image(img)

@@ -204,7 +204,7 @@ func _on_giveup_button_up() -> void:
 func _on_button_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton :
 		var mouse = event as InputEventMouseButton
-		print (mouse.button_mask)
+		#print (mouse.button_mask)
 		if mouse.button_mask & MOUSE_BUTTON_RIGHT :
 			get_tree().quit()
 

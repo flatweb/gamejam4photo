@@ -1,9 +1,11 @@
 extends StaticBody3D
 
-@export var vivacity : float = 5.0
+## Titre de l'objectif (dans l'Array objectifs de espace_jeu)
+@export var ObjectifName : String
+
 var direction : Vector3
 var animation : AnimationPlayer
-var timer : Timer
+var timer : Timer  # Inutile pour l'instant
 
 signal catched(nom : String, node : Node3D, photo : Image)
 
@@ -12,7 +14,6 @@ func _ready() -> void:
 	timer = Timer.new()
 	timer.timeout.connect(_on_timer_timeout.bind())
 	add_child(timer)
-	timer.start(vivacity)
 		
 	# Cherche un AnimationPlayer
 	animation = find_animation_player(self)

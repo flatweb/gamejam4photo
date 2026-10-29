@@ -85,7 +85,6 @@ func clean_photos():
 				print (photos_folder_path + "/" + file_name)
 				DirAccess.remove_absolute(photos_folder_path + "/" + file_name)
 	
-	photos = []
 func load_photos():
 	var photos_folder_path = OS.get_user_data_dir() + "/photos/"
 	var photo : Image

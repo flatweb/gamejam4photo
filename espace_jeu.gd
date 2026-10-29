@@ -63,7 +63,7 @@ func _ready() -> void:
 	
 	#Lister les objectifs
 	loadobjectifs(self)
-	print(objectifs)
+	#print(objectifs)
 	$Joueur.objectifs = objectifs # Passage par référence, donc en cohérence
 	
 	# CONTOURNEMENT D'UN PROBLEME DE PERF SPECIFIQUE SUR PC
@@ -113,7 +113,6 @@ func loadobjectifs(node : Node):
 			if obj["titre"] == node.name :
 				objectifs[ind]["get"] = false
 			ind += 1
-		print("Dinde")
 		node.catched.connect(photographie.bind())
 		return
 	if node.get_child_count() > 0 :
@@ -134,8 +133,6 @@ func start():
 	$AudioPlaine.play()
 
 func photographie(type : String, node : Node3D, img : Image):
-	print ("Get ", type)
-	print (node)
 	for i in range(0,objectifs.size()):
 		if type == objectifs[i]["titre"]:
 			objectifs[i]["img"] = img

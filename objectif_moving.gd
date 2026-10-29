@@ -1,7 +1,13 @@
 extends CharacterBody3D
 
-@export var speed : float = 0.0
+## Titre de l'objectif (dans l'Array objectifs de espace_jeu)
+@export var ObjectifName : String
+
+## Vitesse de l'objectif qui se déplace
+@export var speed : float = 1.0
+## Vivacité (délai avant un changement de direction)
 @export var vivacity : float = 5.0
+
 var direction : Vector3
 var animation : AnimationPlayer
 var timer : Timer
@@ -37,7 +43,6 @@ func newdirection():
 	direction = Vector3.FORWARD.rotated(Vector3.UP,orientation)
 	rotation = Vector3(0,orientation,0)
 	direction += Vector3.UP*0.05
-	#print(rotation)
 
 
 func _physics_process(delta: float) -> void:	
