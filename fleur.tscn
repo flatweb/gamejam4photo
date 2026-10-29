@@ -23,18 +23,18 @@ material = SubResource("StandardMaterial3D_kotm3")
 shading_mode = 0
 albedo_color = Color(0, 1, 0, 1)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_egq5s"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ylwl6"]
+height = 2.5576172
 
-[node name="Fleur" type="StaticBody3D" unique_id=783358859]
+[node name="Fleur" type="StaticBody3D" unique_id=783358859 groups=["objectif"]]
 script = ExtResource("1_egq5s")
-speed = null
 vivacity = 0.0
 
 [node name="MeshTige" type="MeshInstance3D" parent="." unique_id=29767604]
 mesh = SubResource("CylinderMesh_nhxrk")
 
 [node name="MeshTige2" type="MeshInstance3D" parent="MeshTige" unique_id=863471986]
+visible = false
 layers = 2
 mesh = SubResource("CylinderMesh_nhxrk")
 surface_material_override/0 = SubResource("StandardMaterial3D_7x0ad")
@@ -44,9 +44,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("SphereMesh_vpl4w")
 
 [node name="MeshCorolle2" type="MeshInstance3D" parent="MeshCorolle" unique_id=1730544325]
+visible = false
 layers = 2
 mesh = SubResource("SphereMesh_vpl4w")
 surface_material_override/0 = SubResource("StandardMaterial3D_rs1r3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1173608509]
-shape = SubResource("ConcavePolygonShape3D_egq5s")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2788086, 0)
+shape = SubResource("CylinderShape3D_ylwl6")

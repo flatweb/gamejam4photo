@@ -60,6 +60,7 @@ func _ready() -> void:
 		textrect.expand_mode = TextureRect.EXPAND_FIT_WIDTH
 		$Pellicule/HBoxContainer.add_child(textrect)
 	%SubViewport.get_camera_3d()
+	$Control/ViewFinder.hide()
 	
 # FPS MOUSEMOTION
 func _input(event: InputEvent) -> void:
@@ -231,7 +232,10 @@ func shootphoto():
 		
 		# Controle de l'objectif visé
 		var sujet_photo
-		sujet_photo = check_objectif_by_infrared()
+		if Global.has_option("RAYCAST") :
+			sujet_photo = check_objectif_by_raycast()
+		else:
+			sujet_photo = check_objectif_by_infrared()
 		
 		# Show UI again
 		$Control/ViewFinder.visible = true
@@ -301,7 +305,158 @@ func _on_animation_finished(anim_name: StringName) -> void:
 	pass # Replace with function body.
 
 func check_objectif_by_raycast():
-	pass
+	var body : PhysicsBody3D
+	# Cherche un body dans le cadre en utilisant le raycast
+	body = scan_by_raycast()
+	if body == null :
+		# Il n'y a rien sur la photo, ou bien c'est trop petit !
+		return null
+	
+	# Vérifie si il y a un obstacle devant le body
+	if check_obstacles_in_photo(body):
+		# Il y a un obstacle
+		return null
+
+##################################################################
+## Algorithme de recherche d'objectif par envoi de rayon (raycast)
+##################################################################
+
+## Pourcentage minimum pour considérer que le sujet est bien pris
+## dans la zone centrale (container ZoneCentre)
+const COVERAGEMIN = 0.05
+
+func scan_by_raycast():
+	var cam : Camera3D = %Camera3D
+	const RAY_LENGTH = 1000 # TODO
+	var scans = 0
+	var hits : Dictionary
+	var bodies : Dictionary
+	var space_state = get_world_3d().direct_space_state
+	for x in range(%ZoneCentre.position.x,%ZoneCentre.position.x + %ZoneCentre.size.x,20):
+		for y in range(%ZoneCentre.position.y,%ZoneCentre.position.y + %ZoneCentre.size.y,20):
+			scans += 1
+			# position au centre de l'image
+			var pos = Vector2(x,y)
+			var origin = cam.project_ray_origin(pos)
+			var end = origin + cam.project_ray_normal(pos) * RAY_LENGTH
+			var query = PhysicsRayQueryParameters3D.create(origin, end)
+			query.collide_with_areas = true
+			var result = space_state.intersect_ray(query)
+			if not result.is_empty():
+				var cc = result["collider"]
+				if cc.name.begins_with("@StaticBody3D"):
+					continue
+				#print (origin, "->",end,"=",cc.name)
+				var groups : Array = cc.get_groups()
+				if groups.size() >0 and groups.has("objectif"):
+					if not hits.has(cc.name):
+						hits[cc.name] = 0
+						bodies[cc.name] = cc
+					hits[cc.name] += 1
+	#print (hits)
+	# Recherche maintenant le maximum
+	var maxpcthit : float = 0.0
+	var objhit = null
+	for k in hits.keys() :
+		if float(hits[k])/scans > maxpcthit:
+			objhit = bodies[k]
+			maxpcthit = float(hits[k])/scans
+	#print (objhit," gets ",maxpcthit)
+	if maxpcthit >= 0.01 : #FIXME pour être plus précis
+		return objhit
+	else:
+		return null
+	
+	
+## Vérifie si il y a des obstacles devant la photo
+func check_obstacles_in_photo(body : PhysicsBody3D) -> bool:
+	for child in body.get_children():
+		if child is CollisionShape3D:
+			var shape = child.shape
+			var obstacle : Node3D = null
+			# Do something with shape_res or child
+			if shape is BoxShape3D :
+				obstacle = check_obstacle_to_boxshape(body,child, shape)
+			elif shape is CylinderShape3D:
+				obstacle = check_obstacle_to_cylindershape(body,child, shape)
+			if obstacle != null :
+				# Il y a un obstacle devant le sujet sur la photo
+				return true
+	# On a tout parcouru, il n'y a donc pas d'obstacle
+	return false
+
+const ECHANTILLONNAGE = 20
+
+func check_obstacle_to_boxshape(body : PhysicsBody3D, collisionshape : CollisionShape3D, boxshape : BoxShape3D) -> Node3D:
+	const RAY_LENGTH = 1000
+	var cam = %Camera3D
+	for nx in range(-ECHANTILLONNAGE/2,ECHANTILLONNAGE/2+1):
+		var x = boxshape.size.x * (float(nx)/ECHANTILLONNAGE)
+		for nz in range(-ECHANTILLONNAGE/2,ECHANTILLONNAGE/2+1):
+			var z = boxshape.size.z * (float(nz)/ECHANTILLONNAGE)
+			for ny in range(-ECHANTILLONNAGE/2,ECHANTILLONNAGE/2+1):
+				var y = boxshape.size.y * (float(ny)/ECHANTILLONNAGE)
+				# position au centre de l'image
+				var end : Vector3 = collisionshape.global_position + Vector3(x,y,z)
+				var cast = cast_ray_to_obstacle(body,end)
+				if cast == null:
+					continue
+				return cast # FIXME
+	# On n'a rien trouvé, donc il n'y a pas d'obstacle
+	return null
+
+func check_obstacle_to_cylindershape(body : PhysicsBody3D, collisionshape : CollisionShape3D, cylshape : CylinderShape3D) -> Node3D:
+	var cam = %Camera3D
+	var space_state = get_world_3d().direct_space_state
+	const RAY_LENGTH = 1000
+	var distbody = body.global_position.distance_to(cam.global_position)
+	for nangle in range(-ECHANTILLONNAGE/2,ECHANTILLONNAGE/2+1):
+		var angle : float = PI * (float(nangle)/ECHANTILLONNAGE)
+		for ny in range(-ECHANTILLONNAGE/2,ECHANTILLONNAGE/2+1):
+			var y = cylshape.height * (float(ny)/ECHANTILLONNAGE)
+			var radius = cylshape.radius
+			# Dans un premier temps, on considère que le cylindre est vertical : TODO
+			var end : Vector3 = collisionshape.global_position + Vector3(radius*cos(angle),y,radius*sin(angle))
+			var cast = cast_ray_to_obstacle(body,end)
+			if cast == null:
+				continue
+			return cast # FIXME
+	# On n'a rien trouvé, donc il n'y a pas d'obstacle
+	return null
+	
+	
+# Envoie un ray cast de la caméra vers la cible "end"
+# Retourne null si on touche soi-même ou la map (sol)
+# Retourne null si on touche un objet plus loin que body
+# Retourne le parent de l'objet touché 
+func cast_ray_to_obstacle(body : PhysicsBody3D, end : Vector3):
+	var cam = %Camera3D
+	var space_state = get_world_3d().direct_space_state
+	var distbody = body.global_position.distance_to(cam.global_position)
+	var origin : Vector3 = cam.global_position #cam.project_ray_origin(pos)
+	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	query.collide_with_areas = true
+	var result = space_state.intersect_ray(query)
+	if not result.is_empty():
+		var cc = result["collider"]
+		# Si c'est la map du sol, on ignore
+		# Si c'est l'objet lui-même, on ignore
+		if cc == body :
+			return null
+		# FIXME : si c'est le sol, il faudrait quand même vérifier qu'on ne masque pas
+		if cc.name.begins_with("@StaticBody3D"):
+			return null #
+		var distance = origin.distance_to(result["position"])
+		#print ("dist : ",result["position"],"  --  ",distance, " versus ",distbody)
+		# Reste à savoir si l'objet est au loin, ou devant...
+		if (distance < distbody):
+			print("Un objet ",result["collider"].get_parent().name," masque le sujet ",body.name,"  à  ",distance, " versus ",distbody)
+			return result["collider"]
+	return null
+
+##################################################################
+## Algorithme de recherche d'objectif par la recherche de couleur
+##################################################################
 
 func check_objectif_by_infrared() :
 		var scores
@@ -318,13 +473,12 @@ func check_objectif_by_infrared() :
 		for i in range(scores.size()):
 			
 			if scores[i].score >= 100:
-			#	print("Cette photo contient un " + scores[i].objectif)
+				print("Cette photo contient un " + scores[i].objectif)
 				sujet_photo = scores[i].objectif
 			#elif scores[i].score > 0:
 			#	print("Cette photo contient un " + scores[i].objectif + " mais il est trop petit ou masqué :(")
 		
 
-	
 func get_scores_objectifs(img: Image) -> Array:
 	var thresold = 0.2
 	var nb_pixels = 0

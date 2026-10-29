@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://otv2m0s20xdx" path="res://fleur.tscn" id="5_82gh3"]
 [ext_resource type="Script" uid="uid://dco21a1w216gl" path="res://objectif.gd" id="6_8rlno"]
 [ext_resource type="Texture2D" uid="uid://clmnrepcln118" path="res://ASSETS/MODELS/BURON_buron.jpg" id="6_44gsj"]
+[ext_resource type="PackedScene" uid="uid://bpm6cqev1bh65" path="res://ASSETS/SCENES/roche_l.tscn" id="7_ppxyf"]
 [ext_resource type="AudioStream" uid="uid://dr0qr007seqwj" path="res://ASSETS/SOUNDS/AMB01-Forest-V1.mp3" id="8_8utgp"]
 [ext_resource type="AudioStream" uid="uid://6jn0ypawucf1" path="res://ASSETS/SOUNDS/AMB01-Meadow-V1.mp3" id="9_lkouy"]
 
@@ -160,6 +161,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_c28kt")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objectifs/Buron" unique_id=966019783]
 transform = Transform3D(1.0000014, 0, -1.4901161e-07, 0, 1, 0, 1.4901161e-07, 0, 1.0000014, 0.017837524, 1.7930298, 1.9324722)
 shape = SubResource("BoxShape3D_7x0ad")
+
+[node name="Testing" type="Node3D" parent="Objectifs" unique_id=810570482]
+
+[node name="FleurTest" parent="Objectifs/Testing" unique_id=783358859 instance=ExtResource("5_82gh3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.47575, -4.4917784, -0.0745101)
+
+[node name="RocheTest" parent="Objectifs/Testing" unique_id=1981422751 instance=ExtResource("7_ppxyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.36704, -4.244461, -7.8716297)
 
 [node name="AudioForetEst" type="AudioStreamPlayer3D" parent="." unique_id=1607110534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.06033, 0, -69.121376)

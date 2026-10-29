@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_vpl4w"]
 size = Vector3(6.7474365, 4.9262695, 8.777588)
 
-[node name="BURON" type="StaticBody3D" unique_id=710311285]
+[node name="BURON" type="StaticBody3D" unique_id=710311285 groups=["objectif"]]
 script = ExtResource("1_dhixy")
 
 [node name="BURON" parent="." unique_id=1394100143 instance=ExtResource("1_n8q4f")]

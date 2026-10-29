@@ -51,12 +51,15 @@ func _ready() -> void:
 	add_child(scene)
 	
 	# Repositionnement aléatoire du joueur dans l'Area3D
-	#var asize = $Area3D/MeshInstance3D.mesh.size
-	var randposx = randi_range(100/2+MARGEPOS, 100/2-MARGEPOS)
-	var randposy = randi_range(-100/2+MARGEPOS, 100/2-MARGEPOS)
-	$Joueur.position = Vector3(randposx, 0.5, randposy)
-	$Joueur.rotation = Vector3(0,randf_range(0,PI),0)
-	#FIXME : il faut maintenant gérer les collisions avec le décor
+	if Global.has_option("TESTING"):
+		$Objectifs/Testing.show()
+	else:
+		$Objectifs/Testing.hide()
+		var randposx = randi_range(100/2+MARGEPOS, 100/2-MARGEPOS)
+		var randposy = randi_range(-100/2+MARGEPOS, 100/2-MARGEPOS)
+		$Joueur.position = Vector3(randposx, 0.5, randposy)
+		$Joueur.rotation = Vector3(0,randf_range(0,PI),0)
+		#FIXME : il faut maintenant gérer les collisions avec le décor
 	
 	#Lister les objectifs
 	loadobjectifs(self)
