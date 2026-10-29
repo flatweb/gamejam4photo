@@ -46,7 +46,6 @@ func release_mouse() -> void:
 @onready var fps_camera: Camera3D = %Camera3D
 
 @export var camera_FOV = 55
-@export var interaction_ray_length = 3.0
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -79,13 +78,6 @@ func _input(event: InputEvent) -> void:
 		%Camera3D2.rotation_degrees.x = clamp(%Tete.rotation_degrees.x, -70, 70)
 		
 
-# INTERACTION RAY
-#func interaction():
-	#var hit = interaction_ray.get_collider()
-	#if cursor_locked and interaction_ray.is_colliding():
-		#if hit and hit.has_method("interact"):
-			#hit.interact()
-
 # MOUSEMODE TOGGLE
 func toggle_cursor_mode():
 	if mouse_captured:
@@ -95,7 +87,6 @@ func toggle_cursor_mode():
 	mouse_captured = !mouse_captured
 
 func _handle_joypad_camera_rotation(delta: float, sens_mod: float = 1.0) -> void:
-	
 	# On est freeze tant que l'album est ouvert
 	if albumopened : return
 	
@@ -381,9 +372,9 @@ func check_obstacles_in_photo(body : PhysicsBody3D) -> bool:
 
 const ECHANTILLONNAGE = 20
 
+## Controle de la présente d'un obstacle entre le sujet et l'appareil
+## quand le sujet a une forme de cube (type BoxShape3D)
 func check_obstacle_to_boxshape(body : PhysicsBody3D, collisionshape : CollisionShape3D, boxshape : BoxShape3D) -> Node3D:
-	const RAY_LENGTH = 1000
-	var cam = %Camera3D
 	for nx in range(-ECHANTILLONNAGE/2,ECHANTILLONNAGE/2+1):
 		var x = boxshape.size.x * (float(nx)/ECHANTILLONNAGE)
 		for nz in range(-ECHANTILLONNAGE/2,ECHANTILLONNAGE/2+1):
@@ -399,11 +390,9 @@ func check_obstacle_to_boxshape(body : PhysicsBody3D, collisionshape : Collision
 	# On n'a rien trouvé, donc il n'y a pas d'obstacle
 	return null
 
+## Controle de la présente d'un obstacle entre le sujet et l'appareil
+## quand le sujet a une forme de cylidre (type CylinderShape3D)
 func check_obstacle_to_cylindershape(body : PhysicsBody3D, collisionshape : CollisionShape3D, cylshape : CylinderShape3D) -> Node3D:
-	var cam = %Camera3D
-	var space_state = get_world_3d().direct_space_state
-	const RAY_LENGTH = 1000
-	var distbody = body.global_position.distance_to(cam.global_position)
 	for nangle in range(-ECHANTILLONNAGE/2,ECHANTILLONNAGE/2+1):
 		var angle : float = PI * (float(nangle)/ECHANTILLONNAGE)
 		for ny in range(-ECHANTILLONNAGE/2,ECHANTILLONNAGE/2+1):

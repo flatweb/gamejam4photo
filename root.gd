@@ -128,7 +128,7 @@ func endofgame():
 	$AudioMusique.play()
 	get_tree().paused = true
 	
-	var strformat = "{0} photo{1} prise{2} , {3} sujet{4} dans l'album" #FIXME
+	var strformat = "{0} photo{1} prise{2} , {3} sujet{4} dans l'album"
 	%LabelEndOfGame.text = strformat.format([$EspaceJeu/Joueur.get_photos_prises(),
 											"s" if $EspaceJeu/Joueur.get_photos_prises() > 1 else "",
 											"s" if $EspaceJeu/Joueur.get_photos_prises() > 1 else "",
@@ -162,7 +162,7 @@ func _on_retart_button_pressed() -> void:
 
 func _input(event : InputEvent):
 	if not waitingtostart: return
-	#FIXME : en attente d'une interaction
+	
 	if Input.is_action_just_pressed("start"):
 		waitingtostart = false
 		start()
