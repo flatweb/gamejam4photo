@@ -102,7 +102,13 @@ shading_mode = 0
 albedo_color = Color(0, 0, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7x0ad"]
-size = Vector3(1, 1, 0.9790039)
+size = Vector3(6.5810547, 4.5860596, 8.544952)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vpl4w"]
+size = Vector3(201.55383, 80.82617, 194.1748)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0pgee"]
+size = Vector3(200, 115.24, 2)
 
 [node name="EspaceJeu" type="Node3D" unique_id=1443061437]
 script = ExtResource("1_luu0b")
@@ -123,10 +129,8 @@ transform = Transform3D(0.07289038, 0, 0.9973399, 0, 1, 0, -0.9973399, 0, 0.0728
 
 [node name="BICHE" parent="Objectifs" unique_id=596528023 instance=ExtResource("3_mu3ui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.262794, -9.1715355, 32.734062)
-speed = 5.0
-vivacity = 3.0
 
-[node name="Fleur" parent="Objectifs" unique_id=1733826176 groups=["objectif"] instance=ExtResource("5_82gh3")]
+[node name="Fleur" parent="Objectifs" unique_id=1733826176 instance=ExtResource("5_82gh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4114075, -1.6322021, 28.712524)
 
 [node name="Buron" type="StaticBody3D" parent="Objectifs" unique_id=1958804636 groups=["objectif"]]
@@ -154,7 +158,7 @@ mesh = SubResource("ArrayMesh_mu3ui")
 surface_material_override/0 = SubResource("StandardMaterial3D_c28kt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objectifs/Buron" unique_id=966019783]
-transform = Transform3D(1.0000014, 0, -1.7881393e-07, 0, 1, 0, 1.7881393e-07, 0, 1.0000014, 0, 0, -0.010499954)
+transform = Transform3D(1.0000014, 0, -1.4901161e-07, 0, 1, 0, 1.4901161e-07, 0, 1.0000014, 0.017837524, 1.7930298, 1.9324722)
 shape = SubResource("BoxShape3D_7x0ad")
 
 [node name="AudioForetEst" type="AudioStreamPlayer3D" parent="." unique_id=1607110534]
@@ -171,3 +175,33 @@ attenuation_filter_db = -20.0
 [node name="AudioPlaine" type="AudioStreamPlayer3D" parent="." unique_id=441593860]
 stream = ExtResource("9_lkouy")
 attenuation_filter_db = -15.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1823540090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.143616, 20.621094, 2.9125977)
+shape = SubResource("BoxShape3D_vpl4w")
+
+[node name="Limites" type="Node" parent="." unique_id=786741774]
+
+[node name="LimiteXPos" type="StaticBody3D" parent="Limites" unique_id=2072594976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.20175, 0, 7.4605827)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limites/LimiteXPos" unique_id=240121543]
+shape = SubResource("BoxShape3D_0pgee")
+
+[node name="LimiteXNeg" type="StaticBody3D" parent="Limites" unique_id=513941756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.86015, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limites/LimiteXNeg" unique_id=117045743]
+shape = SubResource("BoxShape3D_0pgee")
+
+[node name="LimiteZPos" type="StaticBody3D" parent="Limites" unique_id=1573447071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.629761, 0, 107.87842)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limites/LimiteZPos" unique_id=1438904086]
+shape = SubResource("BoxShape3D_0pgee")
+
+[node name="LimiteZNeg" type="StaticBody3D" parent="Limites" unique_id=1987376583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.075075, 0, -93.5341)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limites/LimiteZNeg" unique_id=1654279894]
+shape = SubResource("BoxShape3D_0pgee")
