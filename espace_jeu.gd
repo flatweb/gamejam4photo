@@ -25,30 +25,35 @@ var started : bool = false :
 func _init() -> void :
 	if Engine.is_editor_hint():
 		# CONTOURNEMENT D'UN PROBLEME DE PERF SPECIFIQUE SUR PC
-		var file = FileAccess.open("user://UNLOADMAP", FileAccess.READ)
-		if file == null :
-			# On n'est pas en mode optimisé (pb perf Thierry), donc on peut charger la MAP2
-			print ("Loading MAP2")
-			var maptscn : PackedScene = load("res://ASSETS/SCENES/map_2.tscn")
-			var scene = maptscn.instantiate()
-			add_child(scene)
-			return
+		if not Global.has_option("UNLOADMAP"):
+			if not self.has_node("MAP2"):
+				# On n'est pas en mode optimisé (pb perf Thierry), donc on peut charger la MAP2
+				print ("Loading MAP2")
+				var maptscn : PackedScene = load("res://ASSETS/SCENES/map_2.tscn")
+				var scene = maptscn.instantiate()
+				add_child(scene)
 		else:
-			print ("Loading MAP2 light !")
-			var maptscn : PackedScene = load("res://ASSETS/SCENES/map_2_light.tscn")
-			var scene = maptscn.instantiate()
-			add_child(scene)
-	
-	
+			if not self.has_node("MAP2"):
+				print ("Loading MAP2 light !")
+				var maptscn : PackedScene = load("res://ASSETS/SCENES/map_2_light.tscn")
+				var scene = maptscn.instantiate()
+				add_child(scene)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 
-	var maptscn : PackedScene = load("res://ASSETS/SCENES/map_2.tscn")
-	var scene = maptscn.instantiate()
-	add_child(scene)
+	if not Global.has_option("UNLOADMAP"):
+		print ("With MAP2")
+		var maptscn : PackedScene = load("res://ASSETS/SCENES/map_2.tscn")
+		var scene = maptscn.instantiate()
+		add_child(scene)
+	else:
+		print ("With MAP2 light")
+		var maptscn : PackedScene = load("res://ASSETS/SCENES/map_2_light.tscn")
+		var scene = maptscn.instantiate()
+		add_child(scene)
 	
 	# Repositionnement aléatoire du joueur dans l'Area3D
 	if Global.has_option("TESTING"):
@@ -63,12 +68,10 @@ func _ready() -> void:
 	
 	#Lister les objectifs
 	loadobjectifs(self)
-	#print(objectifs)
 	$Joueur.objectifs = objectifs # Passage par référence, donc en cohérence
 	
 	# CONTOURNEMENT D'UN PROBLEME DE PERF SPECIFIQUE SUR PC
-	var file = FileAccess.open("user://UNLOADMAP", FileAccess.READ)
-	if file != null :
+	if Global.has_option("UNLOADMAP") :
 		if has_node("MAP"):
 			$MAP/BIOME/FORET_EST.visible = false
 			$MAP/BIOME/FORET_OUEST.visible = false
@@ -81,9 +84,9 @@ func _ready() -> void:
 # Méthode spécifique pour alléger le modèle au run (perf PC Thierry)
 func unloadpins(node : Node):
 	for child in node.get_children():
-		if child.name == "SAPIN" :
+		if child.name.begins_with("SAPIN") :
 			child.free()
-		elif child.name == "PIN":
+		elif child.name.begins_with("PIN"):
 			child.free()
 		elif child.name.begins_with("ROCHE"):
 			child.free()
@@ -102,7 +105,7 @@ func unloadpins(node : Node):
 		elif child.get_child_count() > 0 :
 			unloadpins(child)
 		else:
-			print (child.name)
+			#print (child.name)
 			pass
 	pass
 
