@@ -222,10 +222,10 @@ func shootphoto():
 		
 		# Controle de l'objectif visé
 		var sujet_photo
-		if Global.has_option("RAYCAST") :
-			sujet_photo = check_objectif_by_raycast()
-		else:
+		if Global.has_option("INFRARED") :
 			sujet_photo = check_objectif_by_infrared()
+		else:
+			sujet_photo = check_objectif_by_raycast()
 		
 		# Show UI again
 		$Control/ViewFinder.visible = true
