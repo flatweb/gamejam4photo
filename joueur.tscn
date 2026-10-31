@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b5u7rxl8fuj7q" path="res://joueur.gd" id="1_2d0qe"]
 [ext_resource type="PackedScene" uid="uid://dywsyled223nc" path="res://album.tscn" id="2_mc3kx"]
+[ext_resource type="PackedScene" uid="uid://dmlwxcjd2y11x" path="res://photo.tscn" id="3_6cmlh"]
 [ext_resource type="Texture2D" uid="uid://b4hy25e7y7cp4" path="res://ASSETS/TEXTURES/view_finder.png" id="3_nhxrk"]
 [ext_resource type="AudioStream" uid="uid://bk2iguvb5qd21" path="res://ASSETS/SOUNDS/SFX07-Footsteps walk-V1.mp3" id="4_wr1qv"]
 [ext_resource type="AudioStream" uid="uid://giia682ulshl" path="res://ASSETS/SOUNDS/SFX08-Footsteps run-V1.mp3" id="5_kqiic"]
@@ -140,11 +141,15 @@ tracks/2/keys = {
 "values": [Vector3(0.1, 0.1, 0.1), Vector3(1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_6cmlh"]
+resource_name = "showphoto"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wr1qv"]
 _data = {
 &"RESET": SubResource("Animation_mc3kx"),
 &"hidealbum": SubResource("Animation_nhxrk"),
-&"showalbum": SubResource("Animation_7j7mc")
+&"showalbum": SubResource("Animation_7j7mc"),
+&"showphoto": SubResource("Animation_6cmlh")
 }
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vpl4w"]
@@ -169,6 +174,11 @@ transform = Transform3D(0.07071068, 1.2802769e-09, -0.070710674, 0.070710674, -3
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000739336, -0.10738611)
 cull_mask = 1048573
+
+[node name="Photo" parent="Corps/Tete/Camera3D" unique_id=505167109 instance=ExtResource("3_6cmlh")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000739336, -0.922204)
+visible = false
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Corps/Tete" unique_id=706895765]
 offset_left = -369.99997
@@ -257,5 +267,10 @@ stream = ExtResource("7_6cmlh")
 wait_time = 15.0
 one_shot = true
 
+[node name="TimerPhoto" type="Timer" parent="." unique_id=934280048]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="timeout" from="TimerNoAction" to="." method="_on_no_action_timeout"]
+[connection signal="timeout" from="TimerPhoto" to="." method="_on_timer_photo_timeout"]

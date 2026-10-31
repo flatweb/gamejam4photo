@@ -59,6 +59,7 @@ func _ready() -> void:
 		$Pellicule/HBoxContainer.add_child(textrect)
 	%SubViewport.get_camera_3d()
 	$Control/ViewFinder.hide()
+	%Photo.hide()
 	
 # FPS MOUSEMOTION
 func _input(event: InputEvent) -> void:
@@ -134,16 +135,12 @@ func _physics_process(delta: float) -> void:
 		in_action()
 		return
 		#if velocity != Vector3.ZERO : print(velocity)
-	#elif freezed :
-		## do nothing
-		#pass
-	#else :
 	
 	_handle_joypad_camera_rotation(delta)
 	
 	var running : bool = false
 	
-	if true:
+	if not freezed:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		#var bend = Input.get_action_strength("back")
@@ -179,31 +176,31 @@ func _physics_process(delta: float) -> void:
 			$AudioAim.play()
 			$Control/ViewFinder.visible = true
 			%Tete/Camera3D.fov = 50.0
-			
-		if is_aiming: in_action()
 		
-		if Input.is_action_just_released("aim"):
-			is_aiming = false
-			$Control/ViewFinder.visible = false
-			%Tete/Camera3D.fov = 75.0
-			in_action()
+	if is_aiming: in_action()
 	
-	if (velocity.x != 0.0 or velocity.y != 0) and is_on_floor():
-		if running :
-			$AudioSteps.stop()
-			if not $AudioRun.playing :$AudioRun.play()
-		else:
-			$AudioRun.stop()
-			if not $AudioSteps.playing : $AudioSteps.play()
-	elif velocity.x == 0.0 and velocity.y == 0 :
-		$AudioSteps.stop()
-		$AudioRun.stop()
-	
-	#if velocity != Vector3.ZERO : print (velocity)
-	
-	if velocity != Vector3.ZERO :
+	# Fin de visée, relachement ud bouton
+	if Input.is_action_just_released("aim"):
+		is_aiming = false
+		$Control/ViewFinder.visible = false
+		%Tete/Camera3D.fov = 75.0
 		in_action()
-		move_and_slide()
+	
+	if not freezed:
+		if (velocity.x != 0.0 or velocity.y != 0) and is_on_floor():
+			if running :
+				$AudioSteps.stop()
+				if not $AudioRun.playing :$AudioRun.play()
+			else:
+				$AudioRun.stop()
+				if not $AudioSteps.playing : $AudioSteps.play()
+		elif velocity.x == 0.0 and velocity.y == 0 :
+			$AudioSteps.stop()
+			$AudioRun.stop()
+	
+		if velocity != Vector3.ZERO :
+			in_action()
+			move_and_slide()
 
 	%Camera3D2.global_transform = %Tete/Camera3D.global_transform
 
@@ -245,19 +242,21 @@ func shootphoto():
 			# On a bien pris un sujet en photo
 			Global.showstamp("OK")
 			var sujet = find_objectif_in_tree(sujet_photo)
+			showphoto(screenshot_img,sujet_photo)
 			sujet.catched.emit(sujet_photo, sujet, screenshot_img)
 		elif resultat == Check.TROPLOIN :
 			Global.showstamp("TropLoin")
 		elif resultat == Check.CACHE :
 			Global.showstamp("Rate")
 		else:
-			#Global.showstamp("Rate")
-			if not DirAccess.dir_exists_absolute(OS.get_user_data_dir() + "/photos/") :
-				DirAccess.make_dir_recursive_absolute(OS.get_user_data_dir() + "/photos/")
+			if not DirAccess.dir_exists_absolute("user://photos/") :
+				DirAccess.make_dir_recursive_absolute("user://photos/")
 			var timestamp : String = Time.get_datetime_string_from_system().replace("-", "").replace(":", "").replace("T", "")
 			
-			var save_path = OS.get_user_data_dir() + "/photos/" + timestamp + ".png"
+			var save_path = "user://photos/" + timestamp + ".png"
 			screenshot_img.save_png(save_path)
+			sujet_photo = timestamp
+			showphoto(screenshot_img,sujet_photo)
 		
 func find_objectif_in_tree(sujet : String, node : Node3D = null):
 	if node == null : node = get_node("../Objectifs/")
@@ -267,13 +266,32 @@ func find_objectif_in_tree(sujet : String, node : Node3D = null):
 		var found = find_objectif_in_tree(sujet,child)
 		if found != null : return found
 	return null
+
+func showphoto(img,nom):
+	$Control/ViewFinder.hide()
+	%Photo.show()
+	%Photo.change(img,nom)
+	$TimerPhoto.start()
+	freezed = true
+
+func _on_timer_photo_timeout() -> void:
+	%Photo.hide()
+	# Visée
+	if Input.is_action_pressed("aim"):
+		# On a toujours le doigt appuyé sur le clic du viseur
+		$Control/ViewFinder.show()
+	
+	freezed = false
+	
 	
 func _process(delta : float):
 	# Pas d'action autorisée sur l'album est en train de bouger
 	if albumopening : return
+	if freezed: return
 	
 	if Input.is_action_just_pressed("esc"):
 		toggle_cursor_mode()
+		# FIXME : on garde ça ici ?
 	
 	if Input.is_action_just_pressed("album") and not albumopened :
 		albumopening = true
@@ -289,10 +307,8 @@ func _process(delta : float):
 	if albumopened:
 		if Input.is_action_just_pressed("right"):
 			%Album.pagenext()
-			pass
 		elif Input.is_action_just_pressed("left"):
 			%Album.pageprev()
-			pass
 
 func get_photos_prises():
 	return MAXPHOTOS - photosrestantes
@@ -341,7 +357,7 @@ func check_objectif_by_raycast() -> Dictionary:
 
 ## Pourcentage minimum pour considérer que le sujet est bien pris
 ## dans la zone centrale (container ZoneCentre)
-const COVERAGEMIN = 0.1
+const COVERAGEMIN = 0.02  #TODO : à tuner
 
 func scan_by_raycast() -> Dictionary:
 	var cam : Camera3D = %Camera3D

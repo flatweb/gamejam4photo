@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dmlwxcjd2y11x"]
+
+[ext_resource type="Texture2D" uid="uid://b3s5y6hdkdnj2" path="res://ASSETS/TEXTURES/photo_placeholder.png" id="1_oc6qq"]
+[ext_resource type="Script" uid="uid://fc4g1xpeu3nn" path="res://photo.gd" id="1_yddr6"]
+[ext_resource type="Texture2D" uid="uid://de6fs65twvmmu" path="res://ASSETS/SPRITES/check-vert.png" id="2_yddr6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pgee"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vpl4w"]
+material = SubResource("StandardMaterial3D_0pgee")
+size = Vector2(1, 1)
+
+[node name="Photo" type="Node3D" unique_id=505167109]
+script = ExtResource("1_yddr6")
+
+[node name="LabelTitre" type="Label3D" parent="." unique_id=1761648805]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2990313, 0.05567473)
+text = "Blabla"
+font_size = 16
+
+[node name="SpriteImg" type="Sprite3D" parent="." unique_id=1926016620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15983856, 0.06)
+visible = false
+texture = ExtResource("1_oc6qq")
+
+[node name="SpriteCheck" type="Sprite3D" parent="." unique_id=1337373894]
+transform = Transform3D(0.23999998, 0, 0, 0, 0.23999998, 0, 0, 0, 0.23999998, 0.30865452, -0.10505581, 0.09612124)
+texture = ExtResource("2_yddr6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=880347481]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_vpl4w")
