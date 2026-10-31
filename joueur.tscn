@@ -8,7 +8,12 @@
 [ext_resource type="AudioStream" uid="uid://ddtqmwk240jbe" path="res://ASSETS/SOUNDS/SFX03-Camera equip-V1.mp3" id="6_2l6sa"]
 [ext_resource type="AudioStream" uid="uid://drnrjl3pvcytu" path="res://ASSETS/SOUNDS/SFX01-Camera Shutter-V1.mp3" id="7_6cmlh"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2l6sa"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_vpl4w"]
+material = SubResource("StandardMaterial3D_2l6sa")
 height = 1.2
 
 [sub_resource type="SphereMesh" id="SphereMesh_0pgee"]
@@ -23,19 +28,19 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Album:position")
+tracks/0/path = NodePath("Corps/Tete/Album:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.27687502, 0, -0.9759308)]
+"values": [Vector3(-0.277, -1.258, -0.538)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Album:rotation")
+tracks/1/path = NodePath("Corps/Tete/Album:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -47,7 +52,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Album:scale")
+tracks/2/path = NodePath("Corps/Tete/Album:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -62,19 +67,19 @@ resource_name = "hidealbum"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Album:position")
+tracks/0/path = NodePath("Corps/Tete/Album:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.02, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.277, 1.46, -1), Vector3(-0.277, -0.4, -1)]
+"values": [Vector3(-0.277, 0.073, -1), Vector3(-0.277, 0.035725117, -1), Vector3(-0.277, -1.2576507, -0.53767586)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Album:rotation")
+tracks/1/path = NodePath("Corps/Tete/Album:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -86,7 +91,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Album:scale")
+tracks/2/path = NodePath("Corps/Tete/Album:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -101,19 +106,19 @@ resource_name = "showalbum"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Album:position")
+tracks/0/path = NodePath("Corps/Tete/Album:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-0.27687502, 0, -0.9759308), Vector3(-0.277, 1.46, -1)]
+"values": [Vector3(-0.277, -1.258, -0.538), Vector3(-0.277, 0.072924614, -1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Album:rotation")
+tracks/1/path = NodePath("Corps/Tete/Album:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -125,7 +130,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Album:scale")
+tracks/2/path = NodePath("Corps/Tete/Album:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -149,13 +154,16 @@ script = ExtResource("1_2d0qe")
 
 [node name="Corps" type="MeshInstance3D" parent="." unique_id=655277345]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
-visible = false
 mesh = SubResource("CapsuleMesh_vpl4w")
 
 [node name="Tete" type="MeshInstance3D" parent="Corps" unique_id=856882734]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8191227, 0)
 mesh = SubResource("SphereMesh_0pgee")
+
+[node name="Album" parent="Corps/Tete" unique_id=1819505796 instance=ExtResource("2_mc3kx")]
+unique_name_in_owner = true
+transform = Transform3D(0.07071068, 1.2802769e-09, -0.070710674, 0.070710674, -3.0908616e-09, 0.07071068, -1.2802769e-09, -0.1, -3.0908616e-09, -0.277, -1.258, -0.538)
 
 [node name="Camera3D" type="Camera3D" parent="Corps/Tete" unique_id=525025609]
 unique_name_in_owner = true
@@ -182,9 +190,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.419862, -0.10738611)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=860995187]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CylinderShape3D_vv104")
-
-[node name="Album" parent="." unique_id=1819505796 instance=ExtResource("2_mc3kx")]
-transform = Transform3D(0.07071068, 1.2802769e-09, -0.070710674, 0.070710674, -3.0908616e-09, 0.07071068, -1.2802769e-09, -0.1, -3.0908616e-09, -0.27687502, 0, -0.9759308)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2038335865]
 libraries/ = SubResource("AnimationLibrary_wr1qv")

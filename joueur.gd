@@ -29,7 +29,7 @@ var photosrestantes = MAXPHOTOS
 var objectifs :
 	set(ref):
 		objectifs = ref
-		$Album.objectifs = ref
+		%Album.objectifs = ref
 
 func start():
 	_started = true
@@ -277,21 +277,21 @@ func _process(delta : float):
 	
 	if Input.is_action_just_pressed("album") and not albumopened :
 		albumopening = true
-		$Album.load_photos()
-		$Album.show()
+		%Album.load_photos()
+		%Album.show()
 		$AnimationPlayer.play("showalbum")
-		$Album.showup()
+		%Album.showup()
 	elif Input.is_action_just_pressed("album") and albumopened :
 		albumopening = true
 		$AnimationPlayer.play("hidealbum")
-		$Album.hidedown()
+		%Album.hidedown()
 		
 	if albumopened:
 		if Input.is_action_just_pressed("right"):
-			$Album.pagenext()
+			%Album.pagenext()
 			pass
 		elif Input.is_action_just_pressed("left"):
-			$Album.pageprev()
+			%Album.pageprev()
 			pass
 
 func get_photos_prises():
@@ -303,7 +303,7 @@ func _on_animation_finished(anim_name: StringName) -> void:
 		albumopened = true
 	elif anim_name == "hidealbum":
 		albumopened = false
-		$Album.hide()
+		%Album.hide()
 	pass # Replace with function body.
 
 ##################################################################
