@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dvnew5dnud4g1"]
+
+[ext_resource type="FontFile" uid="uid://cm3akybvu44bl" path="res://res/NationalPark-VariableVF.ttf" id="1_nltto"]
+[ext_resource type="Script" uid="uid://dhtsjd8jjspe3" path="res://ui.gd" id="2_ibotj"]
+[ext_resource type="Texture2D" uid="uid://dymp5lm4cfoek" path="res://ASSETS/SPRITES/stamps-ok.png" id="3_ibotj"]
+[ext_resource type="Texture2D" uid="uid://cvf0m6xcu8olj" path="res://ASSETS/SPRITES/stamps-loin.png" id="4_n5ude"]
+[ext_resource type="Texture2D" uid="uid://cghjafhq8tdnn" path="res://ASSETS/SPRITES/stamps-rate.png" id="5_y4yjw"]
+
+[sub_resource type="Theme" id="Theme_e8heu"]
+Label/fonts/font = ExtResource("1_nltto")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hve3p"]
+
+[sub_resource type="SystemFont" id="SystemFont_e36ub"]
+subpixel_positioning = 0
+
+[node name="UI" type="PanelContainer" unique_id=277547402]
+process_mode = 3
+offset_right = 1152.0
+offset_bottom = 647.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme = SubResource("Theme_e8heu")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hve3p")
+script = ExtResource("2_ibotj")
+
+[node name="HBoxContainerBottom" type="HBoxContainer" parent="." unique_id=562939997]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextMsg" type="Label" parent="HBoxContainerBottom" unique_id=1683087831]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0.3214644, 0.32183927, 1)
+theme_override_fonts/font = SubResource("SystemFont_e36ub")
+theme_override_font_sizes/font_size = 40
+text = "Time to Start"
+horizontal_alignment = 1
+
+[node name="TimerScrollText" type="Timer" parent="." unique_id=603922588]
+wait_time = 0.05
+
+[node name="TimerCleanText" type="Timer" parent="." unique_id=341467335]
+wait_time = 4.0
+one_shot = true
+
+[node name="StampsContainer" type="MarginContainer" parent="." unique_id=963945036]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(400, 200)
+
+[node name="RectOK" type="TextureRect" parent="StampsContainer" unique_id=1448549328]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+texture = ExtResource("3_ibotj")
+stretch_mode = 2
+
+[node name="RectTropLoin" type="TextureRect" parent="StampsContainer" unique_id=904456432]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+texture = ExtResource("4_n5ude")
+stretch_mode = 2
+
+[node name="RectRate" type="TextureRect" parent="StampsContainer" unique_id=1551942119]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+texture = ExtResource("5_y4yjw")
+stretch_mode = 2

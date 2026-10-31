@@ -54,7 +54,7 @@ func loadgame():
 	%Label.hide()
 	$PanelContainer/IntroContainer/RichTextDontWait.show()
 	$PanelContainer/IntroContainer/RichTextIntro.show()
-	%StartButton.text = "  Start !  "
+	%StartButton.text = "  On y va  "
 	%StartButton.show()
 	%AideButton.show()
 	%StartButton.grab_focus()

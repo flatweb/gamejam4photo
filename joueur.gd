@@ -114,7 +114,7 @@ func _on_no_action_timeout() -> void:
 	pausing = true
 	pass # Replace with function body.
 
-func inaction():
+func in_action():
 	$TimerNoAction.start(NOACTION_PERIOD)
 	if pausing :
 		pausing = false
@@ -131,7 +131,7 @@ func _physics_process(delta: float) -> void:
 	if not self.is_on_floor():
 		velocity += get_gravity() * delta
 		move_and_slide()
-		inaction()
+		in_action()
 		return
 		#if velocity != Vector3.ZERO : print(velocity)
 	#elif freezed :
@@ -140,7 +140,6 @@ func _physics_process(delta: float) -> void:
 	#else :
 	
 	_handle_joypad_camera_rotation(delta)
-	
 	
 	var running : bool = false
 	
@@ -180,14 +179,14 @@ func _physics_process(delta: float) -> void:
 			$AudioAim.play()
 			$Control/ViewFinder.visible = true
 			%Tete/Camera3D.fov = 50.0
-			inaction()
 			
+		if is_aiming: in_action()
 		
 		if Input.is_action_just_released("aim"):
 			is_aiming = false
 			$Control/ViewFinder.visible = false
 			%Tete/Camera3D.fov = 75.0
-			inaction()
+			in_action()
 	
 	if (velocity.x != 0.0 or velocity.y != 0) and is_on_floor():
 		if running :
@@ -203,13 +202,13 @@ func _physics_process(delta: float) -> void:
 	#if velocity != Vector3.ZERO : print (velocity)
 	
 	if velocity != Vector3.ZERO :
-		inaction()
+		in_action()
 		move_and_slide()
 
 	%Camera3D2.global_transform = %Tete/Camera3D.global_transform
 
 func shootphoto():
-		inaction()
+		in_action()
 		$AudioShoot.play()
 		
 		# Hide UI and way for frame refresh
@@ -222,11 +221,16 @@ func shootphoto():
 		
 		# Controle de l'objectif visé
 		var sujet_photo
+		var resultat : Check
 		if Global.has_option("INFRARED") :
 			sujet_photo = check_objectif_by_infrared()
+			if sujet_photo == null : resultat = Check.RATE
+			else: resultat = Check.OK
 		else:
-			sujet_photo = check_objectif_by_raycast()
-		
+			var resultphoto = check_objectif_by_raycast()
+			sujet_photo = resultphoto["body"]
+			resultat = resultphoto["result"]
+			
 		# Show UI again
 		$Control/ViewFinder.visible = true
 		$Pellicule.visible = true
@@ -237,10 +241,17 @@ func shootphoto():
 				pellicule.queue_free()
 				break
 		
-		if sujet_photo:
-			var sujet = get_node("../Objectifs/"+sujet_photo)
+		if resultat == Check.OK:
+			# On a bien pris un sujet en photo
+			Global.showstamp("OK")
+			var sujet = find_objectif_in_tree(sujet_photo)
 			sujet.catched.emit(sujet_photo, sujet, screenshot_img)
+		elif resultat == Check.TROPLOIN :
+			Global.showstamp("TropLoin")
+		elif resultat == Check.CACHE :
+			Global.showstamp("Rate")
 		else:
+			#Global.showstamp("Rate")
 			if not DirAccess.dir_exists_absolute(OS.get_user_data_dir() + "/photos/") :
 				DirAccess.make_dir_recursive_absolute(OS.get_user_data_dir() + "/photos/")
 			var timestamp : String = Time.get_datetime_string_from_system().replace("-", "").replace(":", "").replace("T", "")
@@ -248,7 +259,15 @@ func shootphoto():
 			var save_path = OS.get_user_data_dir() + "/photos/" + timestamp + ".png"
 			screenshot_img.save_png(save_path)
 		
-
+func find_objectif_in_tree(sujet : String, node : Node3D = null):
+	if node == null : node = get_node("../Objectifs/")
+	if node.name == sujet : return node
+	for child in node.get_children():
+		if not child is Node3D : continue
+		var found = find_objectif_in_tree(sujet,child)
+		if found != null : return found
+	return null
+	
 func _process(delta : float):
 	# Pas d'action autorisée sur l'album est en train de bouger
 	if albumopening : return
@@ -289,28 +308,40 @@ func _on_animation_finished(anim_name: StringName) -> void:
 ## Algorithme de recherche d'objectif par envoi de rayon (raycast)
 ##################################################################
 
-func check_objectif_by_raycast():
-	var body : PhysicsBody3D
+enum Check {OK, RATE, CACHE, TROPLOIN}
+
+func check_objectif_by_raycast() -> Dictionary:
+	var scanresult : Dictionary
+	var result = {"result" : Check.RATE, "body" : null}
 	# Cherche un body dans le cadre en utilisant le raycast
-	body = scan_by_raycast()
-	if body == null :
+	scanresult = scan_by_raycast()
+	if scanresult["result"] == Check.RATE :
 		# Il n'y a rien sur la photo, ou bien c'est trop petit !
-		return null
+		return scanresult
+	
+	var body : PhysicsBody3D = scanresult["body"]
+	if body.get("ObjectifName") != null and body.get("ObjectifName") != "":
+		result["body"] = body.get("ObjectifName")
+	else:
+		result["body"] = body.name
+	
+	if scanresult["result"] == Check.TROPLOIN:
+		return scanresult
 	
 	# Vérifie si il y a un obstacle devant le body
 	if check_obstacles_in_photo(body):
 		# Il y a un obstacle
-		return null
+		result["result"] = Check.CACHE
+		return result
 	
-	if body.get("ObjectifName") != null and body.get("ObjectifName") != "":
-		return body.get("ObjectifName")
-	return body.name
+	result["result"] = Check.OK 
+	return result
 
 ## Pourcentage minimum pour considérer que le sujet est bien pris
 ## dans la zone centrale (container ZoneCentre)
-const COVERAGEMIN = 0.05
+const COVERAGEMIN = 0.1
 
-func scan_by_raycast():
+func scan_by_raycast() -> Dictionary:
 	var cam : Camera3D = %Camera3D
 	const RAY_LENGTH = 1000 # TODO
 	var scans = 0
@@ -339,6 +370,10 @@ func scan_by_raycast():
 						bodies[cc.name] = cc
 					hits[cc.name] += 1
 	#print (hits)
+	if hits.size() == 0:
+		# On n'a rien touché du tout
+		return {"result" : Check.RATE, "body" : null}
+	
 	# Recherche maintenant le maximum
 	var maxpcthit : float = 0.0
 	var objhit = null
@@ -347,10 +382,10 @@ func scan_by_raycast():
 			objhit = bodies[k]
 			maxpcthit = float(hits[k])/scans
 	#print (objhit," gets ",maxpcthit)
-	if maxpcthit >= 0.01 : #FIXME pour être plus précis
-		return objhit
+	if maxpcthit >= COVERAGEMIN : #FIXME pour être plus précis
+		return {"result" : Check.OK, "body" : objhit}
 	else:
-		return null
+		return {"result" : Check.TROPLOIN, "body" : objhit}
 	
 	
 ## Vérifie si il y a des obstacles devant la photo

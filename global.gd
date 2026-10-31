@@ -24,3 +24,28 @@ func for_options(opt : String) -> Array[String] :
 				result.append(content.strip_edges())
 	return result
 	
+func printmsg(text : String):
+	var ui = get_node("UI")
+	ui.pushtext(text)
+
+var _stampstimer : Timer = Timer.new()
+
+func _ready():
+	if Engine.is_editor_hint():
+		return
+	_stampstimer.timeout.connect(hidestamps.bind())
+	_stampstimer.one_shot = true
+	get_node('/root').add_child.call_deferred(_stampstimer)
+	
+func showstamp(nom : String):
+	hidestamps()
+	var stamps = get_node("/root/Root/UI/StampsContainer")
+	for rect in stamps.get_children():
+		if rect.name == "Rect"+nom:
+			rect.show()
+	_stampstimer.start(2.0)
+	
+func hidestamps():
+	for rect in get_node("/root/Root/UI/StampsContainer").get_children() :
+		rect.hide()
+	

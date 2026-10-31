@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://xcmvx0jaunfs" path="res://res/design.tres" id="3_28aoi"]
 [ext_resource type="FontFile" uid="uid://db60qbp8vwpgc" path="res://res/Butterpop.ttf" id="4_jnlp7"]
 [ext_resource type="AudioStream" uid="uid://y0w0f5fcjxbh" path="res://ASSETS/SOUNDS/MUSIC-Ulysse.mp3" id="5_jnlp7"]
+[ext_resource type="PackedScene" uid="uid://dvnew5dnud4g1" path="res://ui.tscn" id="6_l8v81"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l8v81"]
 
@@ -218,17 +219,21 @@ stream = ExtResource("5_jnlp7")
 [node name="Popup" type="Node" parent="." unique_id=1943659802]
 
 [node name="ColorRectHaut" type="ColorRect" parent="." unique_id=681897389]
+visible = false
 offset_right = 1159.0
 offset_bottom = 128.0
 size_flags_vertical = 0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRectBas" type="ColorRect" parent="." unique_id=1994204065]
+visible = false
 offset_left = -8.0
 offset_top = 542.0
 offset_right = 1166.0
 offset_bottom = 667.0
 color = Color(0, 0, 0, 1)
+
+[node name="UI" parent="." unique_id=277547402 instance=ExtResource("6_l8v81")]
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="gui_input" from="PanelContainer/IntroContainer/CenterContainer/VBoxContainer/AideButton" to="." method="_on_aide_button_gui_input"]
