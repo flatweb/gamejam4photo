@@ -106,7 +106,7 @@ albedo_color = Color(0, 0, 1, 1)
 size = Vector3(6.5810547, 4.5860596, 8.544952)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0pgee"]
-size = Vector3(200, 115.24, 2)
+size = Vector3(209.47272, 115.24, 2)
 
 [node name="EspaceJeu" type="Node3D" unique_id=1443061437]
 script = ExtResource("1_luu0b")
@@ -187,12 +187,14 @@ attenuation_filter_db = -15.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.20175, 0, 7.4605827)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Limites/LimiteXPos" unique_id=240121543]
+transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3711392e-08, -2.303978, 0, 0.19894505)
 shape = SubResource("BoxShape3D_0pgee")
 
 [node name="LimiteXNeg" type="StaticBody3D" parent="Limites" unique_id=513941756]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.86015, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Limites/LimiteXNeg" unique_id=117045743]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -0.6659241, 0, 4.5373836)
 shape = SubResource("BoxShape3D_0pgee")
 
 [node name="LimiteZPos" type="StaticBody3D" parent="Limites" unique_id=1573447071]
