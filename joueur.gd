@@ -246,11 +246,12 @@ func showphoto(img,nom):
 	$Control/ViewFinder.hide()
 	%Photo.show()
 	%Photo.change(img,nom)
+	%AnimationShowPhoto.play("showhide")
 	$TimerPhoto.start()
 	freezed = true
 
 func _on_timer_photo_timeout() -> void:
-	%Photo.hide()
+	%AnimationShowPhoto.play_backwards("showhide")
 	# Visée
 	if Input.is_action_pressed("aim"):
 		# On a toujours le doigt appuyé sur le clic du viseur
