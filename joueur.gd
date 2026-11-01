@@ -110,7 +110,6 @@ func _on_no_action_timeout() -> void:
 	# Il ne s'est rien passé depuis X secondes
 	inactif.emit()
 	pausing = true
-	pass # Replace with function body.
 
 func in_action():
 	$TimerNoAction.start(NOACTION_PERIOD)
@@ -162,28 +161,6 @@ func _physics_process(delta: float) -> void:
 			$Corps.scale.y = 1
 			accroupi = false
 		
-		# Prise de vue
-		if Input.is_action_just_pressed("shoot") and is_aiming :
-			if photosrestantes > 0 :
-				shootphoto()
-		
-		# Visée
-		if Input.is_action_just_pressed("aim") and not Input.is_action_pressed("run"):
-			is_aiming = true
-			$AudioAim.play()
-			$Control/ViewFinder.visible = true
-			%Camera3DPhoto.make_current() #TODO
-		
-	if is_aiming: in_action()
-	
-	# Fin de visée, relachement ud bouton
-	if Input.is_action_just_released("aim"):
-		is_aiming = false
-		$Control/ViewFinder.visible = false
-		%Camera3D.make_current()
-		
-		in_action()
-	
 	if not freezed:
 		if (velocity.x != 0.0 or velocity.y != 0) and is_on_floor():
 			if running :
@@ -283,8 +260,32 @@ func _on_timer_photo_timeout() -> void:
 	
 	
 func _process(delta : float):
+	# on attend que la partie soit démarrée
+	if not _started: return
+	
 	# Pas d'action autorisée sur l'album est en train de bouger
 	if albumopening : return
+	
+	# Prise de vue
+	if not freezed and Input.is_action_just_pressed("shoot") and is_aiming :
+		if photosrestantes > 0 :
+			shootphoto()
+		
+	# Visée
+	if Input.is_action_just_pressed("aim") and not Input.is_action_pressed("run"):
+		is_aiming = true
+		$AudioAim.play()
+		$Control/ViewFinder.visible = true
+		%Camera3DPhoto.make_current() #TODO
+		
+	if is_aiming: in_action()
+	
+	# Fin de visée, relachement du bouton
+	if Input.is_action_just_released("aim"):
+		is_aiming = false
+		$Control/ViewFinder.visible = false
+		%Camera3D.make_current()
+	
 	if freezed: return
 	
 	if Input.is_action_just_pressed("esc"):

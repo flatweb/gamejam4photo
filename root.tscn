@@ -210,12 +210,14 @@ horizontal_alignment = 1
 
 [node name="OutPauseButton" type="Button" parent="PauseContainer/PauseCenterContainer/VBoxContainer" unique_id=348881318]
 unique_name_in_owner = true
+process_mode = 3
 layout_mode = 2
 theme = ExtResource("3_28aoi")
 text = "  Continue  "
 
 [node name="GiveupButton" type="Button" parent="PauseContainer/PauseCenterContainer/VBoxContainer" unique_id=497114911]
 unique_name_in_owner = true
+process_mode = 3
 layout_mode = 2
 theme = ExtResource("3_28aoi")
 text = "On rentre..."

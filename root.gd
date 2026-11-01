@@ -42,6 +42,9 @@ func loadgame():
 	$PanelContainer/IntroContainer/RichTextIntro.hide()
 	$TimerInactivite.stop()
 	
+	$EspaceJeu/Joueur.inactif.connect(inactivite.bind())
+	$EspaceJeu/Joueur.actif.connect(endofinactif.bind())
+
 	# On vide la partie précédente : FIXME
 	#if game != null :
 		#game.queue_free()
@@ -99,8 +102,6 @@ func start():
 	get_tree().paused = false
 	
 	game.start()
-	$EspaceJeu/Joueur.inactif.connect(inactivite.bind())
-	$EspaceJeu/Joueur.actif.connect(endofinactif.bind())
 
 func inactivite():
 	$EspaceJeu.silence()
@@ -118,6 +119,7 @@ func endofinactif():
 
 func endofgame():
 	endofinactif()
+	$EspaceJeu/Joueur._started = false
 	$EspaceJeu/Joueur/TimerNoAction.stop()
 	$AudioMusique.play()
 	get_tree().paused = true
@@ -186,6 +188,7 @@ func _on_out_pause_button_up() -> void:
 
 func outpause():
 	$PauseContainer.hide()
+	$EspaceJeu/Joueur.in_action()
 	get_tree().paused = false
 
 func _on_giveup_button_up() -> void:

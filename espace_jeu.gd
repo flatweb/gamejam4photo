@@ -151,11 +151,14 @@ func get_nb_objectifs_atteints():
 
 func check_end():
 	if check_objectifs_atteints() :
-		fini.emit()
-		$Joueur/TimerNoAction.stop()
+		endofgame()
 	if check_pellicule_vide():
-		fini.emit()
-		$Joueur/TimerNoAction.stop()
+		endofgame()
+
+func endofgame():
+	$Joueur._started = false
+	$Joueur/TimerNoAction.stop()
+	fini.emit()
 
 func check_pellicule_vide():
 	return $Joueur.photosrestantes <= 0
