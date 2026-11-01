@@ -175,7 +175,13 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000739336, -0.10738611)
 cull_mask = 1048573
 
-[node name="Photo" parent="Corps/Tete/Camera3D" unique_id=505167109 instance=ExtResource("3_6cmlh")]
+[node name="Camera3DPhoto" type="Camera3D" parent="Corps/Tete" unique_id=2044165333]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000739336, -0.22908735)
+cull_mask = 1048573
+fov = 50.0
+
+[node name="Photo" parent="Corps/Tete/Camera3DPhoto" unique_id=505167109 instance=ExtResource("3_6cmlh")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000739336, -0.922204)
 visible = false

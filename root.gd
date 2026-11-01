@@ -14,6 +14,11 @@ func _ready() -> void:
 	$ColorRectHaut.hide()
 	$ColorRectBas.hide()
 
+	game = $EspaceJeu
+	game.fini.connect(endofgame.bind())
+	game.process_mode = Node.PROCESS_MODE_ALWAYS
+	#$PanelContainer.add_sibling(game)
+
 
 ## true si en attente du tout premier Start du jeu avant le niveau 1
 var waitingtostart : bool
@@ -43,13 +48,6 @@ func loadgame():
 	#if game != null :
 		#game.queue_free()
 		#await get_tree().create_timer(2.0).timeout 
-	
-	#var gametscn = load("res://game.tscn")
-	#game = gametscn.instantiate()
-	game = $EspaceJeu
-	game.fini.connect(endofgame.bind())
-	game.process_mode = Node.PROCESS_MODE_ALWAYS
-	#$PanelContainer.add_sibling(game)
 	
 	%Label.hide()
 	$PanelContainer/IntroContainer/RichTextDontWait.show()

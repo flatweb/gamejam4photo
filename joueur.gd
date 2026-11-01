@@ -45,11 +45,8 @@ func release_mouse() -> void:
 
 @onready var fps_camera: Camera3D = %Camera3D
 
-@export var camera_FOV = 55
-
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	#fps_camera.fov = camera_FOV
 	for i in range(0,MAXPHOTOS):
 		var textrect : TextureRect
 		textrect = TextureRect.new()
@@ -175,7 +172,7 @@ func _physics_process(delta: float) -> void:
 			is_aiming = true
 			$AudioAim.play()
 			$Control/ViewFinder.visible = true
-			%Tete/Camera3D.fov = 50.0
+			%Camera3DPhoto.make_current() #TODO
 		
 	if is_aiming: in_action()
 	
@@ -183,7 +180,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("aim"):
 		is_aiming = false
 		$Control/ViewFinder.visible = false
-		%Tete/Camera3D.fov = 75.0
+		%Camera3D.make_current()
+		
 		in_action()
 	
 	if not freezed:
@@ -357,10 +355,10 @@ func check_objectif_by_raycast() -> Dictionary:
 
 ## Pourcentage minimum pour considérer que le sujet est bien pris
 ## dans la zone centrale (container ZoneCentre)
-const COVERAGEMIN = 0.02  #TODO : à tuner
+const COVERAGEMIN = 0.2  #TODO : à tuner
 
 func scan_by_raycast() -> Dictionary:
-	var cam : Camera3D = %Camera3D
+	var cam : Camera3D = %Camera3DPhoto
 	const RAY_LENGTH = 1000 # TODO
 	var scans = 0
 	var hits : Dictionary
@@ -466,7 +464,7 @@ func check_obstacle_to_cylindershape(body : PhysicsBody3D, collisionshape : Coll
 # Retourne null si on touche un objet plus loin que body
 # Retourne le parent de l'objet touché 
 func cast_ray_to_obstacle(body : PhysicsBody3D, end : Vector3):
-	var cam = %Camera3D
+	var cam = %Camera3DPhoto
 	var space_state = get_world_3d().direct_space_state
 	var distbody = body.global_position.distance_to(cam.global_position)
 	var origin : Vector3 = cam.global_position #cam.project_ray_origin(pos)
