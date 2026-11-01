@@ -30,6 +30,7 @@ clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 
 [node name="TextMsg" type="Label" parent="HBoxContainerBottom" unique_id=1683087831]
 unique_name_in_owner = true
