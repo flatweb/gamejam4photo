@@ -34,6 +34,66 @@ bg_color = Color(0.18039216, 0.30588236, 0.24313726, 0.35686275)
 [sub_resource type="Shortcut" id="Shortcut_gd4vy"]
 events = [SubResource("InputEventJoypadButton_nyrvt"), SubResource("InputEventJoypadButton_drmux")]
 
+[sub_resource type="Animation" id="Animation_l8v81"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScopeHaut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -132)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScopeBas:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 651)]
+}
+
+[sub_resource type="Animation" id="Animation_vyht1"]
+resource_name = "showhide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScopeHaut:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -132), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScopeBas:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 651), Vector2(0, 542)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bf3um"]
+_data = {
+&"RESET": SubResource("Animation_l8v81"),
+&"showhide": SubResource("Animation_vyht1")
+}
+
 [node name="Root" type="Node" unique_id=414877800]
 script = ExtResource("1_pyidc")
 
@@ -218,20 +278,21 @@ stream = ExtResource("5_jnlp7")
 
 [node name="Popup" type="Node" parent="." unique_id=1943659802]
 
-[node name="ColorRectHaut" type="ColorRect" parent="." unique_id=681897389]
-visible = false
+[node name="ScopeHaut" type="ColorRect" parent="." unique_id=681897389]
+offset_top = -132.0
 offset_right = 1159.0
-offset_bottom = 128.0
+offset_bottom = -4.0
 size_flags_vertical = 0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRectBas" type="ColorRect" parent="." unique_id=1994204065]
-visible = false
-offset_left = -8.0
-offset_top = 542.0
-offset_right = 1166.0
-offset_bottom = 667.0
+[node name="ScopeBas" type="ColorRect" parent="." unique_id=1994204065]
+offset_top = 651.0
+offset_right = 1174.0
+offset_bottom = 776.0
 color = Color(0, 0, 0, 1)
+
+[node name="AnimationScope" type="AnimationPlayer" parent="." unique_id=1534809729]
+libraries/ = SubResource("AnimationLibrary_bf3um")
 
 [node name="UI" parent="." unique_id=277547402 instance=ExtResource("6_l8v81")]
 

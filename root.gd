@@ -11,8 +11,6 @@ func _ready() -> void:
 	$EspaceJeu.show()
 	$EspaceJeu.silence()
 	$AudioMusique.play()
-	$ColorRectHaut.hide()
-	$ColorRectBas.hide()
 
 	game = $EspaceJeu
 	game.fini.connect(endofgame.bind())
@@ -108,8 +106,7 @@ func inactivite():
 	$EspaceJeu.silence()
 	$AudioMusique.play()
 	$EspaceJeu/DirectionalLight3D.light_energy = 0.5
-	$ColorRectHaut.show()
-	$ColorRectBas.show()
+	$AnimationScope.play("showhide")
 
 func endofinactif():
 	$AudioMusique.stop()
@@ -117,12 +114,11 @@ func endofinactif():
 	$EspaceJeu/AudioForetOuest.play()
 	$EspaceJeu/AudioPlaine.play()
 	$EspaceJeu/DirectionalLight3D.light_energy = 1.0
-	$ColorRectHaut.hide()
-	$ColorRectBas.hide()
-
+	$AnimationScope.play_backwards("showhide")
 
 func endofgame():
 	endofinactif()
+	$EspaceJeu/Joueur/TimerNoAction.stop()
 	$AudioMusique.play()
 	get_tree().paused = true
 	
