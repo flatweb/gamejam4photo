@@ -189,6 +189,7 @@ func _on_out_pause_button_up() -> void:
 func outpause():
 	$PauseContainer.hide()
 	$EspaceJeu/Joueur.in_action()
+	$EspaceJeu/Joueur.capture_mouse()
 	get_tree().paused = false
 
 func _on_giveup_button_up() -> void:
